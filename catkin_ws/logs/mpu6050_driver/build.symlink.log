@@ -1,0 +1,6 @@
+Symlinking /home/thanh/catkin_ws/devel/lib/libmpu6050_node_lib.so
+Symlinking /home/thanh/catkin_ws/devel/lib/mpu6050_driver/mpu6050_node
+Symlinking /home/thanh/catkin_ws/devel/lib/mpu6050_driver/mpu6050_calibration_node
+Symlinking /home/thanh/catkin_ws/devel/lib/pkgconfig/mpu6050_driver.pc
+Symlinking /home/thanh/catkin_ws/devel/share/mpu6050_driver/cmake/mpu6050_driverConfig.cmake
+Symlinking /home/thanh/catkin_ws/devel/share/mpu6050_driver/cmake/mpu6050_driverConfig-version.cmake

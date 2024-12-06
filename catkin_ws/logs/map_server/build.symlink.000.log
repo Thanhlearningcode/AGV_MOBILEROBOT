@@ -1,0 +1,7 @@
+Symlinking /home/thanh/catkin_ws/devel/lib/libmap_server_image_loader.so
+Symlinking /home/thanh/catkin_ws/devel/lib/pkgconfig/map_server.pc
+Symlinking /home/thanh/catkin_ws/devel/lib/map_server/rtest
+Symlinking /home/thanh/catkin_ws/devel/lib/map_server/map_saver
+Symlinking /home/thanh/catkin_ws/devel/lib/map_server/map_server
+Symlinking /home/thanh/catkin_ws/devel/share/map_server/cmake/map_serverConfig.cmake
+Symlinking /home/thanh/catkin_ws/devel/share/map_server/cmake/map_serverConfig-version.cmake

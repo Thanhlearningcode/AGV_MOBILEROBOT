@@ -1,0 +1,4 @@
+Symlinking /home/thanh/catkin_ws/devel/lib/libi2c_device_ros.so
+Symlinking /home/thanh/catkin_ws/devel/lib/pkgconfig/i2c_device_ros.pc
+Symlinking /home/thanh/catkin_ws/devel/share/i2c_device_ros/cmake/i2c_device_rosConfig.cmake
+Symlinking /home/thanh/catkin_ws/devel/share/i2c_device_ros/cmake/i2c_device_rosConfig-version.cmake

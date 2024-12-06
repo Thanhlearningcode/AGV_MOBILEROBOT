@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/thanh/catkin_ws/devel/.private/ros_imu_bno055/setup.sh

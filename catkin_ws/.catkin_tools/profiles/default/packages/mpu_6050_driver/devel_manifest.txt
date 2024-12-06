@@ -1,0 +1,8 @@
+mpu_6050_driver
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/bin/imu_node.py /home/thanh/catkin_ws/devel/bin/imu_node.py
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/bin/cmake.lock /home/thanh/catkin_ws/devel/bin/cmake.lock
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/lib/pkgconfig/mpu_6050_driver.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/mpu_6050_driver.pc
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/lib/python3/dist-packages/mpu_6050_driver/__init__.py /home/thanh/catkin_ws/devel/lib/python3/dist-packages/mpu_6050_driver/__init__.py
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/share/mpu_6050_driver/cmake/mpu_6050_driverConfig.cmake /home/thanh/catkin_ws/devel/share/mpu_6050_driver/cmake/mpu_6050_driverConfig.cmake
+/home/thanh/catkin_ws/devel/.private/mpu_6050_driver/share/mpu_6050_driver/cmake/mpu_6050_driverConfig-version.cmake /home/thanh/catkin_ws/devel/share/mpu_6050_driver/cmake/mpu_6050_driverConfig-version.cmake

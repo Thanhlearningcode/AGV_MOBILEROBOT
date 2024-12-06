@@ -1,0 +1,5 @@
+../Core/Src/Systick.c:15:6:Tick_Increment	1
+../Core/Src/Systick.c:19:6:Systick_Init	1
+../Core/Src/Systick.c:35:6:SysTick_Handler	1
+../Core/Src/Systick.c:39:10:get_tick	1
+../Core/Src/Systick.c:45:6:delay	3

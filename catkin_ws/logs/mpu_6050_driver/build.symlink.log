@@ -1,0 +1,6 @@
+Symlinking /home/thanh/catkin_ws/devel/bin/imu_node.py
+Symlinking /home/thanh/catkin_ws/devel/bin/cmake.lock
+Symlinking /home/thanh/catkin_ws/devel/lib/pkgconfig/mpu_6050_driver.pc
+Symlinking /home/thanh/catkin_ws/devel/lib/python3/dist-packages/mpu_6050_driver/__init__.py
+Symlinking /home/thanh/catkin_ws/devel/share/mpu_6050_driver/cmake/mpu_6050_driverConfig.cmake
+Symlinking /home/thanh/catkin_ws/devel/share/mpu_6050_driver/cmake/mpu_6050_driverConfig-version.cmake

@@ -1,0 +1,8 @@
+prefix=/home/thanh/catkin_ws/devel/.private/i2c_device_ros
+
+Name: i2c_device_ros
+Description: Description of i2c_device_ros
+Version: 0.0.0
+Cflags: -I/home/thanh/catkin_ws/src/i2c_device_ros-master/include
+Libs: -L${prefix}/lib -li2c_device_ros
+Requires: 
