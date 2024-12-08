@@ -16,7 +16,7 @@ class STM32Hardware{
     // Get the current index for the DMA receive buffer
     inline uint32_t getRdmaInd(void) {
         // Directly accessing DMA register to get the remaining counter
-        return (rbuflen - DMA1_Stream5->NDTR) & (rbuflen - 1);  // DMA1 Stream5 is used for USART2 RX
+        return ( rbuflen - DMA1_Stream5->NDTR ) & ( rbuflen - 1 );  // DMA1 Stream5 is used for USART2 RX
     }
 
     static const uint16_t tbuflen = 512; // Buffer length for transmission
@@ -39,7 +39,7 @@ class STM32Hardware{
     // Read a byte from the receive buffer
     int read() {
         int c = -1;
-        if (rind != getRdmaInd()) {
+        if ( rind != getRdmaInd() ) {
             c = rbuf[rind++];
             rind &= rbuflen - 1;  // Wrap around buffer index
         }
@@ -50,13 +50,13 @@ class STM32Hardware{
     void flush(void) {
         static bool mutex = false;
 
-        if (!mutex) {
+        if ( !mutex ) {
             mutex = true;
 
-            if (twind != tfind) {
+            if ( twind != tfind ) {
                 uint16_t len = tfind < twind ? twind - tfind : tbuflen - tfind;
-                DMA_UART_Transmit(&(tbuf[tfind]), len);
-                tfind = (tfind + len) & (tbuflen - 1);
+                DMA_UART_Transmit( &( tbuf[tfind]), len );
+                tfind = ( tfind + len ) & ( tbuflen - 1 );
             }
 
             mutex = false;
@@ -69,11 +69,11 @@ class STM32Hardware{
         n = n <= tbuflen ? n : tbuflen;
 
         int n_tail = n <= tbuflen - twind ? n : tbuflen - twind;
-        memcpy(&(tbuf[twind]), data, n_tail);
-        twind = (twind + n) & (tbuflen - 1);
+        memcpy( & ( tbuf[twind] ), data, n_tail );
+        twind = ( twind + n ) & ( tbuflen - 1 );
 
-        if (n != n_tail) {
-            memcpy(tbuf, &(data[n_tail]), n - n_tail);
+        if ( n != n_tail ) {
+            memcpy( tbuf, &( data[n_tail] ), n - n_tail );
         }
 
         flush();

@@ -42,13 +42,13 @@ uint32_t get_tick(void){
 	__enable_irq();
 	return g_curr_tick_p;
 }
-void delay(uint32_t delay){
+void delay( uint32_t delay ){
 	uint32_t tick_start = get_tick();
 	uint32_t wait = delay*1000;
-	if(wait <MAX_DELAY){
-		wait += (uint32_t)(tick_freq);
+	if( wait < MAX_DELAY ){
+		wait += (uint32_t)( tick_freq );
 	}
 
-	while((get_tick()- tick_start) < wait){}
+	while( ( get_tick() - tick_start ) < wait ){}
 }
 

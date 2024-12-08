@@ -142,23 +142,23 @@ void Encoder_Turnleft(void){
 			
  int b1 = readEncoder1() ;
 
-    	if(b1 == 0){
+    	if ( b1 == 0) {
     		Direction_left = 1;
     	}
-    	else if (b1 > 0){
+    	else if ( b1 > 0 ) {
     		Direction_left = 0;
     	}
 
-    	if(Direction_left == 1){
-    		if (pos_left == encoder_maximum){
+    	if ( Direction_left == 1 ){
+    		if ( pos_left == encoder_maximum ){
     			pos_left = encoder_minimum;
     		}
-    		else{
+    		else {
     			pos_left++;
     		}
     	}
     	else {
-    	    if (pos_left == encoder_minimum) {
+    	    if ( pos_left == encoder_minimum ) {
     	    	pos_left = encoder_maximum;
     	    }
     	    else {
@@ -166,19 +166,19 @@ void Encoder_Turnleft(void){
     	    }
     	} left_wheel_tick_count.data = pos_left;
  } }
-void Encoder_Turnright(void){
-	while(1){
+void Encoder_Turnright(void) {
+	while(1) {
  	int b2 = readEncoder2();
 
-    	if(b2 == 0){
+    	if ( b2 == 0) {
     		Direction_right = 0;
     	}
-    	else if (b2 > 0){
+    	else if ( b2 > 0) {
     		Direction_right = 1;
     	}
 
-    	if(Direction_right == 1){
-    		if (pos_right == encoder_maximum){
+    	if ( Direction_right == 1 ){
+    		if ( pos_right == encoder_maximum ){
     			pos_right = encoder_minimum;
     		}
     		else{
@@ -186,7 +186,7 @@ void Encoder_Turnright(void){
     		}
     	}
     	else {
-    	    if (pos_right == encoder_minimum) {
+    	    if ( pos_right == encoder_minimum ) {
     	    	pos_right = encoder_maximum;
     	    }
     	    else {
@@ -209,15 +209,15 @@ void calc_vel_left_wheel(){
 	static int prevLeftCount = 0;
 
 	// Manage rollover and rollunder when we get outside the 16-bit integer range
-	int numOfTicks = (65535 + left_wheel_tick_count.data - prevLeftCount) % 65535;
+	int numOfTicks = ( 65535 + left_wheel_tick_count.data - prevLeftCount ) % 65535;
 
 	// If we have had a big jump, it means the tick count has rolled over.
-	if (numOfTicks > 10000) {
-		numOfTicks = 0 - (65535 - numOfTicks);
+	if ( numOfTicks > 10000 ) {
+		numOfTicks = 0 - ( 65535 - numOfTicks );
 	}
 
 	// Calculate wheel velocity in meters per milisecond
-	velLeftWheel = numOfTicks/TICKS_PER_METER/(get_tick()-prevTime);
+	velLeftWheel = numOfTicks /TICKS_PER_METER / ( get_tick() - prevTime );
 
 	// Calculate right wheel velocity in RPM
 	left_wheel_vel = velLeftWheel*30000.0/PI/WHEEL_RADIUS;
@@ -233,7 +233,7 @@ void calc_vel_left_wheel(){
 
 // Calculate the right wheel linear velocity in m/s every time a
 // tick count message is published on the /right_ticks topic.
-void calc_vel_right_wheel(){
+void calc_vel_right_wheel() {
 
 	// Previous timestamp
 	static double prevTime = 0;
@@ -242,50 +242,50 @@ void calc_vel_right_wheel(){
 	static int prevRightCount = 0;
 
 	// Manage rollover and rollunder when we get outside the 16-bit integer range
-	int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
+	int numOfTicks = ( 65535 + right_wheel_tick_count.data - prevRightCount ) % 65535;
 
-	if (numOfTicks > 10000) {
-		numOfTicks = 0 - (65535 - numOfTicks);
+	if ( numOfTicks > 10000 ) {
+		numOfTicks = 0 - ( 65535 - numOfTicks );
 	}
 
 	// Calculate wheel velocity in meters per milisecond
-	velRightWheel = numOfTicks/TICKS_PER_METER/(get_tick()-prevTime);
+	velRightWheel = numOfTicks /TICKS_PER_METER / ( get_tick() - prevTime );
 
 	// Calculate right wheel velocity in RPM
 	right_wheel_vel = velRightWheel*30000.0/PI/WHEEL_RADIUS;
-	right_vel_data.data = int(right_wheel_vel);
+	right_vel_data.data = int( right_wheel_vel );
 	prevRightCount = right_wheel_tick_count.data;
 
 	prevTime = get_tick();
 
 }
 
-void calc_left_wheel_query(const std_msgs::Int16& vel){
+void calc_left_wheel_query ( const std_msgs::Int16& vel ){
     is_recv_left_wheel = 1;
     vel_left = vel.data;
-    lastCmdVelReceived = (get_tick()/1000);
+    lastCmdVelReceived = ( get_tick() / 1000 );
 }
 
-void calc_right_wheel_query(const std_msgs::Int16& vel){
+void calc_right_wheel_query (const std_msgs::Int16& vel){
     vel_right = vel.data;
     is_recv_right_wheel = 1;
-    lastCmdVelReceived = (get_tick()/1000);
+    lastCmdVelReceived = ( get_tick() / 1000 );
 }
 
-int gain_dir(int x, int y){
-	if( x > 0 && y > 0){
+int gain_dir (int x, int y){
+	if ( x > 0 && y > 0){
 	  return 1;                                   // ti?n tru?c
 	}
 
-	else if(( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0)){
+	else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0)){
 	  return 2;                                   // quay ph?i
 	}
 
-	else if(( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0)){
+	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0)){
 	  return 3;                                  // quay trái
 	}
 
-	else if(x < 0 && y < 0 ){
+	else if (x < 0 && y < 0 ){
 	  return 4;                                   // lùi sau
 	}
 
@@ -312,7 +312,7 @@ void set_pwm_values(int dir, double pwm_left, double pwm_right) {
 	if (abs(pwmRightReq) > pwmRightOut) {
 		pwmRightOut += PWM_INCREMENT;
 	}
-	else if(abs(pwmRightReq) < pwmRightOut) {
+	else if (abs(pwmRightReq) < pwmRightOut) {
 		pwmRightOut -= PWM_INCREMENT;
 	}
 	else{}
@@ -401,11 +401,11 @@ while(1){
 
 	}
 
-	if (is_recv_left_wheel == 1 && is_recv_right_wheel == 1){
+	if (is_recv_left_wheel == 1 && is_recv_right_wheel == 1) {
 
 		/* Compute velocity with method 1 */
 		long currT = get_tick();
-		float deltaT = ((float) (currT-prevT))/1000;
+		float deltaT = ( (float)(currT-prevT) )/1000;
 
 		/* -- ROBOT RUN MANUALLY --
 		 -- set vel target for left motor -- */
@@ -417,9 +417,9 @@ while(1){
 
 		float ul = kpl*el + kil*eintegral_l;	// Tính giá tr? di?u khi?n t?ng h?p P và I.
 
-		pwmLeftReq = fabs(ul);	// PWM yêu c?u (tuy?t d?i).
+		pwmLeftReq = fabs (ul);	// PWM yêu c?u (tuy?t d?i).
 
-		if(pwmLeftReq > PWM_MAX){
+		if (pwmLeftReq > PWM_MAX) {
 			pwmLeftReq = PWM_MAX;	  // Gi?i h?n giá tr? PWM t?i da.
 		}
 
@@ -434,7 +434,7 @@ while(1){
 
 		pwmRightReq = fabs(ur);
 
-		if(pwmRightReq > PWM_MAX){
+		if (pwmRightReq > PWM_MAX) {
 			pwmRightReq = PWM_MAX;	     // Gi?i h?n PWM.
 		}
 
@@ -455,7 +455,7 @@ while(1){
 		}
 
 		/* Case 2: robot change dir => stop robot before running */
-		if (pre_robot_dir != robot_dir){
+		if (pre_robot_dir != robot_dir) {
 			pre_robot_dir = robot_dir;
 			ul = 0;
 			pwmLeftReq = 0;
@@ -467,7 +467,7 @@ while(1){
 		}
 
 		/* Stop the car if there are no cmd_vel messages	*/
-		if((get_tick()/1000) - lastCmdVelReceived > 1) {
+		if ( (get_tick()/1000) - lastCmdVelReceived > 1) {
 			pwmLeftReq = 0;
 			pwmRightReq = 0;
 		}
@@ -479,5 +479,5 @@ while(1){
 
 
 	}
-}
-}	
+		}
+			}	

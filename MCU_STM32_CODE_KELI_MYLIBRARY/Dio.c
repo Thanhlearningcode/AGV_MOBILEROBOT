@@ -9,11 +9,11 @@ void Dio_Init(void){
 			GPIOC->PUPDR &= ~ ( 3U << 12 ); // No pull-up and No pull-down
 }
 int readEncoder1(void){
-	int c = (( GPIOC->IDR>>8)&0x1) ;
+	int c = ( ( GPIOC->IDR>>8 ) & 0x1 ) ;
 	return c;
 
 }
 int readEncoder2(void){
-int c1 =(( GPIOC->IDR>>6)&0x1);
+int c1 =( ( GPIOC->IDR>>6 ) &0x1 );
 	return c1;
 }
