@@ -137,9 +137,9 @@ void USART2_IRQHandler(void) {
 	
 
 void Encoder_Turnleft(void){
+	
 	while(1){
 		
-			
  int b1 = readEncoder1() ;
 
     	if ( b1 == 0) {
@@ -167,7 +167,9 @@ void Encoder_Turnleft(void){
     	} left_wheel_tick_count.data = pos_left;
  } }
 void Encoder_Turnright(void) {
+	
 	while(1) {
+		
  	int b2 = readEncoder2();
 
     	if ( b2 == 0) {
@@ -334,19 +336,19 @@ void set_pwm_values(int dir, double pwm_left, double pwm_right) {
 	switch (dir) {
 
 			    case FORWARD:
-			        ModeMotor(FORWARD, pwmout1, pwmout2);
+			        ModeMotor ( FORWARD, pwmout1, pwmout2 );
 			        break;
 			    case TURNRIGHT:
-			        ModeMotor(TURNRIGHT, pwmout1, pwmout2);
+			        ModeMotor ( TURNRIGHT, pwmout1, pwmout2 );
 			        break;
 			    case TURNLEFT:
-			        ModeMotor(TURNLEFT, pwmout1, pwmout2);
+			        ModeMotor ( TURNLEFT, pwmout1, pwmout2 );
 			        break;
 			    case BACKWARD:
-			        ModeMotor(BACKWARD, pwmout1, pwmout2);
+			        ModeMotor ( BACKWARD, pwmout1, pwmout2 );
 			        break;
 			    default:
-			    	ModeMotor(STOP, 0, 0);
+			      	ModeMotor ( STOP, 0, 0 );
 			        break;
 			}
 }
@@ -354,8 +356,8 @@ void set_pwm_values(int dir, double pwm_left, double pwm_right) {
 
 // Set up ROS subscriber to the velocity command
 
-ros::Subscriber<std_msgs::Int16> left_wheel_query("left_wheel_query", &calc_left_wheel_query );
-ros::Subscriber<std_msgs::Int16> right_wheel_query("right_wheel_query", &calc_right_wheel_query );
+ros::Subscriber<std_msgs::Int16> left_wheel_query  ( "left_wheel_query", &calc_left_wheel_query );
+ros::Subscriber<std_msgs::Int16> right_wheel_query ( "right_wheel_query", &calc_right_wheel_query );
 
 void setup(void)
 {
@@ -364,15 +366,15 @@ void setup(void)
 	Systick_Init();
 	Tim2_Init();
 	osKernelInit();
-		osKernelAddThread(loop,Encoder_Turnright,Encoder_Turnleft);
-	osKernelLaunch(QUANTA);
+		osKernelAddThread ( loop, Encoder_Turnright, Encoder_Turnleft );
+	osKernelLaunch ( QUANTA );
 	  nh.initNode();
-  ModeMotor(STOP, 0, 0);
+  ModeMotor ( STOP, 0, 0 );
   Dio_Init();
   setupVectorTable() ;
 
-  nh.subscribe(left_wheel_query);
-  nh.subscribe(right_wheel_query);
+  nh.subscribe ( left_wheel_query );
+  nh.subscribe ( right_wheel_query );
 
 }
 
@@ -386,7 +388,7 @@ while(1){
 
 	// If the time interval has passed, publish the number of ticks,
 	// and calculate the velocities.
-	if (currentMillis - previousMillis > interval) {
+	if ( currentMillis - previousMillis > interval ) {
 
 		previousMillis = currentMillis;
 
@@ -401,49 +403,49 @@ while(1){
 
 	}
 
-	if (is_recv_left_wheel == 1 && is_recv_right_wheel == 1) {
+	if ( is_recv_left_wheel == 1 && is_recv_right_wheel == 1 ) {
 
 		/* Compute velocity with method 1 */
 		long currT = get_tick();
-		float deltaT = ( (float)(currT-prevT) )/1000;
+		float deltaT = ( (float)( currT-prevT ) )/1000;
 
 		/* -- ROBOT RUN MANUALLY --
 		 -- set vel target for left motor -- */
-		float vtl = abs(vel_left);	  // L?y v?n t?c mong mu?n (tuy?t d?i).
+		float vtl = abs ( vel_left );	  // L?y v?n t?c mong mu?n (tuy?t d?i).
 		float kpl = 5;	// H? s? khu?ch d?i Proportional (P).
 		float kil = 0;	// H? s? khu?ch d?i Integral (I).
-		float el = vtl - abs(left_wheel_vel);	 // Sai s? gi?a v?n t?c mong mu?n và th?c t?.
+		float el = vtl - abs ( left_wheel_vel );	 // Sai s? gi?a v?n t?c mong mu?n và th?c t?.
 		eintegral_l = eintegral_l + el*deltaT;	// C?ng d?n sai s? theo th?i gian (thành ph?n I).
 
 		float ul = kpl*el + kil*eintegral_l;	// Tính giá tr? di?u khi?n t?ng h?p P và I.
 
 		pwmLeftReq = fabs (ul);	// PWM yêu c?u (tuy?t d?i).
 
-		if (pwmLeftReq > PWM_MAX) {
+		if ( pwmLeftReq > PWM_MAX ) {
 			pwmLeftReq = PWM_MAX;	  // Gi?i h?n giá tr? PWM t?i da.
 		}
 
 		// -- set vel target for right motor --
-		float vtr = abs(vel_right); 	 // L?y v?n t?c mong mu?n.
+		float vtr = abs ( vel_right ); 	 // L?y v?n t?c mong mu?n.
 		float kpr = 5;
 		float kir = 0;
-		float er = vtr - abs(right_wheel_vel);	// Sai s? c?a bánh ph?i.
+		float er = vtr - abs ( right_wheel_vel );	// Sai s? c?a bánh ph?i.
 		eintegral_r = eintegral_r + er*deltaT;	// C?ng d?n sai s?.
 
 		float ur = kpr*er + kir*eintegral_r;	// Ði?u khi?n t?ng h?p P và I.
 
 		pwmRightReq = fabs(ur);
 
-		if (pwmRightReq > PWM_MAX) {
+		if ( pwmRightReq > PWM_MAX ) {
 			pwmRightReq = PWM_MAX;	     // Gi?i h?n PWM.
 		}
 
 		/* -- robot run --
 		 determine direction of robot */
-		robot_dir = gain_dir(vel_left, vel_right);
+		robot_dir = gain_dir ( vel_left, vel_right );
 
 		// Case 1: robot stop => reset variables
-		if (robot_dir == 0) {
+		if ( robot_dir == 0 ) {
 			ul = 0;
 			pwmLeftReq = 0;
 			eintegral_l = 0;
@@ -455,7 +457,7 @@ while(1){
 		}
 
 		/* Case 2: robot change dir => stop robot before running */
-		if (pre_robot_dir != robot_dir) {
+		if ( pre_robot_dir != robot_dir ) {
 			pre_robot_dir = robot_dir;
 			ul = 0;
 			pwmLeftReq = 0;
@@ -467,12 +469,12 @@ while(1){
 		}
 
 		/* Stop the car if there are no cmd_vel messages	*/
-		if ( (get_tick()/1000) - lastCmdVelReceived > 1) {
+		if ( ( get_tick()/1000 ) - lastCmdVelReceived > 1 ) {
 			pwmLeftReq = 0;
 			pwmRightReq = 0;
 		}
 
-		set_pwm_values(robot_dir, pwmLeftReq, pwmRightReq);
+		set_pwm_values ( robot_dir, pwmLeftReq, pwmRightReq );
 
 		/* update time */
 		prevT = currT;
