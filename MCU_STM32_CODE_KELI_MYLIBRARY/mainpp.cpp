@@ -35,7 +35,7 @@ std_msgs::Int16 left_wheel_tick_count;
 std_msgs::Int16 left_vel_data;
 //ros::Publisher leftVelPub("left_wheel_vel", &left_vel_data);
 
-std_msgs::Int16 right_vel_data;
+std_msgs::Int16 right_vel_data ;
 //ros::Publisher rightVelPub("right_wheel_vel", &right_vel_data);
 
 //geometry_msgs::Twist core_data;

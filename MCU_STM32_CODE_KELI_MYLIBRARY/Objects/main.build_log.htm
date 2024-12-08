@@ -3,35 +3,56 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.31.0.0
-Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: ok ok, ok, LIC=D0D7S-LIVGL-56IQ2-99SZX-0JQCW-AB62Z
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Phanmem123.com Phanmem123.com, Phanmem123.com, LIC=CZLZX-HI4CW-PCWJ8-3PF0T-XMR3A-BH9DG
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
-Toolchain Path:  D:\App\Keil_v5\ARM\ARMCLANG\Bin
-C Compiler:      ArmClang.exe V6.14
-Assembler:       Armasm.exe V6.14
-Linker/Locator:  ArmLink.exe V6.14
-Library Manager: ArmAr.exe V6.14
-Hex Converter:   FromElf.exe V6.14
-CPU DLL:         SARMCM3.DLL V5.31.0.0
-Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
-Dialog DLL:      TCM.DLL V1.46.0.0
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  D:\Kelic\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\WORK\PBL4\AGV_MyProject_NVT\ROS\LAST\MCU_STM32_CODE_KELI_MYLIBRARY\main.uvprojx
-Project File Date:  12/07/2024
+D:\test\Github\AGV-MOBILER-ROBOT\MCU_STM32_CODE_KELI_MYLIBRARY\main.uvprojx
+Project File Date:  12/08/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.14', folder: 'D:\App\Keil_v5\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.19', folder: 'D:\Kelic\ARM\ARMCLANG\Bin'
 Build target 'Src'
 Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
 Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
+compiling Uart1.c...
+compiling Dio.c...
+compiling main.cpp...
+compiling Exti.c...
+compiling HSCR04.c...
+compiling I2C1.c...
+compiling Spi1.c...
+compiling Spi2.c...
+compiling Uart2.c...
+compiling ros.cpp...
+compiling BNO055.c...
+compiling Lcd1602.c...
+compiling Encoder.c...
 compiling Motor.c...
+compiling BTS7960.c...
+compiling Rcc.c...
+compiling Kernel.c...
+compiling mainpp.cpp...
+compiling Systick.c...
+assembling startup_stm32f411xe.s...
+assembling Kernel.s...
+compiling system_stm32f4xx.c...
 linking...
-Program Size: Code=17470 RO-data=1122 RW-data=32 ZI-data=5488  
+Program Size: Code=16882 RO-data=1122 RW-data=32 ZI-data=5488  
 FromELF: creating hex file...
 ".\Objects\main.axf" - 0 Error(s), 0 Warning(s).
 
@@ -50,21 +71,21 @@ Package Vendor: Keil
    * Component: Startup Version: 2.6.3
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_Src
-  D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
-  D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  ./RTE/_Src
+  D:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
-      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+      Source file:   MDK/Device/Source/ARM/STM32F411xx_OPT.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
