@@ -5,7 +5,7 @@
  *  Author: Nguyen Van Thanh
  *  Created on: 2/11/2024
  *  Contact: https://thanhlearningcode.github.io/Myprofile/
- *  This software is provided command for
+ *  This software is provided command for using Keyword to control Car
  *  \endverbatim
  *************************************************************************************************/
 #include <ros/ros.h>
