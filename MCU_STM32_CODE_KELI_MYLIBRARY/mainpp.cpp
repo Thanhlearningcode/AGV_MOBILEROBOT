@@ -268,13 +268,13 @@ void calc_left_wheel_query ( const std_msgs::Int16& vel ){
     lastCmdVelReceived = ( get_tick() / 1000 );
 }
 
-void calc_right_wheel_query (const std_msgs::Int16& vel){
+void calc_right_wheel_query ( const std_msgs::Int16& vel ){
     vel_right = vel.data;
     is_recv_right_wheel = 1;
     lastCmdVelReceived = ( get_tick() / 1000 );
 }
 
-int gain_dir (int x, int y){
+int gain_dir ( int x, int y) {
 	if ( x > 0 && y > 0){
 	  return 1;                                   // ti?n tru?c
 	}
@@ -296,36 +296,36 @@ int gain_dir (int x, int y){
 	}
 }
 
-void set_pwm_values(int dir, double pwm_left, double pwm_right) {
+void set_pwm_values ( int dir, double pwm_left, double pwm_right ) {
 
 	// These variables will hold our desired PWM values
 	static int pwmLeftOut = 0;
 	static int pwmRightOut = 0;
 
 	// Calculate the output PWM value by making slow changes to the current value
-	if (abs(pwmLeftReq) > pwmLeftOut) {
+	if ( abs(pwmLeftReq) > pwmLeftOut) {
 		pwmLeftOut += PWM_INCREMENT;
 	}
-	else if (abs(pwmLeftReq) < pwmLeftOut) {
+	else if ( abs(pwmLeftReq) < pwmLeftOut ) {
 		pwmLeftOut -= PWM_INCREMENT;
 	}
 	else{}
 
-	if (abs(pwmRightReq) > pwmRightOut) {
+	if ( abs(pwmRightReq) > pwmRightOut ) {
 		pwmRightOut += PWM_INCREMENT;
 	}
-	else if (abs(pwmRightReq) < pwmRightOut) {
+	else if ( abs(pwmRightReq) < pwmRightOut ) {
 		pwmRightOut -= PWM_INCREMENT;
 	}
 	else{}
 
 	// Conditional operator to limit PWM output at the maximum
-	pwmLeftOut = (pwmLeftOut > PWM_MAX) ? PWM_MAX : pwmLeftOut;
-	pwmRightOut = (pwmRightOut > PWM_MAX) ? PWM_MAX : pwmRightOut;
+	pwmLeftOut = ( pwmLeftOut > PWM_MAX) ? PWM_MAX : pwmLeftOut;
+	pwmRightOut = ( pwmRightOut > PWM_MAX) ? PWM_MAX : pwmRightOut;
 
 	// PWM output cannot be less than 0
-	pwmLeftOut = (pwmLeftOut < 0) ? 0 : pwmLeftOut;
-	pwmRightOut = (pwmRightOut < 0) ? 0 : pwmRightOut;
+	pwmLeftOut = ( pwmLeftOut < 0 ) ? 0 : pwmLeftOut;
+	pwmRightOut = ( pwmRightOut < 0) ? 0 : pwmRightOut;
 
 	// convert pwm in 16 bit type
 	pwmout1 = pwmLeftOut*K;
