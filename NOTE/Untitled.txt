@@ -1,0 +1,7 @@
+
+git checkout -b Fixcode
+git status -> Check coi có khởi tạo git(git init) hay thay đổi gì chưa
+git add + FOLER
+git commit -m"CHANGE_COMMON_CODE-DANH"
+git pull origin Fixcode
+git push origin Fixcode
