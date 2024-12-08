@@ -43,7 +43,7 @@ void Tim2_Init1(void){
     TIM2->CNT = 0;         // Reset counter
     TIM2->ARR = 65535;     // Auto-reload value (maximum counter value)
     TIM2->PSC = 0;         // Set prescaler (no division)
-    TIM2->CCR1 = 0;        // Set initial duty cycle for PA0
+    TIM2->CCR1 =  0;        // Set initial duty cycle for PA0
     TIM2->CCR2 = 0;        // Set initial duty cycle for PA1
     TIM2->CCR3 = 0;        // Set initial duty cycle for PA2
     TIM2->CCR4 = 0;        // Set initial duty cycle for PA3
