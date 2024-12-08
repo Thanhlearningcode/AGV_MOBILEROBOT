@@ -33,7 +33,7 @@ void Spi2_Transmitrer( uint8_t *data, uint8_t size){
 			 uint8_t temp;
 		while( i < size ){
 				/* Wait until Tx is emty */
-				while( ! (( SPI1->SR>>1)&0x1));
+				while( !( ( SPI1->SR>>1)&0x1) );
 						SPI2->DR = data[i];
 						i++;		
 		}

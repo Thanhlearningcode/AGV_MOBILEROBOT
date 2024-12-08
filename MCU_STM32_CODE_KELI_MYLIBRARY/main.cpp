@@ -13,7 +13,7 @@ int main(void)
 	/* Configure RCC to 72MHZ */
 	  // Step 1: Enable HSE (High Speed External)
 	    RCC->CR |= RCC_CR_HSEON; // Turn on HSE
-	    while ( !(RCC->CR & RCC_CR_HSERDY) ); // Wait until HSE is ready
+	    while ( !( RCC->CR & RCC_CR_HSERDY ) ); // Wait until HSE is ready
 
 	    // Step 2: Configure PLL
 	    RCC->PLLCFGR = 0; // Reset PLL Configuration Register

@@ -49,7 +49,7 @@ uint16_t Uart2_Receiver() {
     return USART2->DR;                    // Return received data
 }
 
-void DMA_UART_Transmit(uint8_t* data, uint16_t length) {
+void DMA_UART_Transmit ( uint8_t* data, uint16_t length ) {
     // Enable DMA1 Stream6 (for UART2 TX)
     DMA1_Stream6->CR &= ~DMA_SxCR_EN;       // Disable DMA stream
     DMA1_Stream6->CR &= ~DMA_SxCR_DIR;      // Set direction for memory-to-peripheral
@@ -69,7 +69,7 @@ void DMA_UART_Transmit(uint8_t* data, uint16_t length) {
     DMA1_Stream6->CR |= DMA_SxCR_EN;
 }
 
-void DMA_UART_Receive(uint8_t* buffer, uint16_t length) {
+void DMA_UART_Receive ( uint8_t* buffer, uint16_t length ) {
     // Enable DMA1 Stream5 (for UART2 RX)
     DMA1_Stream5->CR &= ~DMA_SxCR_EN;       // Disable DMA stream
     DMA1_Stream5->CR &= ~DMA_SxCR_DIR;      // Set direction for peripheral-to-memory

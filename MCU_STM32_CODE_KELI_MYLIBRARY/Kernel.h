@@ -28,8 +28,8 @@ typedef struct{
 	struct tcb* nextPt;
 }tcbType;
 
-uint8_t osKernelAddThread(void (*task0)(void),void (*task1)(void), void (*task2)(void));
-void osKernelStackInit(int i);
+uint8_t osKernelAddThread (void (*task0)(void),void (*task1)(void), void (*task2)(void));
+void osKernelStackInit (int i);
 void osSchedulerLaunch();
 void osKernelInit(void);
 void osKernelLaunch(uint32_t quanta);

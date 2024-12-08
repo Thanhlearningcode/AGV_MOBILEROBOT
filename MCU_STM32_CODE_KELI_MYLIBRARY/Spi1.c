@@ -33,20 +33,20 @@ void Spi1_Transmitrer( uint8_t *data, uint8_t size){
 			 uint8_t temp;
 		while( i < size ){
 				/* Wait until Tx is set */
-				while( ! (( SPI1->SR>>1)&0x1));
+				while( ! ( ( SPI1->SR>>1)&0x1) );
 						SPI1->DR = data[i];
 						i++;		
 		}
-			while( ! (( SPI1->SR>>1)&0x1));
+			while( ! ( ( SPI1->SR>>1)&0x1) );
 	/* Wait until busy flag is not busy */
 		while(! (( SPI1->SR>>7)&0x1) );
 /* Clearing the OVR bit is done by a read operation by read to access to the SPI_SR register		*/
 }	
-void Spi1_ReceiveData(uint8_t *data, uint8_t size){
+void Spi1_ReceiveData ( uint8_t *data, uint8_t size ){
 	int i=0;
 	while( size ){
 	/* Wait Rx is emty */
-		while( !  (( SPI1->SR)&0x1) );
+		while( !( ( SPI1->SR)&0x1) );
 		
 		SPI1->DR =0xFF; // Send dummy 
 	  while (!(SPI1->SR & SPI_SR_RXNE));

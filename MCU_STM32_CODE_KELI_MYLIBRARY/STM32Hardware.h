@@ -33,7 +33,7 @@ class STM32Hardware{
 
     // Reset the receive buffer and start DMA reception
     void reset_rbuf(void) {
-        DMA_UART_Receive(rbuf, rbuflen);
+        DMA_UART_Receive ( rbuf, rbuflen );
     }
 
     // Read a byte from the receive buffer
