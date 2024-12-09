@@ -46,13 +46,13 @@ void Uart1_Transmiter ( uint8_t *data, uint16_t size ) {
         USART2->DR = data[i];
 
         
-        while ( !( (USART2->SR >> 6) & 0x1 ) );
+        while ( !( (USART2->SR >> 6 ) & 0x1 ) );
     }
 }
 
 uint32_t Uart1_Receiver(){
 	// Wait until the data is ready to be received (RXNE bit set)
-	while( !( ( USART1->SR>>5)&0x1 ) );
+	while( !( ( USART1->SR>>5 )&0x1 ) );
 	
 	return USART1->DR;
 

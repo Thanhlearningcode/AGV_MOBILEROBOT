@@ -22,7 +22,7 @@ uint32_t MILLIS_PRESCALER;
  * @param   i Thread thu i
  * @return  void
  **************************************************************************/
-void osKernelStackInit(int i){
+void osKernelStackInit ( int i ){
 	//set stackPt to last data push in stack
 	tcbs[i].stackPt = &TCB_STACK[i][STACK_SIZE-16];
 	//chon che do Thump cho stm32
@@ -54,7 +54,7 @@ void osKernelStackInit(int i){
  * @param   void (*task2)(void) con tro toi task2 khong nhan tham so và co kieu tra ve là void.
  * @return  True
  **************************************************************************************/
-uint8_t osKernelAddThread(void (*task0)(void),void (*task1)(void),void (*task2)(void)){
+uint8_t osKernelAddThread ( void (*task0)(void),void (*task1)(void),void (*task2)(void) ){
 	__disable_irq();
 	
 	tcbs[0].nextPt = &tcbs[1]; // set nextPt cua tcb0 la tcb1
@@ -83,7 +83,7 @@ uint8_t osKernelAddThread(void (*task0)(void),void (*task1)(void),void (*task2)(
  **************************************************************************************/
 void osKernelInit(void){
 	//1ms
-	MILLIS_PRESCALER = (BUS_FREQ/1000);
+	MILLIS_PRESCALER = ( BUS_FREQ/1000 );
 }
  /*****************************************************************************************
  * @brief   Khoi chay osKernel
@@ -92,15 +92,15 @@ void osKernelInit(void){
  * @param   quanta thoi gian chay moi chu ki cua 1 thread
  * @return  void
  ******************************************************************************************/
-void osKernelLaunch(uint32_t quanta){
+void osKernelLaunch ( uint32_t quanta ){
 	/*Reset the SysTick*/
 	SysTick->CTRL = SYSTICK_RST;
 	/*Clear Systick current value register*/
 	SysTick->VAL = 0;
 	/*Load the quanta*/
-	SysTick->LOAD = (quanta*MILLIS_PRESCALER-1);
+	SysTick->LOAD = ( quanta*MILLIS_PRESCALER-1 );
 	/*Set Systick interupt to lowest priority*/
-	NVIC_SetPriority(SysTick_IRQn, 15);
+	NVIC_SetPriority ( SysTick_IRQn, 15 );
 	/*Enable Systick, select Internal clock*/
 	SysTick->CTRL |= CTRL_CLCKSRC|CTRL_ENABLE;
 	/*Enable Systick interupt*/
