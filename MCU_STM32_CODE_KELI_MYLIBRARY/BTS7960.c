@@ -2,7 +2,7 @@
  *  DC BTS7960.c
  *  -------------------------------------------------------------------------------------------------------------------
  *  \verbatim
- *  Author: Nguyen Van Thanh
+ *  Author: Nguyen Van Thanh 
  *  Created on: 2/11/2024
  *  Contact: https://thanhlearningcode.github.io/Myprofile/
  *  This software is provided for controlling driver BTS7960 motor

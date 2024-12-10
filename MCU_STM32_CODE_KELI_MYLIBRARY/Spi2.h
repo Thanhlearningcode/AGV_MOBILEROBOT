@@ -5,6 +5,6 @@
 
 
 void Spi2_Init(void);
-void Spi2_Trans(uint8_t	 *data , uint8_t size );
-void Spi2_Receive(uint8_t *data, uint8_t size );
+void Spi2_Trans ( uint8_t	 *data , uint8_t size );
+void Spi2_Receive ( uint8_t *data, uint8_t size );
 #endif //_Spi2_H_

@@ -1,594 +1,6 @@
 Dependencies for Project 'main', Target 'Src': (DO NOT MODIFY !)
-<<<<<<< HEAD
-CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\mainpp.cpp)(0x6755A951)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/mainpp.o -MD)
-I (mainpp.h)(0x6755A90A)
-I (ros.h)(0x6755A90A)
-I (node_handle.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__config)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (std_msgs.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stdlib.h)(0x63885718)
-I (msg.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stddef.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stddef.h)(0x63885718)
-I (time.h)(0x6755A90A)
-I (duration.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\math.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\math.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\promote.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\integral_constant.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_same.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__utility\declval.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\cstddef)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__assert)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__verbose_abort)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__availability)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\enable_if.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_integral.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_cv.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_volatile.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\version)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\limits)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\type_traits)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__functional\invoke.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_lvalue_reference.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_referenceable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\apply_cv.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_volatile.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\conditional.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\decay.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_void.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_function.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_extent.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_base_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_core_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_function_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_object_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_reference_wrapper.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\nat.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__utility\forward.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__fwd\hash.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_cv.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_rvalue_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_volatile.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\aligned_storage.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\type_list.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\aligned_union.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\alignment_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\can_extract_key.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__fwd\pair.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_const_ref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\common_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\common_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_cvref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\void_t.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\copy_cv.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\copy_cvref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\conjunction.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\dependent_type.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\disjunction.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\extent.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\has_unique_object_representation.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_all_extents.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\has_virtual_destructor.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_abstract.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_aggregate.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_arithmetic.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_floating_point.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_bounded_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_callable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_char_like_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_standard_layout.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivial.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_class.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_compound.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_fundamental.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_null_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_constant_evaluated.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_empty.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_enum.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_final.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_implicitly_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_literal_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\lazy.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_scalar.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_object.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_union.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_pod.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_polymorphic.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_scoped_enum.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\underlying_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_signed.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_swappable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copyable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_unbounded_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_unsigned.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_const_lvalue_ref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_signed.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_unsigned.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\maybe_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\negation.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\rank.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\result_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\type_identity.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\cstdint)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__undef_macros)(0x63885716)
-I (TopicInfo.h)(0x6755A90A)
-I (Log.h)(0x6755A90A)
-I (RequestParam.h)(0x6755A90A)
-I (publisher.h)(0x6755A90A)
-I (subscriber.h)(0x6755A90A)
-I (service_server.h)(0x6755A90A)
-I (service_client.h)(0x6755A90A)
-I (STM32Hardware.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (Uart2.h)(0x6755A90A)
-I (Int16.h)(0x6755A90A)
-I (Float64.h)(0x6755A90A)
-I (Int32.h)(0x6755A90A)
-I (Twist.h)(0x6755A90A)
-I (Vector3.h)(0x6755A90A)
-I (BTS7960.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\assert.h)(0x63885718)
-I (Encoder.h)(0x6755A90A)
-I (Exti.h)(0x6755A90A)
-I (Dio.h)(0x6755A90A)
-I (Kernel.h)(0x6755A90A)
-I (Systick.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdio.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stdio.h)(0x63885718)
-F (.\main.cpp)(0x6755A90A)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
-I (main.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__config)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (mainpp.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdio.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stdio.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stdlib.h)(0x63885718)
-F (.\ros.cpp)(0x6755A90A)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/ros.o -MD)
-I (ros.h)(0x6755A90A)
-I (node_handle.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__config)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (std_msgs.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\string.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stdlib.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stdlib.h)(0x63885718)
-I (msg.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\stddef.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\stddef.h)(0x63885718)
-I (time.h)(0x6755A90A)
-I (duration.h)(0x6755A90A)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\math.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\math.h)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\promote.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\integral_constant.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_same.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__utility\declval.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\cstddef)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__assert)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__verbose_abort)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__availability)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\enable_if.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_integral.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_cv.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_volatile.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\version)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\limits)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\type_traits)(0x63885718)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__functional\invoke.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_lvalue_reference.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_referenceable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\apply_cv.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_volatile.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\conditional.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\decay.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_void.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_function.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_extent.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_base_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_core_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_function_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_object_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_reference_wrapper.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\nat.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__utility\forward.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__fwd\hash.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_cv.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_rvalue_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\add_volatile.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\aligned_storage.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\type_list.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\aligned_union.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\alignment_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\can_extract_key.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__fwd\pair.h)(0x63885712)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_const_ref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\common_reference.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\common_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_cvref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\void_t.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\copy_cv.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\copy_cvref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\conjunction.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\dependent_type.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\disjunction.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\extent.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\has_unique_object_representation.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_all_extents.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\has_virtual_destructor.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_abstract.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_aggregate.h)(0x63885714)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_arithmetic.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_floating_point.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_bounded_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_callable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_char_like_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_standard_layout.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivial.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_class.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_compound.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_fundamental.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_null_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_constant_evaluated.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_empty.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_enum.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_final.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_implicitly_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_literal_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_member_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_convertible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\lazy.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_scalar.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_nothrow_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_object.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_union.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_pod.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_polymorphic.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_scoped_enum.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\underlying_type.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_signed.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_swappable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copy_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copy_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_copyable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_default_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_destructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_move_assignable.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_trivially_move_constructible.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_unbounded_array.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\is_unsigned.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_const_lvalue_ref.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_signed.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\make_unsigned.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\maybe_const.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\negation.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\rank.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\remove_pointer.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\result_of.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__type_traits\type_identity.h)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\cstdint)(0x63885716)
-I (D:\Kelic\ARM\ARMCLANG\include\libcxx\__undef_macros)(0x63885716)
-I (TopicInfo.h)(0x6755A90A)
-I (Log.h)(0x6755A90A)
-I (RequestParam.h)(0x6755A90A)
-I (publisher.h)(0x6755A90A)
-I (subscriber.h)(0x6755A90A)
-I (service_server.h)(0x6755A90A)
-I (service_client.h)(0x6755A90A)
-I (STM32Hardware.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (Uart2.h)(0x6755A90A)
-F (.\Uart1.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/uart1.o -MD)
-I (Uart1.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Uart1.h)(0x6755A90A)()
-F (.\Uart2.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/uart2.o -MD)
-I (Uart2.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Uart2.h)(0x6755A90A)()
-F (.\Spi1.h)(0x6755A90A)()
-F (.\Spi1.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi1.o -MD)
-I (Spi1.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Spi2.h)(0x6755A90A)()
-F (.\Spi2.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi2.o -MD)
-I (Spi2.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\I2C1.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/i2c1.o -MD)
-I (I2C1.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\I2C1.h)(0x6755A90A)()
-F (.\Dio.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/dio.o -MD)
-I (Dio.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Dio.h)(0x6755A90A)()
-F (.\Exti.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/exti.o -MD)
-I (Exti.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Exti.h)(0x6755A90A)()
-F (.\HSCR04.h)(0x6755A90A)()
-F (.\HSCR04.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/hscr04.o -MD)
-I (HSCR04.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Lcd1602.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/lcd1602.o -MD)
-I (Lcd1602.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Lcd1602.h)(0x6755A90A)()
-F (.\BNO055.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/bno055.o -MD)
-I (BNO055.h)(0x6755A90A)
-I (I2C1.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\BNO055.h)(0x6755A90A)()
-F (.\BTS7960.h)(0x6755A90A)()
-F (.\BTS7960.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/bts7960.o -MD)
-I (BTS7960.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (D:\Kelic\ARM\ARMCLANG\include\assert.h)(0x63885718)
-F (.\Motor.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/motor.o -MD)
-I (Motor.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (D:\Kelic\ARM\ARMCLANG\include\assert.h)(0x63885718)
-F (.\Motor.h)(0x6755A90A)()
-F (.\Rcc.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/rcc.o -MD)
-I (Rcc.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Rcc.h)(0x6755A90A)()
-F (.\Encoder.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/encoder.o -MD)
-I (Encoder.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (Exti.h)(0x6755A90A)
-I (Dio.h)(0x6755A90A)
-F (.\Encoder.h)(0x6755A90A)()
-F (.\Kernel.h)(0x6755A90A)()
-F (.\Kernel.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/kernel.o -MD)
-I (Kernel.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Kernel.s)(0x6755A90A)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 538" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F411xE SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/kernel_1.o)
-F (.\Systick.h)(0x6755A90A)()
-F (.\Systick.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/systick.o -MD)
-I (Systick.h)(0x6755A90A)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (D:\Kelic\ARM\ARMCLANG\include\stdio.h)(0x63885718)
-F (.\STM32Hardware.h)(0x6755A90A)()
-F (.\ros.h)(0x6755A90A)()
-F (.\mainpp.h)(0x6755A90A)()
-F (.\main.h)(0x6755A90A)()
-F (.\node_handle.h)(0x6755A90A)()
-F (.\time.h)(0x6755A90A)()
-F (.\std_msgs.h)(0x6755A90A)()
-F (.\msg.h)(0x6755A90A)()
-F (.\duration.h)(0x6755A90A)()
-F (.\TopicInfo.h)(0x6755A90A)()
-F (.\Log.h)(0x6755A90A)()
-F (.\RequestParam.h)(0x6755A90A)()
-F (.\publisher.h)(0x6755A90A)()
-F (.\subscriber.h)(0x6755A90A)()
-F (.\service_server.h)(0x6755A90A)()
-F (.\service_client.h)(0x6755A90A)()
-F (.\Int16.h)(0x6755A90A)()
-F (.\Float64.h)(0x6755A90A)()
-F (.\Int32.h)(0x6755A90A)()
-F (.\Twist.h)(0x6755A90A)()
-F (.\Vector3.h)(0x6755A90A)()
-F (RTE/Device/STM32F411VETx/startup_stm32f411xe.s)(0x6755A90A)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 538" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F411xE SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f411xe.o)
-F (RTE/Device/STM32F411VETx/system_stm32f4xx.c)(0x6755A90A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/Kelic/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/Kelic/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/system_stm32f4xx.o -MD)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x637457FA)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
-I (D:\Kelic\ARM\ARMCLANG\include\stdint.h)(0x63885718)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
-I (D:\Kelic\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
-I (D:\Kelic\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-=======
 CompilerVersion: 6140000::V6.14::ARMCLANG
-F (.\mainpp.cpp)(0x6755A456)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/mainpp.o -MD)
+F (.\mainpp.cpp)(0x6756FDCB)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/mainpp.o -MD)
 I (mainpp.h)(0x674FD3FA)
 I (ros.h)(0x674FD509)
 I (node_handle.h)(0x6751A317)
@@ -639,11 +51,11 @@ I (D:\App\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5ED619F4)
 I (Encoder.h)(0x6751A928)
 I (Exti.h)(0x671F8E70)
 I (Dio.h)(0x6729FE0F)
-I (Kernel.h)(0x675594F3)
+I (Kernel.h)(0x67567125)
 I (Systick.h)(0x67544F54)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\stdio.h)(0x5E0BC0C8)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED619F4)
-F (.\main.cpp)(0x675593C2)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
+F (.\main.cpp)(0x6756FDCB)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
 I (main.h)(0x674FD423)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -711,7 +123,7 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
 I (Uart2.h)(0x675594F3)
-F (.\Uart1.c)(0x675594F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/uart1.o -MD)
+F (.\Uart1.c)(0x67566F79)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/uart1.o -MD)
 I (Uart1.h)(0x675594F3)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -733,9 +145,9 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
 F (.\Uart2.h)(0x675594F3)()
-F (.\Spi1.h)(0x675594F3)()
-F (.\Spi1.c)(0x675594F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi1.o -MD)
-I (Spi1.h)(0x675594F3)
+F (.\Spi1.h)(0x67566F79)()
+F (.\Spi1.c)(0x67566F79)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi1.o -MD)
+I (Spi1.h)(0x67566F79)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -744,9 +156,9 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Spi2.h)(0x6730AED5)()
-F (.\Spi2.c)(0x675594F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi2.o -MD)
-I (Spi2.h)(0x6730AED5)
+F (.\Spi2.h)(0x67566F79)()
+F (.\Spi2.c)(0x67566F79)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/spi2.o -MD)
+I (Spi2.h)(0x67566F79)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -755,8 +167,8 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\I2C1.c)(0x675594F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/i2c1.o -MD)
-I (I2C1.h)(0x675594F3)
+F (.\I2C1.c)(0x67566FE8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/i2c1.o -MD)
+I (I2C1.h)(0x67567034)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -765,7 +177,7 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\I2C1.h)(0x675594F3)()
+F (.\I2C1.h)(0x67567034)()
 F (.\Dio.c)(0x67551C0C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/dio.o -MD)
 I (Dio.h)(0x6729FE0F)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
@@ -799,8 +211,8 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Lcd1602.c)(0x671F8E70)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/lcd1602.o -MD)
-I (Lcd1602.h)(0x671F8E70)
+F (.\Lcd1602.c)(0x675670B8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/lcd1602.o -MD)
+I (Lcd1602.h)(0x675670EF)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -809,10 +221,10 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\Lcd1602.h)(0x671F8E70)()
+F (.\Lcd1602.h)(0x675670EF)()
 F (.\BNO055.c)(0x67551F25)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/bno055.o -MD)
-I (BNO055.h)(0x67349A3C)
-I (I2C1.h)(0x675594F3)
+I (BNO055.h)(0x675670EF)
+I (I2C1.h)(0x67567034)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -821,9 +233,9 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-F (.\BNO055.h)(0x67349A3C)()
+F (.\BNO055.h)(0x675670EF)()
 F (.\BTS7960.h)(0x67551EEB)()
-F (.\BTS7960.c)(0x67551EB8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/bts7960.o -MD)
+F (.\BTS7960.c)(0x6756FDCB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/bts7960.o -MD)
 I (BTS7960.h)(0x67551EEB)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -834,7 +246,7 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x5ED619F4)
-F (.\Motor.c)(0x675599AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/motor.o -MD)
+F (.\Motor.c)(0x6755A591)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/motor.o -MD)
 I (Motor.h)(0x67543F87)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -870,9 +282,9 @@ I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\
 I (Exti.h)(0x671F8E70)
 I (Dio.h)(0x6729FE0F)
 F (.\Encoder.h)(0x6751A928)()
-F (.\Kernel.h)(0x675594F3)()
-F (.\Kernel.c)(0x672C68DA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/kernel.o -MD)
-I (Kernel.h)(0x675594F3)
+F (.\Kernel.h)(0x67567125)()
+F (.\Kernel.c)(0x67567132)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/kernel.o -MD)
+I (Kernel.h)(0x67567125)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED619F4)
@@ -926,4 +338,3 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
->>>>>>> 42413149aad19c5b7c25d7fee6356648cb0ed865

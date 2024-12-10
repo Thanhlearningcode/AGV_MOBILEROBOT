@@ -28,6 +28,6 @@
 
 
 void Bno055_init (void);
-void Bno055_read_values (uint8_t reg);
+void Bno055_read_values ( uint8_t reg );
 
 #endif /*_BNO055_H_ */

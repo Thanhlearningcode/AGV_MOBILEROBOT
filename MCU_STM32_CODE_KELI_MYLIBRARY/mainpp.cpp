@@ -5,7 +5,7 @@
  *          interface and functionalities required for autonomous navigation and control.
  * @version 1.0
  * @date    2024-10-07
- * @author  NGUYEN VAN THANH
+ * @author  NGUYEN VAN THANH && PHAN DANG DANH
  * @website https://thanhlearningcode.github.io/Myprofile/
  *****************************************************************************************************/
 #include "mainpp.h"
