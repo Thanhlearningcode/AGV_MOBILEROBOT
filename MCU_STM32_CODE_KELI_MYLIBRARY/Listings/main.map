@@ -153,9 +153,11 @@ Section Cross References
     mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp) refers to mainpp.o(.text.__cxx_global_var_init.6) for __cxx_global_var_init.6
     mainpp.o(.ARM.exidx.text._GLOBAL__sub_I_mainpp.cpp) refers to mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp) for [Anonymous Symbol]
     mainpp.o(.init_array) refers to mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp) for _GLOBAL__sub_I_mainpp.cpp
+    main.o(.text.main) refers to main.o(.text._Z8Rcc_initv) for Rcc_init()
     main.o(.text.main) refers to mainpp.o(.text.setup) for setup
     main.o(.text.main) refers to mainpp.o(.text.loop) for loop
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text._Z8Rcc_initv) refers to main.o(.text._Z8Rcc_initv) for [Anonymous Symbol]
     ros.o(.ARM.exidx.text._ZN3ros16normalizeSecNSecERjS0_) refers to ros.o(.text._ZN3ros16normalizeSecNSecERjS0_) for [Anonymous Symbol]
     uart1.o(.text.Uart1_Init) refers to uart1.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
     uart1.o(.text.Uart1_Init) refers to uart1.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
@@ -808,6 +810,7 @@ Removing Unused input sections from the image.
     Removing mainpp.o(.bss.sporadicSemaphore), (4 bytes).
     Removing main.o(.text), (0 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing main.o(.ARM.exidx.text._Z8Rcc_initv), (8 bytes).
     Removing ros.o(.text), (0 bytes).
     Removing ros.o(.ARM.exidx.text._ZN3ros16normalizeSecNSecERjS0_), (8 bytes).
     Removing uart1.o(.text), (0 bytes).
@@ -1029,7 +1032,7 @@ Removing Unused input sections from the image.
     Removing mainpp.o(.ARM.exidx.text._ZN14rosserial_msgs9TopicInfo6getMD5Ev), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE), (8 bytes).
 
-254 unused section(s) (total 8172 bytes) removed from the image.
+255 unused section(s) (total 8180 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1277,162 +1280,163 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08001320   Section        0  mainpp.o(.text._Z20calc_vel_right_wheelv)
     [Anonymous Symbol]                       0x08001498   Section        0  mainpp.o(.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E)
     [Anonymous Symbol]                       0x080014f4   Section        0  mainpp.o(.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E)
-    [Anonymous Symbol]                       0x08001550   Section        0  mainpp.o(.text._Z8gain_dirii)
-    [Anonymous Symbol]                       0x08001604   Section        0  mainpp.o(.text._ZN13STM32Hardware10getRdmaIndEv)
-    [Anonymous Symbol]                       0x08001620   Section        0  mainpp.o(.text._ZN13STM32Hardware10reset_rbufEv)
-    [Anonymous Symbol]                       0x08001634   Section        0  mainpp.o(.text._ZN13STM32Hardware4initEv)
-    [Anonymous Symbol]                       0x08001644   Section        0  mainpp.o(.text._ZN13STM32Hardware4readEv)
-    [Anonymous Symbol]                       0x0800168c   Section        0  mainpp.o(.text._ZN13STM32Hardware4timeEv)
-    [Anonymous Symbol]                       0x0800169c   Section        0  mainpp.o(.text._ZN13STM32Hardware5flushEv)
-    [Anonymous Symbol]                       0x08001744   Section        0  mainpp.o(.text._ZN13STM32Hardware5writeEPhi)
-    [Anonymous Symbol]                       0x080017ec   Section        0  mainpp.o(.text._ZN13STM32HardwareC2Ev)
-    [Anonymous Symbol]                       0x08001804   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
-    [Anonymous Symbol]                       0x08001aa8   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
-    [Anonymous Symbol]                       0x08001ab8   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
-    [Anonymous Symbol]                       0x08001ac8   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponseC2Ev)
-    [Anonymous Symbol]                       0x08001b00   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log11deserializeEPh)
-    [Anonymous Symbol]                       0x08001b88   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log6getMD5Ev)
-    [Anonymous Symbol]                       0x08001b98   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log7getTypeEv)
-    [Anonymous Symbol]                       0x08001ba8   Section        0  mainpp.o(.text._ZN14rosserial_msgs3LogC2Ev)
-    [Anonymous Symbol]                       0x08001bd8   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo11deserializeEPh)
-    [Anonymous Symbol]                       0x08001d78   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo6getMD5Ev)
-    [Anonymous Symbol]                       0x08001d88   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo7getTypeEv)
-    [Anonymous Symbol]                       0x08001d98   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfoC2Ev)
-    [Anonymous Symbol]                       0x08001dd0   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv)
-    [Anonymous Symbol]                       0x08001de4   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv)
-    [Anonymous Symbol]                       0x08001df0   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh)
-    [Anonymous Symbol]                       0x08001e1c   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev)
-    [Anonymous Symbol]                       0x08001e30   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei)
-    [Anonymous Symbol]                       0x08001e70   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
-    [Anonymous Symbol]                       0x08001fb8   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
-    [Anonymous Symbol]                       0x08001ff4   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc)
-    [Anonymous Symbol]                       0x08002034   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE)
-    [Anonymous Symbol]                       0x080020b0   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
-    [Anonymous Symbol]                       0x080021a8   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv)
-    [Anonymous Symbol]                       0x080021d4   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
-    [Anonymous Symbol]                       0x080021ec   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
-    [Anonymous Symbol]                       0x08002598   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
-    [Anonymous Symbol]                       0x08002628   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv)
-    [Anonymous Symbol]                       0x0800263c   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E)
-    [Anonymous Symbol]                       0x080026a0   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev)
-    [Anonymous Symbol]                       0x080027b8   Section        0  mainpp.o(.text._ZN3ros11Subscriber_C2Ev)
-    [Anonymous Symbol]                       0x080027d0   Section        0  mainpp.o(.text._ZN3ros15NodeHandleBase_C2Ev)
-    [Anonymous Symbol]                       0x080027e8   Section        0  ros.o(.text._ZN3ros16normalizeSecNSecERjS0_)
-    [Anonymous Symbol]                       0x08002820   Section        0  mainpp.o(.text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
-    [Anonymous Symbol]                       0x08002858   Section        0  mainpp.o(.text._ZN3ros3Msg8varToArrIPhjEEvT_T0_)
-    [Anonymous Symbol]                       0x08002888   Section        0  mainpp.o(.text._ZN3ros3MsgC2Ev)
-    [Anonymous Symbol]                       0x080028a0   Section        0  mainpp.o(.text._ZN3ros4TimeC2Ev)
-    [Anonymous Symbol]                       0x080028b0   Section        0  mainpp.o(.text._ZN3ros9Publisher15getEndpointTypeEv)
-    [Anonymous Symbol]                       0x080028bc   Section        0  mainpp.o(.text._ZN8std_msgs4Time11deserializeEPh)
-    [Anonymous Symbol]                       0x0800294c   Section        0  mainpp.o(.text._ZN8std_msgs4Time6getMD5Ev)
-    [Anonymous Symbol]                       0x0800295c   Section        0  mainpp.o(.text._ZN8std_msgs4Time7getTypeEv)
-    [Anonymous Symbol]                       0x0800296c   Section        0  mainpp.o(.text._ZN8std_msgs4TimeC2Ev)
-    [Anonymous Symbol]                       0x08002998   Section        0  mainpp.o(.text._ZN8std_msgs5Int1611deserializeEPh)
-    [Anonymous Symbol]                       0x080029e0   Section        0  mainpp.o(.text._ZN8std_msgs5Int166getMD5Ev)
-    [Anonymous Symbol]                       0x080029f0   Section        0  mainpp.o(.text._ZN8std_msgs5Int167getTypeEv)
-    [Anonymous Symbol]                       0x08002a00   Section        0  mainpp.o(.text._ZN8std_msgs5Int16C2Ev)
-    [Anonymous Symbol]                       0x08002a28   Section        0  mainpp.o(.text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
-    [Anonymous Symbol]                       0x08002be4   Section        0  mainpp.o(.text._ZNK14rosserial_msgs3Log9serializeEPh)
-    [Anonymous Symbol]                       0x08002c40   Section        0  mainpp.o(.text._ZNK14rosserial_msgs9TopicInfo9serializeEPh)
-    [Anonymous Symbol]                       0x08002d58   Section        0  mainpp.o(.text._ZNK8std_msgs4Time9serializeEPh)
-    [Anonymous Symbol]                       0x08002dc8   Section        0  mainpp.o(.text._ZNK8std_msgs5Int169serializeEPh)
-    __NVIC_SetPriority                       0x08002dfd   Thumb Code    68  kernel.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08002dfc   Section        0  kernel.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08002e40   Section        0  cxa_virtual.cpp.o(.text.__cxa_pure_virtual)
-    __cxx_global_var_init                    0x08002e69   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init)
-    [Anonymous Symbol]                       0x08002e68   Section        0  mainpp.o(.text.__cxx_global_var_init)
-    __cxx_global_var_init.1                  0x08002e79   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.1)
-    [Anonymous Symbol]                       0x08002e78   Section        0  mainpp.o(.text.__cxx_global_var_init.1)
-    __cxx_global_var_init.2                  0x08002e89   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.2)
-    [Anonymous Symbol]                       0x08002e88   Section        0  mainpp.o(.text.__cxx_global_var_init.2)
-    __cxx_global_var_init.3                  0x08002e99   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.3)
-    [Anonymous Symbol]                       0x08002e98   Section        0  mainpp.o(.text.__cxx_global_var_init.3)
-    __cxx_global_var_init.4                  0x08002ea9   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.4)
-    [Anonymous Symbol]                       0x08002ea8   Section        0  mainpp.o(.text.__cxx_global_var_init.4)
-    __cxx_global_var_init.5                  0x08002eb9   Thumb Code    34  mainpp.o(.text.__cxx_global_var_init.5)
-    [Anonymous Symbol]                       0x08002eb8   Section        0  mainpp.o(.text.__cxx_global_var_init.5)
-    __cxx_global_var_init.6                  0x08002edd   Thumb Code    34  mainpp.o(.text.__cxx_global_var_init.6)
-    [Anonymous Symbol]                       0x08002edc   Section        0  mainpp.o(.text.__cxx_global_var_init.6)
-    [Anonymous Symbol]                       0x08002efe   Section        0  abort_message.cpp.o(.text.abort_message)
-    [Anonymous Symbol]                       0x08002f04   Section        0  systick.o(.text.get_tick)
-    [Anonymous Symbol]                       0x08002f20   Section        0  mainpp.o(.text.loop)
-    [Anonymous Symbol]                       0x0800334c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x0800341c   Section        0  kernel.o(.text.osKernelAddThread)
-    [Anonymous Symbol]                       0x0800348c   Section        0  kernel.o(.text.osKernelInit)
-    [Anonymous Symbol]                       0x080034a0   Section        0  kernel.o(.text.osKernelLaunch)
-    [Anonymous Symbol]                       0x08003500   Section        0  kernel.o(.text.osKernelStackInit)
-    [Anonymous Symbol]                       0x080035cc   Section        0  dio.o(.text.readEncoder1)
-    [Anonymous Symbol]                       0x080035e4   Section        0  dio.o(.text.readEncoder2)
-    [Anonymous Symbol]                       0x080035fc   Section        0  bts7960.o(.text.robot_backward)
-    [Anonymous Symbol]                       0x080036c8   Section        0  bts7960.o(.text.robot_forward)
-    [Anonymous Symbol]                       0x08003794   Section        0  bts7960.o(.text.robot_stop)
-    [Anonymous Symbol]                       0x080037c0   Section        0  bts7960.o(.text.robot_turnleft)
-    [Anonymous Symbol]                       0x0800388c   Section        0  bts7960.o(.text.robot_turnright)
-    [Anonymous Symbol]                       0x08003958   Section        0  mainpp.o(.text.setup)
-    [Anonymous Symbol]                       0x080039d4   Section        0  encoder.o(.text.setupVectorTable)
-    $v0                                      0x08003a14   Number         0  d2f.o(x$fpl$d2f)
-    x$fpl$d2f                                0x08003a14   Section       98  d2f.o(x$fpl$d2f)
-    $v0                                      0x08003a78   Number         0  daddsub_clz.o(x$fpl$dadd)
-    x$fpl$dadd                               0x08003a78   Section      336  daddsub_clz.o(x$fpl$dadd)
-    _dadd1                                   0x08003a89   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
-    $v0                                      0x08003bc8   Number         0  dcmpi.o(x$fpl$dcmpinf)
-    x$fpl$dcmpinf                            0x08003bc8   Section       24  dcmpi.o(x$fpl$dcmpinf)
-    $v0                                      0x08003be0   Number         0  ddiv.o(x$fpl$ddiv)
-    x$fpl$ddiv                               0x08003be0   Section      688  ddiv.o(x$fpl$ddiv)
-    ddiv_entry                               0x08003be7   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    $v0                                      0x08003e90   Number         0  deqf.o(x$fpl$deqf)
-    x$fpl$deqf                               0x08003e90   Section      120  deqf.o(x$fpl$deqf)
-    $v0                                      0x08003f08   Number         0  dfix.o(x$fpl$dfix)
-    x$fpl$dfix                               0x08003f08   Section       94  dfix.o(x$fpl$dfix)
-    $v0                                      0x08003f66   Number         0  dflt_clz.o(x$fpl$dflt)
-    x$fpl$dflt                               0x08003f66   Section       46  dflt_clz.o(x$fpl$dflt)
-    $v0                                      0x08003f94   Number         0  dflt_clz.o(x$fpl$dfltu)
-    x$fpl$dfltu                              0x08003f94   Section       38  dflt_clz.o(x$fpl$dfltu)
-    $v0                                      0x08003fbc   Number         0  dgeqf.o(x$fpl$dgeqf)
-    x$fpl$dgeqf                              0x08003fbc   Section      120  dgeqf.o(x$fpl$dgeqf)
-    $v0                                      0x08004034   Number         0  dleqf.o(x$fpl$dleqf)
-    x$fpl$dleqf                              0x08004034   Section      120  dleqf.o(x$fpl$dleqf)
-    $v0                                      0x080040ac   Number         0  dmul.o(x$fpl$dmul)
-    x$fpl$dmul                               0x080040ac   Section      340  dmul.o(x$fpl$dmul)
-    $v0                                      0x08004200   Number         0  dnaninf.o(x$fpl$dnaninf)
-    x$fpl$dnaninf                            0x08004200   Section      156  dnaninf.o(x$fpl$dnaninf)
-    $v0                                      0x0800429c   Number         0  dretinf.o(x$fpl$dretinf)
-    x$fpl$dretinf                            0x0800429c   Section       12  dretinf.o(x$fpl$dretinf)
-    $v0                                      0x080042a8   Number         0  daddsub_clz.o(x$fpl$dsub)
-    x$fpl$dsub                               0x080042a8   Section      468  daddsub_clz.o(x$fpl$dsub)
-    _dsub1                                   0x080042b9   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
-    $v0                                      0x0800447c   Number         0  f2d.o(x$fpl$f2d)
-    x$fpl$f2d                                0x0800447c   Section       86  f2d.o(x$fpl$f2d)
-    $v0                                      0x080044d2   Number         0  dcmp.o(x$fpl$fcmp)
-    x$fpl$fcmp                               0x080044d2   Section       84  dcmp.o(x$fpl$fcmp)
-    $v0                                      0x08004526   Number         0  fnaninf.o(x$fpl$fnaninf)
-    x$fpl$fnaninf                            0x08004526   Section      140  fnaninf.o(x$fpl$fnaninf)
-    $v0                                      0x080045b2   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x080045b2   Section       26  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x080045cc   Number         0  fretinf.o(x$fpl$fretinf)
-    x$fpl$fretinf                            0x080045cc   Section       10  fretinf.o(x$fpl$fretinf)
-    _ZN14rosserial_msgsL12REQUESTPARAME      0x080045d6   Data          28  mainpp.o(.rodata._ZN14rosserial_msgsL12REQUESTPARAME)
-    [Anonymous Symbol]                       0x080045d6   Section        0  mainpp.o(.rodata._ZN14rosserial_msgsL12REQUESTPARAME)
-    x$fpl$usenofp                            0x080045d6   Section        0  usenofp.o(x$fpl$usenofp)
-    .L.str.9                                 0x080046dc   Data          57  mainpp.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080046dc   Section        0  mainpp.o(.rodata.str1.1)
-    .L.str.18                                0x08004715   Data          33  mainpp.o(.rodata.str1.1)
-    .L.str.12                                0x08004736   Data          33  mainpp.o(.rodata.str1.1)
-    .L.str.13                                0x08004757   Data          15  mainpp.o(.rodata.str1.1)
-    .L.str.14                                0x08004766   Data          33  mainpp.o(.rodata.str1.1)
-    .L.str.8                                 0x08004787   Data          33  mainpp.o(.rodata.str1.1)
-    .L.str.16                                0x080047a8   Data          33  mainpp.o(.rodata.str1.1)
-    .L.str.15                                0x080047c9   Data          14  mainpp.o(.rodata.str1.1)
-    .L.str.11                                0x080047d7   Data          19  mainpp.o(.rodata.str1.1)
-    .L.str.17                                0x080047ea   Data          25  mainpp.o(.rodata.str1.1)
-    .L.str                                   0x08004803   Data          17  mainpp.o(.rodata.str1.1)
-    .L.str.7                                 0x08004814   Data          18  mainpp.o(.rodata.str1.1)
-    .L.str.10                                0x08004825   Data           1  mainpp.o(.rodata.str1.1)
-    .L.str                                   0x08004826   Data          39  bts7960.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08004826   Section        0  bts7960.o(.rodata.str1.1)
-    .L.str.2                                 0x0800484d   Data          35  bts7960.o(.rodata.str1.1)
-    .L.str.1                                 0x08004870   Data          10  bts7960.o(.rodata.str1.1)
-    .init_array                              0x080048a0   Section        0  init_aeabi.o(.init_array)
+    [Anonymous Symbol]                       0x08001550   Section        0  main.o(.text._Z8Rcc_initv)
+    [Anonymous Symbol]                       0x08001610   Section        0  mainpp.o(.text._Z8gain_dirii)
+    [Anonymous Symbol]                       0x080016c4   Section        0  mainpp.o(.text._ZN13STM32Hardware10getRdmaIndEv)
+    [Anonymous Symbol]                       0x080016e0   Section        0  mainpp.o(.text._ZN13STM32Hardware10reset_rbufEv)
+    [Anonymous Symbol]                       0x080016f4   Section        0  mainpp.o(.text._ZN13STM32Hardware4initEv)
+    [Anonymous Symbol]                       0x08001704   Section        0  mainpp.o(.text._ZN13STM32Hardware4readEv)
+    [Anonymous Symbol]                       0x0800174c   Section        0  mainpp.o(.text._ZN13STM32Hardware4timeEv)
+    [Anonymous Symbol]                       0x0800175c   Section        0  mainpp.o(.text._ZN13STM32Hardware5flushEv)
+    [Anonymous Symbol]                       0x08001804   Section        0  mainpp.o(.text._ZN13STM32Hardware5writeEPhi)
+    [Anonymous Symbol]                       0x080018ac   Section        0  mainpp.o(.text._ZN13STM32HardwareC2Ev)
+    [Anonymous Symbol]                       0x080018c4   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
+    [Anonymous Symbol]                       0x08001b68   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
+    [Anonymous Symbol]                       0x08001b78   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
+    [Anonymous Symbol]                       0x08001b88   Section        0  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponseC2Ev)
+    [Anonymous Symbol]                       0x08001bc0   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log11deserializeEPh)
+    [Anonymous Symbol]                       0x08001c48   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log6getMD5Ev)
+    [Anonymous Symbol]                       0x08001c58   Section        0  mainpp.o(.text._ZN14rosserial_msgs3Log7getTypeEv)
+    [Anonymous Symbol]                       0x08001c68   Section        0  mainpp.o(.text._ZN14rosserial_msgs3LogC2Ev)
+    [Anonymous Symbol]                       0x08001c98   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo11deserializeEPh)
+    [Anonymous Symbol]                       0x08001e38   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo6getMD5Ev)
+    [Anonymous Symbol]                       0x08001e48   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo7getTypeEv)
+    [Anonymous Symbol]                       0x08001e58   Section        0  mainpp.o(.text._ZN14rosserial_msgs9TopicInfoC2Ev)
+    [Anonymous Symbol]                       0x08001e90   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv)
+    [Anonymous Symbol]                       0x08001ea4   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv)
+    [Anonymous Symbol]                       0x08001eb0   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh)
+    [Anonymous Symbol]                       0x08001edc   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev)
+    [Anonymous Symbol]                       0x08001ef0   Section        0  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei)
+    [Anonymous Symbol]                       0x08001f30   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
+    [Anonymous Symbol]                       0x08002078   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
+    [Anonymous Symbol]                       0x080020b4   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc)
+    [Anonymous Symbol]                       0x080020f4   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE)
+    [Anonymous Symbol]                       0x08002170   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
+    [Anonymous Symbol]                       0x08002268   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv)
+    [Anonymous Symbol]                       0x08002294   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
+    [Anonymous Symbol]                       0x080022ac   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
+    [Anonymous Symbol]                       0x08002658   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
+    [Anonymous Symbol]                       0x080026e8   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv)
+    [Anonymous Symbol]                       0x080026fc   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E)
+    [Anonymous Symbol]                       0x08002760   Section        0  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev)
+    [Anonymous Symbol]                       0x08002878   Section        0  mainpp.o(.text._ZN3ros11Subscriber_C2Ev)
+    [Anonymous Symbol]                       0x08002890   Section        0  mainpp.o(.text._ZN3ros15NodeHandleBase_C2Ev)
+    [Anonymous Symbol]                       0x080028a8   Section        0  ros.o(.text._ZN3ros16normalizeSecNSecERjS0_)
+    [Anonymous Symbol]                       0x080028e0   Section        0  mainpp.o(.text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
+    [Anonymous Symbol]                       0x08002918   Section        0  mainpp.o(.text._ZN3ros3Msg8varToArrIPhjEEvT_T0_)
+    [Anonymous Symbol]                       0x08002948   Section        0  mainpp.o(.text._ZN3ros3MsgC2Ev)
+    [Anonymous Symbol]                       0x08002960   Section        0  mainpp.o(.text._ZN3ros4TimeC2Ev)
+    [Anonymous Symbol]                       0x08002970   Section        0  mainpp.o(.text._ZN3ros9Publisher15getEndpointTypeEv)
+    [Anonymous Symbol]                       0x0800297c   Section        0  mainpp.o(.text._ZN8std_msgs4Time11deserializeEPh)
+    [Anonymous Symbol]                       0x08002a0c   Section        0  mainpp.o(.text._ZN8std_msgs4Time6getMD5Ev)
+    [Anonymous Symbol]                       0x08002a1c   Section        0  mainpp.o(.text._ZN8std_msgs4Time7getTypeEv)
+    [Anonymous Symbol]                       0x08002a2c   Section        0  mainpp.o(.text._ZN8std_msgs4TimeC2Ev)
+    [Anonymous Symbol]                       0x08002a58   Section        0  mainpp.o(.text._ZN8std_msgs5Int1611deserializeEPh)
+    [Anonymous Symbol]                       0x08002aa0   Section        0  mainpp.o(.text._ZN8std_msgs5Int166getMD5Ev)
+    [Anonymous Symbol]                       0x08002ab0   Section        0  mainpp.o(.text._ZN8std_msgs5Int167getTypeEv)
+    [Anonymous Symbol]                       0x08002ac0   Section        0  mainpp.o(.text._ZN8std_msgs5Int16C2Ev)
+    [Anonymous Symbol]                       0x08002ae8   Section        0  mainpp.o(.text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
+    [Anonymous Symbol]                       0x08002ca4   Section        0  mainpp.o(.text._ZNK14rosserial_msgs3Log9serializeEPh)
+    [Anonymous Symbol]                       0x08002d00   Section        0  mainpp.o(.text._ZNK14rosserial_msgs9TopicInfo9serializeEPh)
+    [Anonymous Symbol]                       0x08002e18   Section        0  mainpp.o(.text._ZNK8std_msgs4Time9serializeEPh)
+    [Anonymous Symbol]                       0x08002e88   Section        0  mainpp.o(.text._ZNK8std_msgs5Int169serializeEPh)
+    __NVIC_SetPriority                       0x08002ebd   Thumb Code    68  kernel.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x08002ebc   Section        0  kernel.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x08002f00   Section        0  cxa_virtual.cpp.o(.text.__cxa_pure_virtual)
+    __cxx_global_var_init                    0x08002f29   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init)
+    [Anonymous Symbol]                       0x08002f28   Section        0  mainpp.o(.text.__cxx_global_var_init)
+    __cxx_global_var_init.1                  0x08002f39   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.1)
+    [Anonymous Symbol]                       0x08002f38   Section        0  mainpp.o(.text.__cxx_global_var_init.1)
+    __cxx_global_var_init.2                  0x08002f49   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.2)
+    [Anonymous Symbol]                       0x08002f48   Section        0  mainpp.o(.text.__cxx_global_var_init.2)
+    __cxx_global_var_init.3                  0x08002f59   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.3)
+    [Anonymous Symbol]                       0x08002f58   Section        0  mainpp.o(.text.__cxx_global_var_init.3)
+    __cxx_global_var_init.4                  0x08002f69   Thumb Code    16  mainpp.o(.text.__cxx_global_var_init.4)
+    [Anonymous Symbol]                       0x08002f68   Section        0  mainpp.o(.text.__cxx_global_var_init.4)
+    __cxx_global_var_init.5                  0x08002f79   Thumb Code    34  mainpp.o(.text.__cxx_global_var_init.5)
+    [Anonymous Symbol]                       0x08002f78   Section        0  mainpp.o(.text.__cxx_global_var_init.5)
+    __cxx_global_var_init.6                  0x08002f9d   Thumb Code    34  mainpp.o(.text.__cxx_global_var_init.6)
+    [Anonymous Symbol]                       0x08002f9c   Section        0  mainpp.o(.text.__cxx_global_var_init.6)
+    [Anonymous Symbol]                       0x08002fbe   Section        0  abort_message.cpp.o(.text.abort_message)
+    [Anonymous Symbol]                       0x08002fc4   Section        0  systick.o(.text.get_tick)
+    [Anonymous Symbol]                       0x08002fe0   Section        0  mainpp.o(.text.loop)
+    [Anonymous Symbol]                       0x0800340c   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x08003424   Section        0  kernel.o(.text.osKernelAddThread)
+    [Anonymous Symbol]                       0x08003494   Section        0  kernel.o(.text.osKernelInit)
+    [Anonymous Symbol]                       0x080034a8   Section        0  kernel.o(.text.osKernelLaunch)
+    [Anonymous Symbol]                       0x08003508   Section        0  kernel.o(.text.osKernelStackInit)
+    [Anonymous Symbol]                       0x080035d4   Section        0  dio.o(.text.readEncoder1)
+    [Anonymous Symbol]                       0x080035ec   Section        0  dio.o(.text.readEncoder2)
+    [Anonymous Symbol]                       0x08003604   Section        0  bts7960.o(.text.robot_backward)
+    [Anonymous Symbol]                       0x080036d0   Section        0  bts7960.o(.text.robot_forward)
+    [Anonymous Symbol]                       0x0800379c   Section        0  bts7960.o(.text.robot_stop)
+    [Anonymous Symbol]                       0x080037c8   Section        0  bts7960.o(.text.robot_turnleft)
+    [Anonymous Symbol]                       0x08003894   Section        0  bts7960.o(.text.robot_turnright)
+    [Anonymous Symbol]                       0x08003960   Section        0  mainpp.o(.text.setup)
+    [Anonymous Symbol]                       0x080039dc   Section        0  encoder.o(.text.setupVectorTable)
+    $v0                                      0x08003a1c   Number         0  d2f.o(x$fpl$d2f)
+    x$fpl$d2f                                0x08003a1c   Section       98  d2f.o(x$fpl$d2f)
+    $v0                                      0x08003a80   Number         0  daddsub_clz.o(x$fpl$dadd)
+    x$fpl$dadd                               0x08003a80   Section      336  daddsub_clz.o(x$fpl$dadd)
+    _dadd1                                   0x08003a91   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
+    $v0                                      0x08003bd0   Number         0  dcmpi.o(x$fpl$dcmpinf)
+    x$fpl$dcmpinf                            0x08003bd0   Section       24  dcmpi.o(x$fpl$dcmpinf)
+    $v0                                      0x08003be8   Number         0  ddiv.o(x$fpl$ddiv)
+    x$fpl$ddiv                               0x08003be8   Section      688  ddiv.o(x$fpl$ddiv)
+    ddiv_entry                               0x08003bef   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    $v0                                      0x08003e98   Number         0  deqf.o(x$fpl$deqf)
+    x$fpl$deqf                               0x08003e98   Section      120  deqf.o(x$fpl$deqf)
+    $v0                                      0x08003f10   Number         0  dfix.o(x$fpl$dfix)
+    x$fpl$dfix                               0x08003f10   Section       94  dfix.o(x$fpl$dfix)
+    $v0                                      0x08003f6e   Number         0  dflt_clz.o(x$fpl$dflt)
+    x$fpl$dflt                               0x08003f6e   Section       46  dflt_clz.o(x$fpl$dflt)
+    $v0                                      0x08003f9c   Number         0  dflt_clz.o(x$fpl$dfltu)
+    x$fpl$dfltu                              0x08003f9c   Section       38  dflt_clz.o(x$fpl$dfltu)
+    $v0                                      0x08003fc4   Number         0  dgeqf.o(x$fpl$dgeqf)
+    x$fpl$dgeqf                              0x08003fc4   Section      120  dgeqf.o(x$fpl$dgeqf)
+    $v0                                      0x0800403c   Number         0  dleqf.o(x$fpl$dleqf)
+    x$fpl$dleqf                              0x0800403c   Section      120  dleqf.o(x$fpl$dleqf)
+    $v0                                      0x080040b4   Number         0  dmul.o(x$fpl$dmul)
+    x$fpl$dmul                               0x080040b4   Section      340  dmul.o(x$fpl$dmul)
+    $v0                                      0x08004208   Number         0  dnaninf.o(x$fpl$dnaninf)
+    x$fpl$dnaninf                            0x08004208   Section      156  dnaninf.o(x$fpl$dnaninf)
+    $v0                                      0x080042a4   Number         0  dretinf.o(x$fpl$dretinf)
+    x$fpl$dretinf                            0x080042a4   Section       12  dretinf.o(x$fpl$dretinf)
+    $v0                                      0x080042b0   Number         0  daddsub_clz.o(x$fpl$dsub)
+    x$fpl$dsub                               0x080042b0   Section      468  daddsub_clz.o(x$fpl$dsub)
+    _dsub1                                   0x080042c1   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
+    $v0                                      0x08004484   Number         0  f2d.o(x$fpl$f2d)
+    x$fpl$f2d                                0x08004484   Section       86  f2d.o(x$fpl$f2d)
+    $v0                                      0x080044da   Number         0  dcmp.o(x$fpl$fcmp)
+    x$fpl$fcmp                               0x080044da   Section       84  dcmp.o(x$fpl$fcmp)
+    $v0                                      0x0800452e   Number         0  fnaninf.o(x$fpl$fnaninf)
+    x$fpl$fnaninf                            0x0800452e   Section      140  fnaninf.o(x$fpl$fnaninf)
+    $v0                                      0x080045ba   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x080045ba   Section       26  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x080045d4   Number         0  fretinf.o(x$fpl$fretinf)
+    x$fpl$fretinf                            0x080045d4   Section       10  fretinf.o(x$fpl$fretinf)
+    _ZN14rosserial_msgsL12REQUESTPARAME      0x080045de   Data          28  mainpp.o(.rodata._ZN14rosserial_msgsL12REQUESTPARAME)
+    [Anonymous Symbol]                       0x080045de   Section        0  mainpp.o(.rodata._ZN14rosserial_msgsL12REQUESTPARAME)
+    x$fpl$usenofp                            0x080045de   Section        0  usenofp.o(x$fpl$usenofp)
+    .L.str.9                                 0x080046e4   Data          57  mainpp.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080046e4   Section        0  mainpp.o(.rodata.str1.1)
+    .L.str.18                                0x0800471d   Data          33  mainpp.o(.rodata.str1.1)
+    .L.str.12                                0x0800473e   Data          33  mainpp.o(.rodata.str1.1)
+    .L.str.13                                0x0800475f   Data          15  mainpp.o(.rodata.str1.1)
+    .L.str.14                                0x0800476e   Data          33  mainpp.o(.rodata.str1.1)
+    .L.str.8                                 0x0800478f   Data          33  mainpp.o(.rodata.str1.1)
+    .L.str.16                                0x080047b0   Data          33  mainpp.o(.rodata.str1.1)
+    .L.str.15                                0x080047d1   Data          14  mainpp.o(.rodata.str1.1)
+    .L.str.11                                0x080047df   Data          19  mainpp.o(.rodata.str1.1)
+    .L.str.17                                0x080047f2   Data          25  mainpp.o(.rodata.str1.1)
+    .L.str                                   0x0800480b   Data          17  mainpp.o(.rodata.str1.1)
+    .L.str.7                                 0x0800481c   Data          18  mainpp.o(.rodata.str1.1)
+    .L.str.10                                0x0800482d   Data           1  mainpp.o(.rodata.str1.1)
+    .L.str                                   0x0800482e   Data          39  bts7960.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800482e   Section        0  bts7960.o(.rodata.str1.1)
+    .L.str.2                                 0x08004855   Data          35  bts7960.o(.rodata.str1.1)
+    .L.str.1                                 0x08004878   Data          10  bts7960.o(.rodata.str1.1)
+    .init_array                              0x080048a8   Section        0  init_aeabi.o(.init_array)
     .bss                                     0x20000020   Section       96  libspace.o(.bss)
     set_pwm_values(int, double, double)::pwmLeftOut 0x20000534   Data           4  mainpp.o(.bss._ZZ14set_pwm_valuesiddE10pwmLeftOut)
     [Anonymous Symbol]                       0x20000534   Section        0  mainpp.o(.bss._ZZ14set_pwm_valuesiddE10pwmLeftOut)
@@ -1674,142 +1678,143 @@ Image Symbol Table
     calc_vel_right_wheel()                   0x08001321   Thumb Code   376  mainpp.o(.text._Z20calc_vel_right_wheelv)
     calc_left_wheel_query(const std_msgs::Int16&) 0x08001499   Thumb Code    90  mainpp.o(.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E)
     calc_right_wheel_query(const std_msgs::Int16&) 0x080014f5   Thumb Code    90  mainpp.o(.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E)
-    gain_dir(int, int)                       0x08001551   Thumb Code   180  mainpp.o(.text._Z8gain_dirii)
-    STM32Hardware::getRdmaInd()              0x08001605   Thumb Code    26  mainpp.o(.text._ZN13STM32Hardware10getRdmaIndEv)
-    STM32Hardware::reset_rbuf()              0x08001621   Thumb Code    20  mainpp.o(.text._ZN13STM32Hardware10reset_rbufEv)
-    STM32Hardware::init()                    0x08001635   Thumb Code    16  mainpp.o(.text._ZN13STM32Hardware4initEv)
-    STM32Hardware::read()                    0x08001645   Thumb Code    70  mainpp.o(.text._ZN13STM32Hardware4readEv)
-    STM32Hardware::time()                    0x0800168d   Thumb Code    14  mainpp.o(.text._ZN13STM32Hardware4timeEv)
-    STM32Hardware::flush()                   0x0800169d   Thumb Code   168  mainpp.o(.text._ZN13STM32Hardware5flushEv)
-    STM32Hardware::write(unsigned char*, int) 0x08001745   Thumb Code   168  mainpp.o(.text._ZN13STM32Hardware5writeEPhi)
-    STM32Hardware::STM32Hardware__sub_object() 0x080017ed   Thumb Code    24  mainpp.o(.text._ZN13STM32HardwareC2Ev)
-    rosserial_msgs::RequestParamResponse::deserialize(unsigned char*) 0x08001805   Thumb Code   676  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
-    rosserial_msgs::RequestParamResponse::getMD5() 0x08001aa9   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
-    rosserial_msgs::RequestParamResponse::getType() 0x08001ab9   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
-    rosserial_msgs::RequestParamResponse::RequestParamResponse__sub_object() 0x08001ac9   Thumb Code    54  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponseC2Ev)
-    rosserial_msgs::Log::deserialize(unsigned char*) 0x08001b01   Thumb Code   134  mainpp.o(.text._ZN14rosserial_msgs3Log11deserializeEPh)
-    rosserial_msgs::Log::getMD5()            0x08001b89   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs3Log6getMD5Ev)
-    rosserial_msgs::Log::getType()           0x08001b99   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs3Log7getTypeEv)
-    rosserial_msgs::Log::Log__sub_object()   0x08001ba9   Thumb Code    48  mainpp.o(.text._ZN14rosserial_msgs3LogC2Ev)
-    rosserial_msgs::TopicInfo::deserialize(unsigned char*) 0x08001bd9   Thumb Code   414  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo11deserializeEPh)
-    rosserial_msgs::TopicInfo::getMD5()      0x08001d79   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo6getMD5Ev)
-    rosserial_msgs::TopicInfo::getType()     0x08001d89   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo7getTypeEv)
-    rosserial_msgs::TopicInfo::TopicInfo__sub_object() 0x08001d99   Thumb Code    54  mainpp.o(.text._ZN14rosserial_msgs9TopicInfoC2Ev)
-    ros::Subscriber<std_msgs::Int16, void>::getMsgType() 0x08001dd1   Thumb Code    18  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv)
-    ros::Subscriber<std_msgs::Int16, void>::getEndpointType() 0x08001de5   Thumb Code    12  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv)
-    ros::Subscriber<std_msgs::Int16, void>::callback(unsigned char*) 0x08001df1   Thumb Code    44  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh)
-    ros::Subscriber<std_msgs::Int16, void>::getMsgMD5() 0x08001e1d   Thumb Code    18  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev)
-    ros::Subscriber<std_msgs::Int16, void>::Subscriber__sub_object(const char*, void(*)(const std_msgs::Int16&), int) 0x08001e31   Thumb Code    62  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::negotiateTopics() 0x08001e71   Thumb Code   328  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::requestSyncTime() 0x08001fb9   Thumb Code    60  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::log(char, const char*) 0x08001ff5   Thumb Code    64  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::setNow(const ros::Time&) 0x08002035   Thumb Code   124  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::publish(int, const ros::Msg*) 0x080020b1   Thumb Code   248  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::initNode() 0x080021a9   Thumb Code    42  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::logerror(const char*) 0x080021d5   Thumb Code    22  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::spinOnce() 0x080021ed   Thumb Code   938  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::syncTime(unsigned char*) 0x08002599   Thumb Code   144  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::connected() 0x08002629   Thumb Code    18  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::subscribe(ros::Subscriber_&) 0x0800263d   Thumb Code    98  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E)
-    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::NodeHandle___sub_object() 0x080026a1   Thumb Code   278  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev)
-    ros::Subscriber_::Subscriber___sub_object() 0x080027b9   Thumb Code    22  mainpp.o(.text._ZN3ros11Subscriber_C2Ev)
-    ros::NodeHandleBase_::NodeHandleBase___sub_object() 0x080027d1   Thumb Code    22  mainpp.o(.text._ZN3ros15NodeHandleBase_C2Ev)
-    ros::normalizeSecNSec(unsigned&, unsigned&) 0x080027e9   Thumb Code    56  ros.o(.text._ZN3ros16normalizeSecNSecERjS0_)
-    void ros::Msg::arrToVar<unsigned, unsigned char*>(T1&, T2) 0x08002821   Thumb Code    56  mainpp.o(.text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
-    void ros::Msg::varToArr<unsigned char*, unsigned>(T1, T2) 0x08002859   Thumb Code    46  mainpp.o(.text._ZN3ros3Msg8varToArrIPhjEEvT_T0_)
-    ros::Msg::Msg__sub_object()              0x08002889   Thumb Code    22  mainpp.o(.text._ZN3ros3MsgC2Ev)
-    ros::Time::Time__sub_object()            0x080028a1   Thumb Code    16  mainpp.o(.text._ZN3ros4TimeC2Ev)
-    ros::Publisher::getEndpointType()        0x080028b1   Thumb Code    12  mainpp.o(.text._ZN3ros9Publisher15getEndpointTypeEv)
-    std_msgs::Time::deserialize(unsigned char*) 0x080028bd   Thumb Code   142  mainpp.o(.text._ZN8std_msgs4Time11deserializeEPh)
-    std_msgs::Time::getMD5()                 0x0800294d   Thumb Code    16  mainpp.o(.text._ZN8std_msgs4Time6getMD5Ev)
-    std_msgs::Time::getType()                0x0800295d   Thumb Code    16  mainpp.o(.text._ZN8std_msgs4Time7getTypeEv)
-    std_msgs::Time::Time__sub_object()       0x0800296d   Thumb Code    42  mainpp.o(.text._ZN8std_msgs4TimeC2Ev)
-    std_msgs::Int16::deserialize(unsigned char*) 0x08002999   Thumb Code    70  mainpp.o(.text._ZN8std_msgs5Int1611deserializeEPh)
-    std_msgs::Int16::getMD5()                0x080029e1   Thumb Code    16  mainpp.o(.text._ZN8std_msgs5Int166getMD5Ev)
-    std_msgs::Int16::getType()               0x080029f1   Thumb Code    16  mainpp.o(.text._ZN8std_msgs5Int167getTypeEv)
-    std_msgs::Int16::Int16__sub_object()     0x08002a01   Thumb Code    38  mainpp.o(.text._ZN8std_msgs5Int16C2Ev)
-    rosserial_msgs::RequestParamResponse::serialize(unsigned char*) const 0x08002a29   Thumb Code   444  mainpp.o(.text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
-    rosserial_msgs::Log::serialize(unsigned char*) const 0x08002be5   Thumb Code    92  mainpp.o(.text._ZNK14rosserial_msgs3Log9serializeEPh)
-    rosserial_msgs::TopicInfo::serialize(unsigned char*) const 0x08002c41   Thumb Code   280  mainpp.o(.text._ZNK14rosserial_msgs9TopicInfo9serializeEPh)
-    std_msgs::Time::serialize(unsigned char*) const 0x08002d59   Thumb Code   110  mainpp.o(.text._ZNK8std_msgs4Time9serializeEPh)
-    std_msgs::Int16::serialize(unsigned char*) const 0x08002dc9   Thumb Code    52  mainpp.o(.text._ZNK8std_msgs5Int169serializeEPh)
-    __cxa_pure_virtual                       0x08002e41   Thumb Code    40  cxa_virtual.cpp.o(.text.__cxa_pure_virtual)
-    abort_message                            0x08002eff   Thumb Code     4  abort_message.cpp.o(.text.abort_message)
-    get_tick                                 0x08002f05   Thumb Code    28  systick.o(.text.get_tick)
-    loop                                     0x08002f21   Thumb Code  1068  mainpp.o(.text.loop)
-    main                                     0x0800334d   Thumb Code   208  main.o(.text.main)
-    osKernelAddThread                        0x0800341d   Thumb Code   110  kernel.o(.text.osKernelAddThread)
-    osKernelInit                             0x0800348d   Thumb Code    20  kernel.o(.text.osKernelInit)
-    osKernelLaunch                           0x080034a1   Thumb Code    96  kernel.o(.text.osKernelLaunch)
-    osKernelStackInit                        0x08003501   Thumb Code   204  kernel.o(.text.osKernelStackInit)
-    readEncoder1                             0x080035cd   Thumb Code    24  dio.o(.text.readEncoder1)
-    readEncoder2                             0x080035e5   Thumb Code    24  dio.o(.text.readEncoder2)
-    robot_backward                           0x080035fd   Thumb Code   204  bts7960.o(.text.robot_backward)
-    robot_forward                            0x080036c9   Thumb Code   204  bts7960.o(.text.robot_forward)
-    robot_stop                               0x08003795   Thumb Code    44  bts7960.o(.text.robot_stop)
-    robot_turnleft                           0x080037c1   Thumb Code   204  bts7960.o(.text.robot_turnleft)
-    robot_turnright                          0x0800388d   Thumb Code   204  bts7960.o(.text.robot_turnright)
-    setup                                    0x08003959   Thumb Code   124  mainpp.o(.text.setup)
-    setupVectorTable                         0x080039d5   Thumb Code    64  encoder.o(.text.setupVectorTable)
-    __aeabi_d2f                              0x08003a15   Thumb Code     0  d2f.o(x$fpl$d2f)
-    _d2f                                     0x08003a15   Thumb Code    98  d2f.o(x$fpl$d2f)
-    __aeabi_dadd                             0x08003a79   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
-    _dadd                                    0x08003a79   Thumb Code   332  daddsub_clz.o(x$fpl$dadd)
-    __fpl_dcmp_Inf                           0x08003bc9   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
-    __aeabi_ddiv                             0x08003be1   Thumb Code     0  ddiv.o(x$fpl$ddiv)
-    _ddiv                                    0x08003be1   Thumb Code   552  ddiv.o(x$fpl$ddiv)
-    __aeabi_cdcmpeq                          0x08003e91   Thumb Code     0  deqf.o(x$fpl$deqf)
-    _dcmpeq                                  0x08003e91   Thumb Code   120  deqf.o(x$fpl$deqf)
-    __aeabi_d2iz                             0x08003f09   Thumb Code     0  dfix.o(x$fpl$dfix)
-    _dfix                                    0x08003f09   Thumb Code    94  dfix.o(x$fpl$dfix)
-    __aeabi_i2d                              0x08003f67   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
-    _dflt                                    0x08003f67   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
-    __aeabi_ui2d                             0x08003f95   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
-    _dfltu                                   0x08003f95   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
-    __aeabi_cdcmpge                          0x08003fbd   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
-    _dcmpge                                  0x08003fbd   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
-    __aeabi_cdcmple                          0x08004035   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    _dcmple                                  0x08004035   Thumb Code   120  dleqf.o(x$fpl$dleqf)
-    __fpl_dcmple_InfNaN                      0x08004097   Thumb Code     0  dleqf.o(x$fpl$dleqf)
-    __aeabi_dmul                             0x080040ad   Thumb Code     0  dmul.o(x$fpl$dmul)
-    _dmul                                    0x080040ad   Thumb Code   332  dmul.o(x$fpl$dmul)
-    __fpl_dnaninf                            0x08004201   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
-    __fpl_dretinf                            0x0800429d   Thumb Code    12  dretinf.o(x$fpl$dretinf)
-    __aeabi_dsub                             0x080042a9   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
-    _dsub                                    0x080042a9   Thumb Code   464  daddsub_clz.o(x$fpl$dsub)
-    __aeabi_f2d                              0x0800447d   Thumb Code     0  f2d.o(x$fpl$f2d)
-    _f2d                                     0x0800447d   Thumb Code    86  f2d.o(x$fpl$f2d)
-    __aeabi_dcmpeq                           0x080044d3   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _deq                                     0x080044d3   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    _dneq                                    0x080044e1   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpgt                           0x080044ef   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgr                                     0x080044ef   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmpge                           0x080044fd   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dgeq                                    0x080044fd   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmple                           0x0800450b   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dleq                                    0x0800450b   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __aeabi_dcmplt                           0x08004519   Thumb Code     0  dcmp.o(x$fpl$fcmp)
-    _dls                                     0x08004519   Thumb Code    14  dcmp.o(x$fpl$fcmp)
-    __fpl_fnaninf                            0x08004527   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
-    _fp_init                                 0x080045b3   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080045cb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080045cb   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fpl_fretinf                            0x080045cd   Thumb Code    10  fretinf.o(x$fpl$fretinf)
-    __I$use$fp                               0x080045d6   Number         0  usenofp.o(x$fpl$usenofp)
-    vtable for rosserial_msgs::RequestParamResponse 0x080045f4   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs20RequestParamResponseE)
-    vtable for rosserial_msgs::Log           0x0800460c   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs3LogE)
-    vtable for rosserial_msgs::TopicInfo     0x08004624   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs9TopicInfoE)
-    vtable for ros::Subscriber<std_msgs::Int16, void> 0x0800463c   Data          24  mainpp.o(.rodata._ZTVN3ros10SubscriberIN8std_msgs5Int16EvEE)
-    vtable for ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512> 0x08004654   Data          20  mainpp.o(.rodata._ZTVN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEE)
-    vtable for ros::Subscriber_              0x08004668   Data          24  mainpp.o(.rodata._ZTVN3ros11Subscriber_E)
-    vtable for ros::NodeHandleBase_          0x08004680   Data          20  mainpp.o(.rodata._ZTVN3ros15NodeHandleBase_E)
-    vtable for ros::Msg                      0x08004694   Data          24  mainpp.o(.rodata._ZTVN3ros3MsgE)
-    vtable for std_msgs::Time                0x080046ac   Data          24  mainpp.o(.rodata._ZTVN8std_msgs4TimeE)
-    vtable for std_msgs::Int16               0x080046c4   Data          24  mainpp.o(.rodata._ZTVN8std_msgs5Int16E)
-    Region$$Table$$Base                      0x0800487c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800489c   Number         0  anon$$obj.o(Region$$Table)
-    SHT$$INIT_ARRAY$$Base                    0x0800489c   Number         0  mainpp.o(.init_array)
-    SHT$$INIT_ARRAY$$Limit                   0x080048a0   Number         0  init_aeabi.o(.init_array)
+    Rcc_init()                               0x08001551   Thumb Code   190  main.o(.text._Z8Rcc_initv)
+    gain_dir(int, int)                       0x08001611   Thumb Code   180  mainpp.o(.text._Z8gain_dirii)
+    STM32Hardware::getRdmaInd()              0x080016c5   Thumb Code    26  mainpp.o(.text._ZN13STM32Hardware10getRdmaIndEv)
+    STM32Hardware::reset_rbuf()              0x080016e1   Thumb Code    20  mainpp.o(.text._ZN13STM32Hardware10reset_rbufEv)
+    STM32Hardware::init()                    0x080016f5   Thumb Code    16  mainpp.o(.text._ZN13STM32Hardware4initEv)
+    STM32Hardware::read()                    0x08001705   Thumb Code    70  mainpp.o(.text._ZN13STM32Hardware4readEv)
+    STM32Hardware::time()                    0x0800174d   Thumb Code    14  mainpp.o(.text._ZN13STM32Hardware4timeEv)
+    STM32Hardware::flush()                   0x0800175d   Thumb Code   168  mainpp.o(.text._ZN13STM32Hardware5flushEv)
+    STM32Hardware::write(unsigned char*, int) 0x08001805   Thumb Code   168  mainpp.o(.text._ZN13STM32Hardware5writeEPhi)
+    STM32Hardware::STM32Hardware__sub_object() 0x080018ad   Thumb Code    24  mainpp.o(.text._ZN13STM32HardwareC2Ev)
+    rosserial_msgs::RequestParamResponse::deserialize(unsigned char*) 0x080018c5   Thumb Code   676  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh)
+    rosserial_msgs::RequestParamResponse::getMD5() 0x08001b69   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev)
+    rosserial_msgs::RequestParamResponse::getType() 0x08001b79   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv)
+    rosserial_msgs::RequestParamResponse::RequestParamResponse__sub_object() 0x08001b89   Thumb Code    54  mainpp.o(.text._ZN14rosserial_msgs20RequestParamResponseC2Ev)
+    rosserial_msgs::Log::deserialize(unsigned char*) 0x08001bc1   Thumb Code   134  mainpp.o(.text._ZN14rosserial_msgs3Log11deserializeEPh)
+    rosserial_msgs::Log::getMD5()            0x08001c49   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs3Log6getMD5Ev)
+    rosserial_msgs::Log::getType()           0x08001c59   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs3Log7getTypeEv)
+    rosserial_msgs::Log::Log__sub_object()   0x08001c69   Thumb Code    48  mainpp.o(.text._ZN14rosserial_msgs3LogC2Ev)
+    rosserial_msgs::TopicInfo::deserialize(unsigned char*) 0x08001c99   Thumb Code   414  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo11deserializeEPh)
+    rosserial_msgs::TopicInfo::getMD5()      0x08001e39   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo6getMD5Ev)
+    rosserial_msgs::TopicInfo::getType()     0x08001e49   Thumb Code    16  mainpp.o(.text._ZN14rosserial_msgs9TopicInfo7getTypeEv)
+    rosserial_msgs::TopicInfo::TopicInfo__sub_object() 0x08001e59   Thumb Code    54  mainpp.o(.text._ZN14rosserial_msgs9TopicInfoC2Ev)
+    ros::Subscriber<std_msgs::Int16, void>::getMsgType() 0x08001e91   Thumb Code    18  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv)
+    ros::Subscriber<std_msgs::Int16, void>::getEndpointType() 0x08001ea5   Thumb Code    12  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv)
+    ros::Subscriber<std_msgs::Int16, void>::callback(unsigned char*) 0x08001eb1   Thumb Code    44  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh)
+    ros::Subscriber<std_msgs::Int16, void>::getMsgMD5() 0x08001edd   Thumb Code    18  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev)
+    ros::Subscriber<std_msgs::Int16, void>::Subscriber__sub_object(const char*, void(*)(const std_msgs::Int16&), int) 0x08001ef1   Thumb Code    62  mainpp.o(.text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::negotiateTopics() 0x08001f31   Thumb Code   328  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::requestSyncTime() 0x08002079   Thumb Code    60  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::log(char, const char*) 0x080020b5   Thumb Code    64  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::setNow(const ros::Time&) 0x080020f5   Thumb Code   124  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::publish(int, const ros::Msg*) 0x08002171   Thumb Code   248  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::initNode() 0x08002269   Thumb Code    42  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::logerror(const char*) 0x08002295   Thumb Code    22  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::spinOnce() 0x080022ad   Thumb Code   938  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::syncTime(unsigned char*) 0x08002659   Thumb Code   144  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::connected() 0x080026e9   Thumb Code    18  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::subscribe(ros::Subscriber_&) 0x080026fd   Thumb Code    98  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E)
+    ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512>::NodeHandle___sub_object() 0x08002761   Thumb Code   278  mainpp.o(.text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev)
+    ros::Subscriber_::Subscriber___sub_object() 0x08002879   Thumb Code    22  mainpp.o(.text._ZN3ros11Subscriber_C2Ev)
+    ros::NodeHandleBase_::NodeHandleBase___sub_object() 0x08002891   Thumb Code    22  mainpp.o(.text._ZN3ros15NodeHandleBase_C2Ev)
+    ros::normalizeSecNSec(unsigned&, unsigned&) 0x080028a9   Thumb Code    56  ros.o(.text._ZN3ros16normalizeSecNSecERjS0_)
+    void ros::Msg::arrToVar<unsigned, unsigned char*>(T1&, T2) 0x080028e1   Thumb Code    56  mainpp.o(.text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_)
+    void ros::Msg::varToArr<unsigned char*, unsigned>(T1, T2) 0x08002919   Thumb Code    46  mainpp.o(.text._ZN3ros3Msg8varToArrIPhjEEvT_T0_)
+    ros::Msg::Msg__sub_object()              0x08002949   Thumb Code    22  mainpp.o(.text._ZN3ros3MsgC2Ev)
+    ros::Time::Time__sub_object()            0x08002961   Thumb Code    16  mainpp.o(.text._ZN3ros4TimeC2Ev)
+    ros::Publisher::getEndpointType()        0x08002971   Thumb Code    12  mainpp.o(.text._ZN3ros9Publisher15getEndpointTypeEv)
+    std_msgs::Time::deserialize(unsigned char*) 0x0800297d   Thumb Code   142  mainpp.o(.text._ZN8std_msgs4Time11deserializeEPh)
+    std_msgs::Time::getMD5()                 0x08002a0d   Thumb Code    16  mainpp.o(.text._ZN8std_msgs4Time6getMD5Ev)
+    std_msgs::Time::getType()                0x08002a1d   Thumb Code    16  mainpp.o(.text._ZN8std_msgs4Time7getTypeEv)
+    std_msgs::Time::Time__sub_object()       0x08002a2d   Thumb Code    42  mainpp.o(.text._ZN8std_msgs4TimeC2Ev)
+    std_msgs::Int16::deserialize(unsigned char*) 0x08002a59   Thumb Code    70  mainpp.o(.text._ZN8std_msgs5Int1611deserializeEPh)
+    std_msgs::Int16::getMD5()                0x08002aa1   Thumb Code    16  mainpp.o(.text._ZN8std_msgs5Int166getMD5Ev)
+    std_msgs::Int16::getType()               0x08002ab1   Thumb Code    16  mainpp.o(.text._ZN8std_msgs5Int167getTypeEv)
+    std_msgs::Int16::Int16__sub_object()     0x08002ac1   Thumb Code    38  mainpp.o(.text._ZN8std_msgs5Int16C2Ev)
+    rosserial_msgs::RequestParamResponse::serialize(unsigned char*) const 0x08002ae9   Thumb Code   444  mainpp.o(.text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh)
+    rosserial_msgs::Log::serialize(unsigned char*) const 0x08002ca5   Thumb Code    92  mainpp.o(.text._ZNK14rosserial_msgs3Log9serializeEPh)
+    rosserial_msgs::TopicInfo::serialize(unsigned char*) const 0x08002d01   Thumb Code   280  mainpp.o(.text._ZNK14rosserial_msgs9TopicInfo9serializeEPh)
+    std_msgs::Time::serialize(unsigned char*) const 0x08002e19   Thumb Code   110  mainpp.o(.text._ZNK8std_msgs4Time9serializeEPh)
+    std_msgs::Int16::serialize(unsigned char*) const 0x08002e89   Thumb Code    52  mainpp.o(.text._ZNK8std_msgs5Int169serializeEPh)
+    __cxa_pure_virtual                       0x08002f01   Thumb Code    40  cxa_virtual.cpp.o(.text.__cxa_pure_virtual)
+    abort_message                            0x08002fbf   Thumb Code     4  abort_message.cpp.o(.text.abort_message)
+    get_tick                                 0x08002fc5   Thumb Code    28  systick.o(.text.get_tick)
+    loop                                     0x08002fe1   Thumb Code  1068  mainpp.o(.text.loop)
+    main                                     0x0800340d   Thumb Code    24  main.o(.text.main)
+    osKernelAddThread                        0x08003425   Thumb Code   110  kernel.o(.text.osKernelAddThread)
+    osKernelInit                             0x08003495   Thumb Code    20  kernel.o(.text.osKernelInit)
+    osKernelLaunch                           0x080034a9   Thumb Code    96  kernel.o(.text.osKernelLaunch)
+    osKernelStackInit                        0x08003509   Thumb Code   204  kernel.o(.text.osKernelStackInit)
+    readEncoder1                             0x080035d5   Thumb Code    24  dio.o(.text.readEncoder1)
+    readEncoder2                             0x080035ed   Thumb Code    24  dio.o(.text.readEncoder2)
+    robot_backward                           0x08003605   Thumb Code   204  bts7960.o(.text.robot_backward)
+    robot_forward                            0x080036d1   Thumb Code   204  bts7960.o(.text.robot_forward)
+    robot_stop                               0x0800379d   Thumb Code    44  bts7960.o(.text.robot_stop)
+    robot_turnleft                           0x080037c9   Thumb Code   204  bts7960.o(.text.robot_turnleft)
+    robot_turnright                          0x08003895   Thumb Code   204  bts7960.o(.text.robot_turnright)
+    setup                                    0x08003961   Thumb Code   124  mainpp.o(.text.setup)
+    setupVectorTable                         0x080039dd   Thumb Code    64  encoder.o(.text.setupVectorTable)
+    __aeabi_d2f                              0x08003a1d   Thumb Code     0  d2f.o(x$fpl$d2f)
+    _d2f                                     0x08003a1d   Thumb Code    98  d2f.o(x$fpl$d2f)
+    __aeabi_dadd                             0x08003a81   Thumb Code     0  daddsub_clz.o(x$fpl$dadd)
+    _dadd                                    0x08003a81   Thumb Code   332  daddsub_clz.o(x$fpl$dadd)
+    __fpl_dcmp_Inf                           0x08003bd1   Thumb Code    24  dcmpi.o(x$fpl$dcmpinf)
+    __aeabi_ddiv                             0x08003be9   Thumb Code     0  ddiv.o(x$fpl$ddiv)
+    _ddiv                                    0x08003be9   Thumb Code   552  ddiv.o(x$fpl$ddiv)
+    __aeabi_cdcmpeq                          0x08003e99   Thumb Code     0  deqf.o(x$fpl$deqf)
+    _dcmpeq                                  0x08003e99   Thumb Code   120  deqf.o(x$fpl$deqf)
+    __aeabi_d2iz                             0x08003f11   Thumb Code     0  dfix.o(x$fpl$dfix)
+    _dfix                                    0x08003f11   Thumb Code    94  dfix.o(x$fpl$dfix)
+    __aeabi_i2d                              0x08003f6f   Thumb Code     0  dflt_clz.o(x$fpl$dflt)
+    _dflt                                    0x08003f6f   Thumb Code    46  dflt_clz.o(x$fpl$dflt)
+    __aeabi_ui2d                             0x08003f9d   Thumb Code     0  dflt_clz.o(x$fpl$dfltu)
+    _dfltu                                   0x08003f9d   Thumb Code    38  dflt_clz.o(x$fpl$dfltu)
+    __aeabi_cdcmpge                          0x08003fc5   Thumb Code     0  dgeqf.o(x$fpl$dgeqf)
+    _dcmpge                                  0x08003fc5   Thumb Code   120  dgeqf.o(x$fpl$dgeqf)
+    __aeabi_cdcmple                          0x0800403d   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    _dcmple                                  0x0800403d   Thumb Code   120  dleqf.o(x$fpl$dleqf)
+    __fpl_dcmple_InfNaN                      0x0800409f   Thumb Code     0  dleqf.o(x$fpl$dleqf)
+    __aeabi_dmul                             0x080040b5   Thumb Code     0  dmul.o(x$fpl$dmul)
+    _dmul                                    0x080040b5   Thumb Code   332  dmul.o(x$fpl$dmul)
+    __fpl_dnaninf                            0x08004209   Thumb Code   156  dnaninf.o(x$fpl$dnaninf)
+    __fpl_dretinf                            0x080042a5   Thumb Code    12  dretinf.o(x$fpl$dretinf)
+    __aeabi_dsub                             0x080042b1   Thumb Code     0  daddsub_clz.o(x$fpl$dsub)
+    _dsub                                    0x080042b1   Thumb Code   464  daddsub_clz.o(x$fpl$dsub)
+    __aeabi_f2d                              0x08004485   Thumb Code     0  f2d.o(x$fpl$f2d)
+    _f2d                                     0x08004485   Thumb Code    86  f2d.o(x$fpl$f2d)
+    __aeabi_dcmpeq                           0x080044db   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _deq                                     0x080044db   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    _dneq                                    0x080044e9   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpgt                           0x080044f7   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgr                                     0x080044f7   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmpge                           0x08004505   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dgeq                                    0x08004505   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmple                           0x08004513   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dleq                                    0x08004513   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __aeabi_dcmplt                           0x08004521   Thumb Code     0  dcmp.o(x$fpl$fcmp)
+    _dls                                     0x08004521   Thumb Code    14  dcmp.o(x$fpl$fcmp)
+    __fpl_fnaninf                            0x0800452f   Thumb Code   140  fnaninf.o(x$fpl$fnaninf)
+    _fp_init                                 0x080045bb   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x080045d3   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x080045d3   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fpl_fretinf                            0x080045d5   Thumb Code    10  fretinf.o(x$fpl$fretinf)
+    __I$use$fp                               0x080045de   Number         0  usenofp.o(x$fpl$usenofp)
+    vtable for rosserial_msgs::RequestParamResponse 0x080045fc   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs20RequestParamResponseE)
+    vtable for rosserial_msgs::Log           0x08004614   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs3LogE)
+    vtable for rosserial_msgs::TopicInfo     0x0800462c   Data          24  mainpp.o(.rodata._ZTVN14rosserial_msgs9TopicInfoE)
+    vtable for ros::Subscriber<std_msgs::Int16, void> 0x08004644   Data          24  mainpp.o(.rodata._ZTVN3ros10SubscriberIN8std_msgs5Int16EvEE)
+    vtable for ros::NodeHandle_<STM32Hardware, (int)25, (int)25, (int)512, (int)512> 0x0800465c   Data          20  mainpp.o(.rodata._ZTVN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEE)
+    vtable for ros::Subscriber_              0x08004670   Data          24  mainpp.o(.rodata._ZTVN3ros11Subscriber_E)
+    vtable for ros::NodeHandleBase_          0x08004688   Data          20  mainpp.o(.rodata._ZTVN3ros15NodeHandleBase_E)
+    vtable for ros::Msg                      0x0800469c   Data          24  mainpp.o(.rodata._ZTVN3ros3MsgE)
+    vtable for std_msgs::Time                0x080046b4   Data          24  mainpp.o(.rodata._ZTVN8std_msgs4TimeE)
+    vtable for std_msgs::Int16               0x080046cc   Data          24  mainpp.o(.rodata._ZTVN8std_msgs5Int16E)
+    Region$$Table$$Base                      0x08004884   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080048a4   Number         0  anon$$obj.o(Region$$Table)
+    SHT$$INIT_ARRAY$$Base                    0x080048a4   Number         0  mainpp.o(.init_array)
+    SHT$$INIT_ARRAY$$Limit                   0x080048a8   Number         0  init_aeabi.o(.init_array)
     Direction_left                           0x20000000   Data           4  mainpp.o(.data.Direction_left)
     Direction_right                          0x20000004   Data           4  mainpp.o(.data.Direction_right)
     controlCar                               0x20000008   Data          20  bts7960.o(.data.controlCar)
@@ -1861,121 +1866,121 @@ Memory Map of the image
 
   Image Entry point : 0x08000291
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x000048c0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000048c8, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000048a0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000048a8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x00000198   Data   RO          519    RESET               startup_stm32f411xe.o
-    0x08000198   0x08000198   0x00000008   Code   RO          604  * !!!main             c_w.l(__main.o)
-    0x080001a0   0x080001a0   0x00000034   Code   RO          896    !!!scatter          c_w.l(__scatter.o)
-    0x080001d4   0x080001d4   0x0000001a   Code   RO          898    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x08000000   0x08000000   0x00000198   Data   RO          522    RESET               startup_stm32f411xe.o
+    0x08000198   0x08000198   0x00000008   Code   RO          607  * !!!main             c_w.l(__main.o)
+    0x080001a0   0x080001a0   0x00000034   Code   RO          899    !!!scatter          c_w.l(__scatter.o)
+    0x080001d4   0x080001d4   0x0000001a   Code   RO          901    !!handler_copy      c_w.l(__scatter_copy.o)
     0x080001ee   0x080001ee   0x00000002   PAD
-    0x080001f0   0x080001f0   0x0000001c   Code   RO          900    !!handler_zi        c_w.l(__scatter_zi.o)
-    0x0800020c   0x0800020c   0x00000002   Code   RO          841    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
-    0x0800020e   0x0800020e   0x00000004   Code   RO          686    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
-    0x08000212   0x08000212   0x00000000   Code   RO          689    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
-    0x08000212   0x08000212   0x00000008   Code   RO          690    .ARM.Collect$$libinit$$00000005  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          692    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          694    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          696    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          699    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          701    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          703    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          705    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          707    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          709    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          711    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          713    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          715    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          717    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000000   Code   RO          719    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
-    0x0800021a   0x0800021a   0x00000008   Code   RO          720    .ARM.Collect$$libinit$$00000026  c_w.l(libinit2.o)
-    0x08000222   0x08000222   0x00000000   Code   RO          725    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
-    0x08000222   0x08000222   0x00000000   Code   RO          727    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
-    0x08000222   0x08000222   0x00000004   Code   RO          728    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
-    0x08000226   0x08000226   0x00000000   Code   RO          729    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
-    0x08000226   0x08000226   0x00000002   Code   RO          730    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
-    0x08000228   0x08000228   0x00000002   Code   RO          893    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          853    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          855    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          858    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          861    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          863    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000000   Code   RO          866    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
-    0x0800022a   0x0800022a   0x00000002   Code   RO          867    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
-    0x0800022c   0x0800022c   0x00000000   Code   RO          648    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
-    0x0800022c   0x0800022c   0x00000000   Code   RO          766    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
-    0x0800022c   0x0800022c   0x00000006   Code   RO          778    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
-    0x08000232   0x08000232   0x00000000   Code   RO          768    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
-    0x08000232   0x08000232   0x00000004   Code   RO          769    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
-    0x08000236   0x08000236   0x00000000   Code   RO          771    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
-    0x08000236   0x08000236   0x00000008   Code   RO          772    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
-    0x0800023e   0x0800023e   0x00000002   Code   RO          842    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
-    0x08000240   0x08000240   0x00000000   Code   RO          869    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
-    0x08000240   0x08000240   0x00000004   Code   RO          870    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
-    0x08000244   0x08000244   0x00000006   Code   RO          871    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x080001f0   0x080001f0   0x0000001c   Code   RO          903    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x0800020c   0x0800020c   0x00000002   Code   RO          844    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x0800020e   0x0800020e   0x00000004   Code   RO          689    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x08000212   0x08000212   0x00000000   Code   RO          692    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x08000212   0x08000212   0x00000008   Code   RO          693    .ARM.Collect$$libinit$$00000005  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          695    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          697    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          699    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          702    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          704    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          706    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          708    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          710    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          712    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          714    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          716    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          718    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          720    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000000   Code   RO          722    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x0800021a   0x0800021a   0x00000008   Code   RO          723    .ARM.Collect$$libinit$$00000026  c_w.l(libinit2.o)
+    0x08000222   0x08000222   0x00000000   Code   RO          728    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x08000222   0x08000222   0x00000000   Code   RO          730    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x08000222   0x08000222   0x00000004   Code   RO          731    .ARM.Collect$$libinit$$00000031  c_w.l(libinit2.o)
+    0x08000226   0x08000226   0x00000000   Code   RO          732    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x08000226   0x08000226   0x00000002   Code   RO          733    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x08000228   0x08000228   0x00000002   Code   RO          896    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          856    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          858    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          861    .ARM.Collect$$libshutdown$$00000007  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          864    .ARM.Collect$$libshutdown$$0000000A  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          866    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000000   Code   RO          869    .ARM.Collect$$libshutdown$$0000000F  c_w.l(libshutdown2.o)
+    0x0800022a   0x0800022a   0x00000002   Code   RO          870    .ARM.Collect$$libshutdown$$00000010  c_w.l(libshutdown2.o)
+    0x0800022c   0x0800022c   0x00000000   Code   RO          651    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x0800022c   0x0800022c   0x00000000   Code   RO          769    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x0800022c   0x0800022c   0x00000006   Code   RO          781    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x08000232   0x08000232   0x00000000   Code   RO          771    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x08000232   0x08000232   0x00000004   Code   RO          772    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x08000236   0x08000236   0x00000000   Code   RO          774    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x08000236   0x08000236   0x00000008   Code   RO          775    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0800023e   0x0800023e   0x00000002   Code   RO          845    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x08000240   0x08000240   0x00000000   Code   RO          872    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x08000240   0x08000240   0x00000004   Code   RO          873    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x08000244   0x08000244   0x00000006   Code   RO          874    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x0800024a   0x0800024a   0x00000002   PAD
-    0x0800024c   0x0800024c   0x00000040   Code   RO          492    .TEXT               kernel_1.o
-    0x0800028c   0x0800028c   0x00000004   Code   RO          803    .emb_text           c_w.l(argv_veneer.o)
-    0x08000290   0x08000290   0x00000040   Code   RO          520  * .text               startup_stm32f411xe.o
-    0x080002d0   0x080002d0   0x000000c4   Code   RO          542    .text               c_w.l(h1_realloc.o)
-    0x08000394   0x08000394   0x00000080   Code   RO          596    .text               c_w.l(assert.o)
-    0x08000414   0x08000414   0x0000003e   Code   RO          598    .text               c_w.l(strlen.o)
-    0x08000452   0x08000452   0x0000008a   Code   RO          600    .text               c_w.l(rt_memcpy_v6.o)
-    0x080004dc   0x080004dc   0x00000006   Code   RO          602    .text               c_w.l(heapauxi.o)
+    0x0800024c   0x0800024c   0x00000040   Code   RO          495    .TEXT               kernel_1.o
+    0x0800028c   0x0800028c   0x00000004   Code   RO          806    .emb_text           c_w.l(argv_veneer.o)
+    0x08000290   0x08000290   0x00000040   Code   RO          523  * .text               startup_stm32f411xe.o
+    0x080002d0   0x080002d0   0x000000c4   Code   RO          545    .text               c_w.l(h1_realloc.o)
+    0x08000394   0x08000394   0x00000080   Code   RO          599    .text               c_w.l(assert.o)
+    0x08000414   0x08000414   0x0000003e   Code   RO          601    .text               c_w.l(strlen.o)
+    0x08000452   0x08000452   0x0000008a   Code   RO          603    .text               c_w.l(rt_memcpy_v6.o)
+    0x080004dc   0x080004dc   0x00000006   Code   RO          605    .text               c_w.l(heapauxi.o)
     0x080004e2   0x080004e2   0x00000002   PAD
-    0x080004e4   0x080004e4   0x00000024   Code   RO          609    .text               c_w.l(init_aeabi.o)
-    0x08000508   0x08000508   0x00000008   Code   RO          652    .text               c_w.l(rt_heap_descriptor_intlibspace.o)
-    0x08000510   0x08000510   0x00000004   Code   RO          654    .text               c_w.l(hguard.o)
-    0x08000514   0x08000514   0x0000008a   Code   RO          656    .text               c_w.l(init_alloc.o)
-    0x0800059e   0x0800059e   0x0000005e   Code   RO          664    .text               c_w.l(h1_alloc.o)
-    0x080005fc   0x080005fc   0x0000004e   Code   RO          666    .text               c_w.l(h1_free.o)
-    0x0800064a   0x0800064a   0x00000016   Code   RO          680    .text               c_w.l(abort.o)
-    0x08000660   0x08000660   0x00000014   Code   RO          682    .text               c_w.l(assert_puts.o)
-    0x08000674   0x08000674   0x00000064   Code   RO          684    .text               c_w.l(rt_memcpy_w.o)
-    0x080006d8   0x080006d8   0x0000000e   Code   RO          754    .text               c_w.l(sys_wrch.o)
+    0x080004e4   0x080004e4   0x00000024   Code   RO          612    .text               c_w.l(init_aeabi.o)
+    0x08000508   0x08000508   0x00000008   Code   RO          655    .text               c_w.l(rt_heap_descriptor_intlibspace.o)
+    0x08000510   0x08000510   0x00000004   Code   RO          657    .text               c_w.l(hguard.o)
+    0x08000514   0x08000514   0x0000008a   Code   RO          659    .text               c_w.l(init_alloc.o)
+    0x0800059e   0x0800059e   0x0000005e   Code   RO          667    .text               c_w.l(h1_alloc.o)
+    0x080005fc   0x080005fc   0x0000004e   Code   RO          669    .text               c_w.l(h1_free.o)
+    0x0800064a   0x0800064a   0x00000016   Code   RO          683    .text               c_w.l(abort.o)
+    0x08000660   0x08000660   0x00000014   Code   RO          685    .text               c_w.l(assert_puts.o)
+    0x08000674   0x08000674   0x00000064   Code   RO          687    .text               c_w.l(rt_memcpy_w.o)
+    0x080006d8   0x080006d8   0x0000000e   Code   RO          757    .text               c_w.l(sys_wrch.o)
     0x080006e6   0x080006e6   0x00000002   PAD
-    0x080006e8   0x080006e8   0x0000000c   Code   RO          756    .text               c_w.l(sys_exit.o)
-    0x080006f4   0x080006f4   0x00000008   Code   RO          762    .text               c_w.l(libspace.o)
-    0x080006fc   0x080006fc   0x00000000   Code   RO          780    .text               c_w.l(maybetermalloc1.o)
-    0x080006fc   0x080006fc   0x0000000e   Code   RO          782    .text               c_w.l(h1_init.o)
-    0x0800070a   0x0800070a   0x00000034   Code   RO          784    .text               c_w.l(h1_extend.o)
-    0x0800073e   0x0800073e   0x0000000e   Code   RO          790    .text               c_w.l(defsig_abrt_outer.o)
-    0x0800074c   0x0800074c   0x0000000e   Code   RO          794    .text               c_w.l(defsig_rtmem_outer.o)
-    0x0800075a   0x0800075a   0x00000108   Code   RO          801    .text               c_w.l(_get_argv.o)
-    0x08000862   0x08000862   0x00000018   Code   RO          809    .text               c_w.l(sys_command.o)
-    0x0800087a   0x0800087a   0x00000002   Code   RO          813    .text               c_w.l(use_no_semi.o)
-    0x0800087c   0x0800087c   0x00000000   Code   RO          815    .text               c_w.l(indicate_semi.o)
-    0x0800087c   0x0800087c   0x0000004a   Code   RO          816    .text               c_w.l(sys_stackheap_outer.o)
-    0x080008c6   0x080008c6   0x00000004   Code   RO          820    .text               c_w.l(hrguard.o)
-    0x080008ca   0x080008ca   0x00000012   Code   RO          824    .text               c_w.l(exit.o)
-    0x080008dc   0x080008dc   0x0000000a   Code   RO          826    .text               c_w.l(defsig_exit.o)
+    0x080006e8   0x080006e8   0x0000000c   Code   RO          759    .text               c_w.l(sys_exit.o)
+    0x080006f4   0x080006f4   0x00000008   Code   RO          765    .text               c_w.l(libspace.o)
+    0x080006fc   0x080006fc   0x00000000   Code   RO          783    .text               c_w.l(maybetermalloc1.o)
+    0x080006fc   0x080006fc   0x0000000e   Code   RO          785    .text               c_w.l(h1_init.o)
+    0x0800070a   0x0800070a   0x00000034   Code   RO          787    .text               c_w.l(h1_extend.o)
+    0x0800073e   0x0800073e   0x0000000e   Code   RO          793    .text               c_w.l(defsig_abrt_outer.o)
+    0x0800074c   0x0800074c   0x0000000e   Code   RO          797    .text               c_w.l(defsig_rtmem_outer.o)
+    0x0800075a   0x0800075a   0x00000108   Code   RO          804    .text               c_w.l(_get_argv.o)
+    0x08000862   0x08000862   0x00000018   Code   RO          812    .text               c_w.l(sys_command.o)
+    0x0800087a   0x0800087a   0x00000002   Code   RO          816    .text               c_w.l(use_no_semi.o)
+    0x0800087c   0x0800087c   0x00000000   Code   RO          818    .text               c_w.l(indicate_semi.o)
+    0x0800087c   0x0800087c   0x0000004a   Code   RO          819    .text               c_w.l(sys_stackheap_outer.o)
+    0x080008c6   0x080008c6   0x00000004   Code   RO          823    .text               c_w.l(hrguard.o)
+    0x080008ca   0x080008ca   0x00000012   Code   RO          827    .text               c_w.l(exit.o)
+    0x080008dc   0x080008dc   0x0000000a   Code   RO          829    .text               c_w.l(defsig_exit.o)
     0x080008e6   0x080008e6   0x00000002   PAD
-    0x080008e8   0x080008e8   0x00000030   Code   RO          828    .text               c_w.l(defsig_abrt_inner.o)
-    0x08000918   0x08000918   0x00000050   Code   RO          830    .text               c_w.l(defsig_rtmem_inner.o)
-    0x08000968   0x08000968   0x00000032   Code   RO          850    .text               c_w.l(defsig_general.o)
+    0x080008e8   0x080008e8   0x00000030   Code   RO          831    .text               c_w.l(defsig_abrt_inner.o)
+    0x08000918   0x08000918   0x00000050   Code   RO          833    .text               c_w.l(defsig_rtmem_inner.o)
+    0x08000968   0x08000968   0x00000032   Code   RO          853    .text               c_w.l(defsig_general.o)
     0x0800099a   0x0800099a   0x00000002   PAD
-    0x0800099c   0x0800099c   0x00000082   Code   RO          271    .text.DMA_UART_Receive  uart2.o
+    0x0800099c   0x0800099c   0x00000082   Code   RO          274    .text.DMA_UART_Receive  uart2.o
     0x08000a1e   0x08000a1e   0x00000002   PAD
-    0x08000a20   0x08000a20   0x0000008a   Code   RO          269    .text.DMA_UART_Transmit  uart2.o
+    0x08000a20   0x08000a20   0x0000008a   Code   RO          272    .text.DMA_UART_Transmit  uart2.o
     0x08000aaa   0x08000aaa   0x00000002   PAD
-    0x08000aac   0x08000aac   0x00000032   Code   RO          321    .text.Dio_Init      dio.o
+    0x08000aac   0x08000aac   0x00000032   Code   RO          324    .text.Dio_Init      dio.o
     0x08000ade   0x08000ade   0x00000002   PAD
     0x08000ae0   0x08000ae0   0x000000ce   Code   RO           14    .text.Encoder_Turnleft  mainpp.o
     0x08000bae   0x08000bae   0x00000002   PAD
     0x08000bb0   0x08000bb0   0x000000ce   Code   RO           16    .text.Encoder_Turnright  mainpp.o
     0x08000c7e   0x08000c7e   0x00000002   PAD
-    0x08000c80   0x08000c80   0x00000032   Code   RO          417    .text.ModeMotor     bts7960.o
+    0x08000c80   0x08000c80   0x00000032   Code   RO          420    .text.ModeMotor     bts7960.o
     0x08000cb2   0x08000cb2   0x00000002   PAD
-    0x08000cb4   0x08000cb4   0x00000008   Code   RO          501    .text.SysTick_Handler  systick.o
-    0x08000cbc   0x08000cbc   0x00000012   Code   RO          525    .text.SystemInit    system_stm32f4xx.o
+    0x08000cb4   0x08000cb4   0x00000008   Code   RO          504    .text.SysTick_Handler  systick.o
+    0x08000cbc   0x08000cbc   0x00000012   Code   RO          528    .text.SystemInit    system_stm32f4xx.o
     0x08000cce   0x08000cce   0x00000002   PAD
-    0x08000cd0   0x08000cd0   0x00000028   Code   RO          499    .text.Systick_Init  systick.o
-    0x08000cf8   0x08000cf8   0x0000001a   Code   RO          497    .text.Tick_Increment  systick.o
+    0x08000cd0   0x08000cd0   0x00000028   Code   RO          502    .text.Systick_Init  systick.o
+    0x08000cf8   0x08000cf8   0x0000001a   Code   RO          500    .text.Tick_Increment  systick.o
     0x08000d12   0x08000d12   0x00000002   PAD
-    0x08000d14   0x08000d14   0x0000013a   Code   RO          405    .text.Tim2_Init     bts7960.o
+    0x08000d14   0x08000d14   0x0000013a   Code   RO          408    .text.Tim2_Init     bts7960.o
     0x08000e4e   0x08000e4e   0x00000002   PAD
     0x08000e50   0x08000e50   0x00000020   Code   RO           38    .text._GLOBAL__sub_I_mainpp.cpp  mainpp.o
     0x08000e70   0x08000e70   0x00000338   Code   RO           28    .text._Z14set_pwm_valuesidd  mainpp.o
@@ -1985,196 +1990,198 @@ Memory Map of the image
     0x080014f2   0x080014f2   0x00000002   PAD
     0x080014f4   0x080014f4   0x0000005a   Code   RO           24    .text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E  mainpp.o
     0x0800154e   0x0800154e   0x00000002   PAD
-    0x08001550   0x08001550   0x000000b4   Code   RO           26    .text._Z8gain_dirii  mainpp.o
-    0x08001604   0x08001604   0x0000001a   Code   RO          186    .text._ZN13STM32Hardware10getRdmaIndEv  mainpp.o
-    0x0800161e   0x0800161e   0x00000002   PAD
-    0x08001620   0x08001620   0x00000014   Code   RO          104    .text._ZN13STM32Hardware10reset_rbufEv  mainpp.o
-    0x08001634   0x08001634   0x00000010   Code   RO          174    .text._ZN13STM32Hardware4initEv  mainpp.o
-    0x08001644   0x08001644   0x00000046   Code   RO          178    .text._ZN13STM32Hardware4readEv  mainpp.o
-    0x0800168a   0x0800168a   0x00000002   PAD
-    0x0800168c   0x0800168c   0x0000000e   Code   RO          176    .text._ZN13STM32Hardware4timeEv  mainpp.o
-    0x0800169a   0x0800169a   0x00000002   PAD
-    0x0800169c   0x0800169c   0x000000a8   Code   RO          106    .text._ZN13STM32Hardware5flushEv  mainpp.o
-    0x08001744   0x08001744   0x000000a8   Code   RO          140    .text._ZN13STM32Hardware5writeEPhi  mainpp.o
-    0x080017ec   0x080017ec   0x00000018   Code   RO          118    .text._ZN13STM32HardwareC2Ev  mainpp.o
-    0x08001804   0x08001804   0x000002a4   Code   RO          130    .text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh  mainpp.o
-    0x08001aa8   0x08001aa8   0x00000010   Code   RO          134    .text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev  mainpp.o
-    0x08001ab8   0x08001ab8   0x00000010   Code   RO          132    .text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv  mainpp.o
-    0x08001ac8   0x08001ac8   0x00000036   Code   RO          120    .text._ZN14rosserial_msgs20RequestParamResponseC2Ev  mainpp.o
-    0x08001afe   0x08001afe   0x00000002   PAD
-    0x08001b00   0x08001b00   0x00000086   Code   RO          150    .text._ZN14rosserial_msgs3Log11deserializeEPh  mainpp.o
-    0x08001b86   0x08001b86   0x00000002   PAD
-    0x08001b88   0x08001b88   0x00000010   Code   RO          154    .text._ZN14rosserial_msgs3Log6getMD5Ev  mainpp.o
-    0x08001b98   0x08001b98   0x00000010   Code   RO          152    .text._ZN14rosserial_msgs3Log7getTypeEv  mainpp.o
-    0x08001ba8   0x08001ba8   0x00000030   Code   RO          146    .text._ZN14rosserial_msgs3LogC2Ev  mainpp.o
-    0x08001bd8   0x08001bd8   0x0000019e   Code   RO          206    .text._ZN14rosserial_msgs9TopicInfo11deserializeEPh  mainpp.o
-    0x08001d76   0x08001d76   0x00000002   PAD
-    0x08001d78   0x08001d78   0x00000010   Code   RO          210    .text._ZN14rosserial_msgs9TopicInfo6getMD5Ev  mainpp.o
-    0x08001d88   0x08001d88   0x00000010   Code   RO          208    .text._ZN14rosserial_msgs9TopicInfo7getTypeEv  mainpp.o
-    0x08001d98   0x08001d98   0x00000036   Code   RO          200    .text._ZN14rosserial_msgs9TopicInfoC2Ev  mainpp.o
-    0x08001dce   0x08001dce   0x00000002   PAD
-    0x08001dd0   0x08001dd0   0x00000012   Code   RO          170    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv  mainpp.o
-    0x08001de2   0x08001de2   0x00000002   PAD
-    0x08001de4   0x08001de4   0x0000000c   Code   RO          168    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv  mainpp.o
-    0x08001df0   0x08001df0   0x0000002c   Code   RO          166    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh  mainpp.o
-    0x08001e1c   0x08001e1c   0x00000012   Code   RO          172    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev  mainpp.o
-    0x08001e2e   0x08001e2e   0x00000002   PAD
-    0x08001e30   0x08001e30   0x0000003e   Code   RO          108    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei  mainpp.o
-    0x08001e6e   0x08001e6e   0x00000002   PAD
-    0x08001e70   0x08001e70   0x00000148   Code   RO          182    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv  mainpp.o
-    0x08001fb8   0x08001fb8   0x0000003c   Code   RO          180    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv  mainpp.o
-    0x08001ff4   0x08001ff4   0x00000040   Code   RO          144    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc  mainpp.o
-    0x08002034   0x08002034   0x0000007c   Code   RO          212    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE  mainpp.o
-    0x080020b0   0x080020b0   0x000000f8   Code   RO          122    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE  mainpp.o
-    0x080021a8   0x080021a8   0x0000002a   Code   RO          110    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv  mainpp.o
-    0x080021d2   0x080021d2   0x00000002   PAD
-    0x080021d4   0x080021d4   0x00000016   Code   RO          142    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc  mainpp.o
-    0x080021ea   0x080021ea   0x00000002   PAD
-    0x080021ec   0x080021ec   0x000003aa   Code   RO          114    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv  mainpp.o
-    0x08002596   0x08002596   0x00000002   PAD
-    0x08002598   0x08002598   0x00000090   Code   RO          184    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh  mainpp.o
-    0x08002628   0x08002628   0x00000012   Code   RO          124    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv  mainpp.o
-    0x0800263a   0x0800263a   0x00000002   PAD
-    0x0800263c   0x0800263c   0x00000062   Code   RO          112    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E  mainpp.o
-    0x0800269e   0x0800269e   0x00000002   PAD
-    0x080026a0   0x080026a0   0x00000116   Code   RO           98    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev  mainpp.o
-    0x080027b6   0x080027b6   0x00000002   PAD
-    0x080027b8   0x080027b8   0x00000016   Code   RO          164    .text._ZN3ros11Subscriber_C2Ev  mainpp.o
-    0x080027ce   0x080027ce   0x00000002   PAD
-    0x080027d0   0x080027d0   0x00000016   Code   RO          116    .text._ZN3ros15NodeHandleBase_C2Ev  mainpp.o
-    0x080027e6   0x080027e6   0x00000002   PAD
-    0x080027e8   0x080027e8   0x00000038   Code   RO          234    .text._ZN3ros16normalizeSecNSecERjS0_  ros.o
-    0x08002820   0x08002820   0x00000038   Code   RO          138    .text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_  mainpp.o
-    0x08002858   0x08002858   0x0000002e   Code   RO          136    .text._ZN3ros3Msg8varToArrIPhjEEvT_T0_  mainpp.o
-    0x08002886   0x08002886   0x00000002   PAD
-    0x08002888   0x08002888   0x00000016   Code   RO          126    .text._ZN3ros3MsgC2Ev  mainpp.o
-    0x0800289e   0x0800289e   0x00000002   PAD
-    0x080028a0   0x080028a0   0x00000010   Code   RO          190    .text._ZN3ros4TimeC2Ev  mainpp.o
-    0x080028b0   0x080028b0   0x0000000c   Code   RO          202    .text._ZN3ros9Publisher15getEndpointTypeEv  mainpp.o
-    0x080028bc   0x080028bc   0x0000008e   Code   RO          194    .text._ZN8std_msgs4Time11deserializeEPh  mainpp.o
-    0x0800294a   0x0800294a   0x00000002   PAD
-    0x0800294c   0x0800294c   0x00000010   Code   RO          198    .text._ZN8std_msgs4Time6getMD5Ev  mainpp.o
-    0x0800295c   0x0800295c   0x00000010   Code   RO          196    .text._ZN8std_msgs4Time7getTypeEv  mainpp.o
-    0x0800296c   0x0800296c   0x0000002a   Code   RO          188    .text._ZN8std_msgs4TimeC2Ev  mainpp.o
-    0x08002996   0x08002996   0x00000002   PAD
-    0x08002998   0x08002998   0x00000046   Code   RO          158    .text._ZN8std_msgs5Int1611deserializeEPh  mainpp.o
-    0x080029de   0x080029de   0x00000002   PAD
-    0x080029e0   0x080029e0   0x00000010   Code   RO          162    .text._ZN8std_msgs5Int166getMD5Ev  mainpp.o
-    0x080029f0   0x080029f0   0x00000010   Code   RO          160    .text._ZN8std_msgs5Int167getTypeEv  mainpp.o
-    0x08002a00   0x08002a00   0x00000026   Code   RO          100    .text._ZN8std_msgs5Int16C2Ev  mainpp.o
-    0x08002a26   0x08002a26   0x00000002   PAD
-    0x08002a28   0x08002a28   0x000001bc   Code   RO          128    .text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh  mainpp.o
-    0x08002be4   0x08002be4   0x0000005c   Code   RO          148    .text._ZNK14rosserial_msgs3Log9serializeEPh  mainpp.o
-    0x08002c40   0x08002c40   0x00000118   Code   RO          204    .text._ZNK14rosserial_msgs9TopicInfo9serializeEPh  mainpp.o
-    0x08002d58   0x08002d58   0x0000006e   Code   RO          192    .text._ZNK8std_msgs4Time9serializeEPh  mainpp.o
-    0x08002dc6   0x08002dc6   0x00000002   PAD
-    0x08002dc8   0x08002dc8   0x00000034   Code   RO          156    .text._ZNK8std_msgs5Int169serializeEPh  mainpp.o
-    0x08002dfc   0x08002dfc   0x00000044   Code   RO          480    .text.__NVIC_SetPriority  kernel.o
-    0x08002e40   0x08002e40   0x00000028   Code   RO          641    .text.__cxa_pure_virtual  libcppabi_w.l(cxa_virtual.cpp.o)
-    0x08002e68   0x08002e68   0x00000010   Code   RO            2    .text.__cxx_global_var_init  mainpp.o
-    0x08002e78   0x08002e78   0x00000010   Code   RO            4    .text.__cxx_global_var_init.1  mainpp.o
-    0x08002e88   0x08002e88   0x00000010   Code   RO            6    .text.__cxx_global_var_init.2  mainpp.o
-    0x08002e98   0x08002e98   0x00000010   Code   RO            8    .text.__cxx_global_var_init.3  mainpp.o
-    0x08002ea8   0x08002ea8   0x00000010   Code   RO           10    .text.__cxx_global_var_init.4  mainpp.o
-    0x08002eb8   0x08002eb8   0x00000022   Code   RO           30    .text.__cxx_global_var_init.5  mainpp.o
-    0x08002eda   0x08002eda   0x00000002   PAD
-    0x08002edc   0x08002edc   0x00000022   Code   RO           32    .text.__cxx_global_var_init.6  mainpp.o
-    0x08002efe   0x08002efe   0x00000004   Code   RO          751    .text.abort_message  libcppabi_w.l(abort_message.cpp.o)
-    0x08002f02   0x08002f02   0x00000002   PAD
-    0x08002f04   0x08002f04   0x0000001c   Code   RO          503    .text.get_tick      systick.o
-    0x08002f20   0x08002f20   0x0000042c   Code   RO           36    .text.loop          mainpp.o
-    0x0800334c   0x0800334c   0x000000d0   Code   RO          226    .text.main          main.o
-    0x0800341c   0x0800341c   0x0000006e   Code   RO          474    .text.osKernelAddThread  kernel.o
-    0x0800348a   0x0800348a   0x00000002   PAD
-    0x0800348c   0x0800348c   0x00000014   Code   RO          476    .text.osKernelInit  kernel.o
-    0x080034a0   0x080034a0   0x00000060   Code   RO          478    .text.osKernelLaunch  kernel.o
-    0x08003500   0x08003500   0x000000cc   Code   RO          472    .text.osKernelStackInit  kernel.o
-    0x080035cc   0x080035cc   0x00000018   Code   RO          323    .text.readEncoder1  dio.o
-    0x080035e4   0x080035e4   0x00000018   Code   RO          325    .text.readEncoder2  dio.o
-    0x080035fc   0x080035fc   0x000000cc   Code   RO          409    .text.robot_backward  bts7960.o
-    0x080036c8   0x080036c8   0x000000cc   Code   RO          407    .text.robot_forward  bts7960.o
-    0x08003794   0x08003794   0x0000002c   Code   RO          415    .text.robot_stop    bts7960.o
-    0x080037c0   0x080037c0   0x000000cc   Code   RO          411    .text.robot_turnleft  bts7960.o
-    0x0800388c   0x0800388c   0x000000cc   Code   RO          413    .text.robot_turnright  bts7960.o
-    0x08003958   0x08003958   0x0000007c   Code   RO           34    .text.setup         mainpp.o
-    0x080039d4   0x080039d4   0x00000040   Code   RO          464    .text.setupVectorTable  encoder.o
-    0x08003a14   0x08003a14   0x00000062   Code   RO          612    x$fpl$d2f           fz_wm.l(d2f.o)
-    0x08003a76   0x08003a76   0x00000002   PAD
-    0x08003a78   0x08003a78   0x00000150   Code   RO          614    x$fpl$dadd          fz_wm.l(daddsub_clz.o)
-    0x08003bc8   0x08003bc8   0x00000018   Code   RO          805    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
-    0x08003be0   0x08003be0   0x000002b0   Code   RO          623    x$fpl$ddiv          fz_wm.l(ddiv.o)
-    0x08003e90   0x08003e90   0x00000078   Code   RO          735    x$fpl$deqf          fz_wm.l(deqf.o)
-    0x08003f08   0x08003f08   0x0000005e   Code   RO          626    x$fpl$dfix          fz_wm.l(dfix.o)
-    0x08003f66   0x08003f66   0x0000002e   Code   RO          631    x$fpl$dflt          fz_wm.l(dflt_clz.o)
-    0x08003f94   0x08003f94   0x00000026   Code   RO          630    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
-    0x08003fba   0x08003fba   0x00000002   PAD
-    0x08003fbc   0x08003fbc   0x00000078   Code   RO          737    x$fpl$dgeqf         fz_wm.l(dgeqf.o)
-    0x08004034   0x08004034   0x00000078   Code   RO          739    x$fpl$dleqf         fz_wm.l(dleqf.o)
-    0x080040ac   0x080040ac   0x00000154   Code   RO          636    x$fpl$dmul          fz_wm.l(dmul.o)
-    0x08004200   0x08004200   0x0000009c   Code   RO          741    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
-    0x0800429c   0x0800429c   0x0000000c   Code   RO          743    x$fpl$dretinf       fz_wm.l(dretinf.o)
-    0x080042a8   0x080042a8   0x000001d4   Code   RO          616    x$fpl$dsub          fz_wm.l(daddsub_clz.o)
-    0x0800447c   0x0800447c   0x00000056   Code   RO          638    x$fpl$f2d           fz_wm.l(f2d.o)
-    0x080044d2   0x080044d2   0x00000054   Code   RO          620    x$fpl$fcmp          fz_wm.l(dcmp.o)
-    0x08004526   0x08004526   0x0000008c   Code   RO          745    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
-    0x080045b2   0x080045b2   0x0000001a   Code   RO          807    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080045cc   0x080045cc   0x0000000a   Code   RO          747    x$fpl$fretinf       fz_wm.l(fretinf.o)
-    0x080045d6   0x080045d6   0x00000000   Code   RO          749    x$fpl$usenofp       fz_wm.l(usenofp.o)
-    0x080045d6   0x080045d6   0x0000001c   Data   RO           89    .rodata._ZN14rosserial_msgsL12REQUESTPARAME  mainpp.o
-    0x080045f2   0x080045f2   0x00000002   PAD
-    0x080045f4   0x080045f4   0x00000018   Data   RO          216    .rodata._ZTVN14rosserial_msgs20RequestParamResponseE  mainpp.o
-    0x0800460c   0x0800460c   0x00000018   Data   RO          218    .rodata._ZTVN14rosserial_msgs3LogE  mainpp.o
-    0x08004624   0x08004624   0x00000018   Data   RO          224    .rodata._ZTVN14rosserial_msgs9TopicInfoE  mainpp.o
-    0x0800463c   0x0800463c   0x00000018   Data   RO          221    .rodata._ZTVN3ros10SubscriberIN8std_msgs5Int16EvEE  mainpp.o
-    0x08004654   0x08004654   0x00000014   Data   RO          214    .rodata._ZTVN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEE  mainpp.o
-    0x08004668   0x08004668   0x00000018   Data   RO          222    .rodata._ZTVN3ros11Subscriber_E  mainpp.o
-    0x08004680   0x08004680   0x00000014   Data   RO          215    .rodata._ZTVN3ros15NodeHandleBase_E  mainpp.o
-    0x08004694   0x08004694   0x00000018   Data   RO          217    .rodata._ZTVN3ros3MsgE  mainpp.o
-    0x080046ac   0x080046ac   0x00000018   Data   RO          223    .rodata._ZTVN8std_msgs4TimeE  mainpp.o
-    0x080046c4   0x080046c4   0x00000018   Data   RO          219    .rodata._ZTVN8std_msgs5Int16E  mainpp.o
-    0x080046dc   0x080046dc   0x0000014a   Data   RO           87    .rodata.str1.1      mainpp.o
-    0x08004826   0x08004826   0x00000054   Data   RO          419    .rodata.str1.1      bts7960.o
-    0x0800487a   0x0800487a   0x00000002   PAD
-    0x0800487c   0x0800487c   0x00000020   Data   RO          895    Region$$Table       anon$$obj.o
-    0x0800489c   0x0800489c   0x00000004   Data   RO           90    .init_array         mainpp.o
-    0x080048a0   0x0800489c   0x00000000   Data   RO          607    .init_array         c_w.l(init_aeabi.o)
+    0x08001550   0x08001550   0x000000be   Code   RO          228    .text._Z8Rcc_initv  main.o
+    0x0800160e   0x0800160e   0x00000002   PAD
+    0x08001610   0x08001610   0x000000b4   Code   RO           26    .text._Z8gain_dirii  mainpp.o
+    0x080016c4   0x080016c4   0x0000001a   Code   RO          186    .text._ZN13STM32Hardware10getRdmaIndEv  mainpp.o
+    0x080016de   0x080016de   0x00000002   PAD
+    0x080016e0   0x080016e0   0x00000014   Code   RO          104    .text._ZN13STM32Hardware10reset_rbufEv  mainpp.o
+    0x080016f4   0x080016f4   0x00000010   Code   RO          174    .text._ZN13STM32Hardware4initEv  mainpp.o
+    0x08001704   0x08001704   0x00000046   Code   RO          178    .text._ZN13STM32Hardware4readEv  mainpp.o
+    0x0800174a   0x0800174a   0x00000002   PAD
+    0x0800174c   0x0800174c   0x0000000e   Code   RO          176    .text._ZN13STM32Hardware4timeEv  mainpp.o
+    0x0800175a   0x0800175a   0x00000002   PAD
+    0x0800175c   0x0800175c   0x000000a8   Code   RO          106    .text._ZN13STM32Hardware5flushEv  mainpp.o
+    0x08001804   0x08001804   0x000000a8   Code   RO          140    .text._ZN13STM32Hardware5writeEPhi  mainpp.o
+    0x080018ac   0x080018ac   0x00000018   Code   RO          118    .text._ZN13STM32HardwareC2Ev  mainpp.o
+    0x080018c4   0x080018c4   0x000002a4   Code   RO          130    .text._ZN14rosserial_msgs20RequestParamResponse11deserializeEPh  mainpp.o
+    0x08001b68   0x08001b68   0x00000010   Code   RO          134    .text._ZN14rosserial_msgs20RequestParamResponse6getMD5Ev  mainpp.o
+    0x08001b78   0x08001b78   0x00000010   Code   RO          132    .text._ZN14rosserial_msgs20RequestParamResponse7getTypeEv  mainpp.o
+    0x08001b88   0x08001b88   0x00000036   Code   RO          120    .text._ZN14rosserial_msgs20RequestParamResponseC2Ev  mainpp.o
+    0x08001bbe   0x08001bbe   0x00000002   PAD
+    0x08001bc0   0x08001bc0   0x00000086   Code   RO          150    .text._ZN14rosserial_msgs3Log11deserializeEPh  mainpp.o
+    0x08001c46   0x08001c46   0x00000002   PAD
+    0x08001c48   0x08001c48   0x00000010   Code   RO          154    .text._ZN14rosserial_msgs3Log6getMD5Ev  mainpp.o
+    0x08001c58   0x08001c58   0x00000010   Code   RO          152    .text._ZN14rosserial_msgs3Log7getTypeEv  mainpp.o
+    0x08001c68   0x08001c68   0x00000030   Code   RO          146    .text._ZN14rosserial_msgs3LogC2Ev  mainpp.o
+    0x08001c98   0x08001c98   0x0000019e   Code   RO          206    .text._ZN14rosserial_msgs9TopicInfo11deserializeEPh  mainpp.o
+    0x08001e36   0x08001e36   0x00000002   PAD
+    0x08001e38   0x08001e38   0x00000010   Code   RO          210    .text._ZN14rosserial_msgs9TopicInfo6getMD5Ev  mainpp.o
+    0x08001e48   0x08001e48   0x00000010   Code   RO          208    .text._ZN14rosserial_msgs9TopicInfo7getTypeEv  mainpp.o
+    0x08001e58   0x08001e58   0x00000036   Code   RO          200    .text._ZN14rosserial_msgs9TopicInfoC2Ev  mainpp.o
+    0x08001e8e   0x08001e8e   0x00000002   PAD
+    0x08001e90   0x08001e90   0x00000012   Code   RO          170    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE10getMsgTypeEv  mainpp.o
+    0x08001ea2   0x08001ea2   0x00000002   PAD
+    0x08001ea4   0x08001ea4   0x0000000c   Code   RO          168    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE15getEndpointTypeEv  mainpp.o
+    0x08001eb0   0x08001eb0   0x0000002c   Code   RO          166    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE8callbackEPh  mainpp.o
+    0x08001edc   0x08001edc   0x00000012   Code   RO          172    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvE9getMsgMD5Ev  mainpp.o
+    0x08001eee   0x08001eee   0x00000002   PAD
+    0x08001ef0   0x08001ef0   0x0000003e   Code   RO          108    .text._ZN3ros10SubscriberIN8std_msgs5Int16EvEC2EPKcPFvRKS2_Ei  mainpp.o
+    0x08001f2e   0x08001f2e   0x00000002   PAD
+    0x08001f30   0x08001f30   0x00000148   Code   RO          182    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15negotiateTopicsEv  mainpp.o
+    0x08002078   0x08002078   0x0000003c   Code   RO          180    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE15requestSyncTimeEv  mainpp.o
+    0x080020b4   0x080020b4   0x00000040   Code   RO          144    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE3logEcPKc  mainpp.o
+    0x080020f4   0x080020f4   0x0000007c   Code   RO          212    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE6setNowERKNS_4TimeE  mainpp.o
+    0x08002170   0x08002170   0x000000f8   Code   RO          122    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE7publishEiPKNS_3MsgE  mainpp.o
+    0x08002268   0x08002268   0x0000002a   Code   RO          110    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8initNodeEv  mainpp.o
+    0x08002292   0x08002292   0x00000002   PAD
+    0x08002294   0x08002294   0x00000016   Code   RO          142    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8logerrorEPKc  mainpp.o
+    0x080022aa   0x080022aa   0x00000002   PAD
+    0x080022ac   0x080022ac   0x000003aa   Code   RO          114    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8spinOnceEv  mainpp.o
+    0x08002656   0x08002656   0x00000002   PAD
+    0x08002658   0x08002658   0x00000090   Code   RO          184    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE8syncTimeEPh  mainpp.o
+    0x080026e8   0x080026e8   0x00000012   Code   RO          124    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9connectedEv  mainpp.o
+    0x080026fa   0x080026fa   0x00000002   PAD
+    0x080026fc   0x080026fc   0x00000062   Code   RO          112    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EE9subscribeERNS_11Subscriber_E  mainpp.o
+    0x0800275e   0x0800275e   0x00000002   PAD
+    0x08002760   0x08002760   0x00000116   Code   RO           98    .text._ZN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEC2Ev  mainpp.o
+    0x08002876   0x08002876   0x00000002   PAD
+    0x08002878   0x08002878   0x00000016   Code   RO          164    .text._ZN3ros11Subscriber_C2Ev  mainpp.o
+    0x0800288e   0x0800288e   0x00000002   PAD
+    0x08002890   0x08002890   0x00000016   Code   RO          116    .text._ZN3ros15NodeHandleBase_C2Ev  mainpp.o
+    0x080028a6   0x080028a6   0x00000002   PAD
+    0x080028a8   0x080028a8   0x00000038   Code   RO          237    .text._ZN3ros16normalizeSecNSecERjS0_  ros.o
+    0x080028e0   0x080028e0   0x00000038   Code   RO          138    .text._ZN3ros3Msg8arrToVarIjPhEEvRT_T0_  mainpp.o
+    0x08002918   0x08002918   0x0000002e   Code   RO          136    .text._ZN3ros3Msg8varToArrIPhjEEvT_T0_  mainpp.o
+    0x08002946   0x08002946   0x00000002   PAD
+    0x08002948   0x08002948   0x00000016   Code   RO          126    .text._ZN3ros3MsgC2Ev  mainpp.o
+    0x0800295e   0x0800295e   0x00000002   PAD
+    0x08002960   0x08002960   0x00000010   Code   RO          190    .text._ZN3ros4TimeC2Ev  mainpp.o
+    0x08002970   0x08002970   0x0000000c   Code   RO          202    .text._ZN3ros9Publisher15getEndpointTypeEv  mainpp.o
+    0x0800297c   0x0800297c   0x0000008e   Code   RO          194    .text._ZN8std_msgs4Time11deserializeEPh  mainpp.o
+    0x08002a0a   0x08002a0a   0x00000002   PAD
+    0x08002a0c   0x08002a0c   0x00000010   Code   RO          198    .text._ZN8std_msgs4Time6getMD5Ev  mainpp.o
+    0x08002a1c   0x08002a1c   0x00000010   Code   RO          196    .text._ZN8std_msgs4Time7getTypeEv  mainpp.o
+    0x08002a2c   0x08002a2c   0x0000002a   Code   RO          188    .text._ZN8std_msgs4TimeC2Ev  mainpp.o
+    0x08002a56   0x08002a56   0x00000002   PAD
+    0x08002a58   0x08002a58   0x00000046   Code   RO          158    .text._ZN8std_msgs5Int1611deserializeEPh  mainpp.o
+    0x08002a9e   0x08002a9e   0x00000002   PAD
+    0x08002aa0   0x08002aa0   0x00000010   Code   RO          162    .text._ZN8std_msgs5Int166getMD5Ev  mainpp.o
+    0x08002ab0   0x08002ab0   0x00000010   Code   RO          160    .text._ZN8std_msgs5Int167getTypeEv  mainpp.o
+    0x08002ac0   0x08002ac0   0x00000026   Code   RO          100    .text._ZN8std_msgs5Int16C2Ev  mainpp.o
+    0x08002ae6   0x08002ae6   0x00000002   PAD
+    0x08002ae8   0x08002ae8   0x000001bc   Code   RO          128    .text._ZNK14rosserial_msgs20RequestParamResponse9serializeEPh  mainpp.o
+    0x08002ca4   0x08002ca4   0x0000005c   Code   RO          148    .text._ZNK14rosserial_msgs3Log9serializeEPh  mainpp.o
+    0x08002d00   0x08002d00   0x00000118   Code   RO          204    .text._ZNK14rosserial_msgs9TopicInfo9serializeEPh  mainpp.o
+    0x08002e18   0x08002e18   0x0000006e   Code   RO          192    .text._ZNK8std_msgs4Time9serializeEPh  mainpp.o
+    0x08002e86   0x08002e86   0x00000002   PAD
+    0x08002e88   0x08002e88   0x00000034   Code   RO          156    .text._ZNK8std_msgs5Int169serializeEPh  mainpp.o
+    0x08002ebc   0x08002ebc   0x00000044   Code   RO          483    .text.__NVIC_SetPriority  kernel.o
+    0x08002f00   0x08002f00   0x00000028   Code   RO          644    .text.__cxa_pure_virtual  libcppabi_w.l(cxa_virtual.cpp.o)
+    0x08002f28   0x08002f28   0x00000010   Code   RO            2    .text.__cxx_global_var_init  mainpp.o
+    0x08002f38   0x08002f38   0x00000010   Code   RO            4    .text.__cxx_global_var_init.1  mainpp.o
+    0x08002f48   0x08002f48   0x00000010   Code   RO            6    .text.__cxx_global_var_init.2  mainpp.o
+    0x08002f58   0x08002f58   0x00000010   Code   RO            8    .text.__cxx_global_var_init.3  mainpp.o
+    0x08002f68   0x08002f68   0x00000010   Code   RO           10    .text.__cxx_global_var_init.4  mainpp.o
+    0x08002f78   0x08002f78   0x00000022   Code   RO           30    .text.__cxx_global_var_init.5  mainpp.o
+    0x08002f9a   0x08002f9a   0x00000002   PAD
+    0x08002f9c   0x08002f9c   0x00000022   Code   RO           32    .text.__cxx_global_var_init.6  mainpp.o
+    0x08002fbe   0x08002fbe   0x00000004   Code   RO          754    .text.abort_message  libcppabi_w.l(abort_message.cpp.o)
+    0x08002fc2   0x08002fc2   0x00000002   PAD
+    0x08002fc4   0x08002fc4   0x0000001c   Code   RO          506    .text.get_tick      systick.o
+    0x08002fe0   0x08002fe0   0x0000042c   Code   RO           36    .text.loop          mainpp.o
+    0x0800340c   0x0800340c   0x00000018   Code   RO          226    .text.main          main.o
+    0x08003424   0x08003424   0x0000006e   Code   RO          477    .text.osKernelAddThread  kernel.o
+    0x08003492   0x08003492   0x00000002   PAD
+    0x08003494   0x08003494   0x00000014   Code   RO          479    .text.osKernelInit  kernel.o
+    0x080034a8   0x080034a8   0x00000060   Code   RO          481    .text.osKernelLaunch  kernel.o
+    0x08003508   0x08003508   0x000000cc   Code   RO          475    .text.osKernelStackInit  kernel.o
+    0x080035d4   0x080035d4   0x00000018   Code   RO          326    .text.readEncoder1  dio.o
+    0x080035ec   0x080035ec   0x00000018   Code   RO          328    .text.readEncoder2  dio.o
+    0x08003604   0x08003604   0x000000cc   Code   RO          412    .text.robot_backward  bts7960.o
+    0x080036d0   0x080036d0   0x000000cc   Code   RO          410    .text.robot_forward  bts7960.o
+    0x0800379c   0x0800379c   0x0000002c   Code   RO          418    .text.robot_stop    bts7960.o
+    0x080037c8   0x080037c8   0x000000cc   Code   RO          414    .text.robot_turnleft  bts7960.o
+    0x08003894   0x08003894   0x000000cc   Code   RO          416    .text.robot_turnright  bts7960.o
+    0x08003960   0x08003960   0x0000007c   Code   RO           34    .text.setup         mainpp.o
+    0x080039dc   0x080039dc   0x00000040   Code   RO          467    .text.setupVectorTable  encoder.o
+    0x08003a1c   0x08003a1c   0x00000062   Code   RO          615    x$fpl$d2f           fz_wm.l(d2f.o)
+    0x08003a7e   0x08003a7e   0x00000002   PAD
+    0x08003a80   0x08003a80   0x00000150   Code   RO          617    x$fpl$dadd          fz_wm.l(daddsub_clz.o)
+    0x08003bd0   0x08003bd0   0x00000018   Code   RO          808    x$fpl$dcmpinf       fz_wm.l(dcmpi.o)
+    0x08003be8   0x08003be8   0x000002b0   Code   RO          626    x$fpl$ddiv          fz_wm.l(ddiv.o)
+    0x08003e98   0x08003e98   0x00000078   Code   RO          738    x$fpl$deqf          fz_wm.l(deqf.o)
+    0x08003f10   0x08003f10   0x0000005e   Code   RO          629    x$fpl$dfix          fz_wm.l(dfix.o)
+    0x08003f6e   0x08003f6e   0x0000002e   Code   RO          634    x$fpl$dflt          fz_wm.l(dflt_clz.o)
+    0x08003f9c   0x08003f9c   0x00000026   Code   RO          633    x$fpl$dfltu         fz_wm.l(dflt_clz.o)
+    0x08003fc2   0x08003fc2   0x00000002   PAD
+    0x08003fc4   0x08003fc4   0x00000078   Code   RO          740    x$fpl$dgeqf         fz_wm.l(dgeqf.o)
+    0x0800403c   0x0800403c   0x00000078   Code   RO          742    x$fpl$dleqf         fz_wm.l(dleqf.o)
+    0x080040b4   0x080040b4   0x00000154   Code   RO          639    x$fpl$dmul          fz_wm.l(dmul.o)
+    0x08004208   0x08004208   0x0000009c   Code   RO          744    x$fpl$dnaninf       fz_wm.l(dnaninf.o)
+    0x080042a4   0x080042a4   0x0000000c   Code   RO          746    x$fpl$dretinf       fz_wm.l(dretinf.o)
+    0x080042b0   0x080042b0   0x000001d4   Code   RO          619    x$fpl$dsub          fz_wm.l(daddsub_clz.o)
+    0x08004484   0x08004484   0x00000056   Code   RO          641    x$fpl$f2d           fz_wm.l(f2d.o)
+    0x080044da   0x080044da   0x00000054   Code   RO          623    x$fpl$fcmp          fz_wm.l(dcmp.o)
+    0x0800452e   0x0800452e   0x0000008c   Code   RO          748    x$fpl$fnaninf       fz_wm.l(fnaninf.o)
+    0x080045ba   0x080045ba   0x0000001a   Code   RO          810    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x080045d4   0x080045d4   0x0000000a   Code   RO          750    x$fpl$fretinf       fz_wm.l(fretinf.o)
+    0x080045de   0x080045de   0x00000000   Code   RO          752    x$fpl$usenofp       fz_wm.l(usenofp.o)
+    0x080045de   0x080045de   0x0000001c   Data   RO           89    .rodata._ZN14rosserial_msgsL12REQUESTPARAME  mainpp.o
+    0x080045fa   0x080045fa   0x00000002   PAD
+    0x080045fc   0x080045fc   0x00000018   Data   RO          216    .rodata._ZTVN14rosserial_msgs20RequestParamResponseE  mainpp.o
+    0x08004614   0x08004614   0x00000018   Data   RO          218    .rodata._ZTVN14rosserial_msgs3LogE  mainpp.o
+    0x0800462c   0x0800462c   0x00000018   Data   RO          224    .rodata._ZTVN14rosserial_msgs9TopicInfoE  mainpp.o
+    0x08004644   0x08004644   0x00000018   Data   RO          221    .rodata._ZTVN3ros10SubscriberIN8std_msgs5Int16EvEE  mainpp.o
+    0x0800465c   0x0800465c   0x00000014   Data   RO          214    .rodata._ZTVN3ros11NodeHandle_I13STM32HardwareLi25ELi25ELi512ELi512EEE  mainpp.o
+    0x08004670   0x08004670   0x00000018   Data   RO          222    .rodata._ZTVN3ros11Subscriber_E  mainpp.o
+    0x08004688   0x08004688   0x00000014   Data   RO          215    .rodata._ZTVN3ros15NodeHandleBase_E  mainpp.o
+    0x0800469c   0x0800469c   0x00000018   Data   RO          217    .rodata._ZTVN3ros3MsgE  mainpp.o
+    0x080046b4   0x080046b4   0x00000018   Data   RO          223    .rodata._ZTVN8std_msgs4TimeE  mainpp.o
+    0x080046cc   0x080046cc   0x00000018   Data   RO          219    .rodata._ZTVN8std_msgs5Int16E  mainpp.o
+    0x080046e4   0x080046e4   0x0000014a   Data   RO           87    .rodata.str1.1      mainpp.o
+    0x0800482e   0x0800482e   0x00000054   Data   RO          422    .rodata.str1.1      bts7960.o
+    0x08004882   0x08004882   0x00000002   PAD
+    0x08004884   0x08004884   0x00000020   Data   RO          898    Region$$Table       anon$$obj.o
+    0x080048a4   0x080048a4   0x00000004   Data   RO           90    .init_array         mainpp.o
+    0x080048a8   0x080048a4   0x00000000   Data   RO          610    .init_array         c_w.l(init_aeabi.o)
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080048a0, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x080048a0   0x00000004   Data   RW           47    .data.Direction_left  mainpp.o
-    0x20000004   0x080048a4   0x00000004   Data   RW           48    .data.Direction_right  mainpp.o
-    0x20000008   0x080048a8   0x00000014   Data   RW          420    .data.controlCar    bts7960.o
-    0x2000001c   0x080048bc   0x00000004   Data   RW          508    .data.tick_freq     systick.o
-
-
-    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x080048c0, Size: 0x00001570, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080048a8, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000020        -       0x00000060   Zero   RW          763    .bss                c_w.l(libspace.o)
-    0x20000080        -       0x00000004   Zero   RW          485    .bss.MILLIS_PRESCALER  kernel.o
-    0x20000084        -       0x000004b0   Zero   RW          482    .bss.TCB_STACK      kernel.o
+    0x20000000   0x080048a8   0x00000004   Data   RW           47    .data.Direction_left  mainpp.o
+    0x20000004   0x080048ac   0x00000004   Data   RW           48    .data.Direction_right  mainpp.o
+    0x20000008   0x080048b0   0x00000014   Data   RW          423    .data.controlCar    bts7960.o
+    0x2000001c   0x080048c4   0x00000004   Data   RW          511    .data.tick_freq     systick.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x080048c8, Size: 0x00001570, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000020        -       0x00000060   Zero   RW          766    .bss                c_w.l(libspace.o)
+    0x20000080        -       0x00000004   Zero   RW          488    .bss.MILLIS_PRESCALER  kernel.o
+    0x20000084        -       0x000004b0   Zero   RW          485    .bss.TCB_STACK      kernel.o
     0x20000534        -       0x00000004   Zero   RW           84    .bss._ZZ14set_pwm_valuesiddE10pwmLeftOut  mainpp.o
     0x20000538        -       0x00000004   Zero   RW           85    .bss._ZZ14set_pwm_valuesiddE11pwmRightOut  mainpp.o
     0x2000053c        -       0x00000004   Zero   RW           81    .bss._ZZ19calc_vel_left_wheelvE13prevLeftCount  mainpp.o
     0x20000540        -       0x00000008   Zero   RW           80    .bss._ZZ19calc_vel_left_wheelvE8prevTime  mainpp.o
     0x20000548        -       0x00000004   Zero   RW           83    .bss._ZZ20calc_vel_right_wheelvE14prevRightCount  mainpp.o
-    0x2000054c   0x080048c0   0x00000004   PAD
+    0x2000054c   0x080048c8   0x00000004   PAD
     0x20000550        -       0x00000008   Zero   RW           82    .bss._ZZ20calc_vel_right_wheelvE8prevTime  mainpp.o
     0x20000558        -       0x00000001   Zero   RW          220    .bss._ZZN13STM32Hardware5flushEvE5mutex  mainpp.o
-    0x20000559   0x080048c0   0x00000003   PAD
+    0x20000559   0x080048c8   0x00000003   PAD
     0x2000055c        -       0x00000004   Zero   RW           50    .bss.currentMillis  mainpp.o
-    0x20000560        -       0x00000004   Zero   RW          484    .bss.currentPt      kernel.o
+    0x20000560        -       0x00000004   Zero   RW          487    .bss.currentPt      kernel.o
     0x20000564        -       0x00000004   Zero   RW           65    .bss.eintegral_l    mainpp.o
     0x20000568        -       0x00000004   Zero   RW           64    .bss.eintegral_r    mainpp.o
-    0x2000056c        -       0x00000004   Zero   RW          509    .bss.g_curr_tick    systick.o
-    0x20000570        -       0x00000004   Zero   RW          510    .bss.g_curr_tick_p  systick.o
+    0x2000056c        -       0x00000004   Zero   RW          512    .bss.g_curr_tick    systick.o
+    0x20000570        -       0x00000004   Zero   RW          513    .bss.g_curr_tick_p  systick.o
     0x20000574        -       0x00000004   Zero   RW           60    .bss.is_recv_left_wheel  mainpp.o
     0x20000578        -       0x00000004   Zero   RW           61    .bss.is_recv_right_wheel  mainpp.o
-    0x2000057c   0x080048c0   0x00000004   PAD
+    0x2000057c   0x080048c8   0x00000004   PAD
     0x20000580        -       0x00000008   Zero   RW           57    .bss.lastCmdVelReceived  mainpp.o
     0x20000588        -       0x00000008   Zero   RW           43    .bss.left_vel_data  mainpp.o
     0x20000590        -       0x0000001c   Zero   RW           86    .bss.left_wheel_query  mainpp.o
@@ -2186,7 +2193,7 @@ Memory Map of the image
     0x20000ef8        -       0x00000004   Zero   RW           68    .bss.pre_robot_dir  mainpp.o
     0x20000efc        -       0x00000004   Zero   RW           63    .bss.prevT          mainpp.o
     0x20000f00        -       0x00000004   Zero   RW           49    .bss.previousMillis  mainpp.o
-    0x20000f04   0x080048c0   0x00000004   PAD
+    0x20000f04   0x080048c8   0x00000004   PAD
     0x20000f08        -       0x00000008   Zero   RW           53    .bss.pwmLeftReq     mainpp.o
     0x20000f10        -       0x00000008   Zero   RW           54    .bss.pwmRightReq    mainpp.o
     0x20000f18        -       0x00000004   Zero   RW           66    .bss.pwmout1        mainpp.o
@@ -2196,14 +2203,14 @@ Memory Map of the image
     0x20000f44        -       0x00000008   Zero   RW           41    .bss.right_wheel_tick_count  mainpp.o
     0x20000f4c        -       0x00000004   Zero   RW           70    .bss.right_wheel_vel  mainpp.o
     0x20000f50        -       0x00000004   Zero   RW           62    .bss.robot_dir      mainpp.o
-    0x20000f54        -       0x00000018   Zero   RW          483    .bss.tcbs           kernel.o
-    0x20000f6c   0x080048c0   0x00000004   PAD
+    0x20000f54        -       0x00000018   Zero   RW          486    .bss.tcbs           kernel.o
+    0x20000f6c   0x080048c8   0x00000004   PAD
     0x20000f70        -       0x00000008   Zero   RW           51    .bss.velLeftWheel   mainpp.o
     0x20000f78        -       0x00000008   Zero   RW           52    .bss.velRightWheel  mainpp.o
     0x20000f80        -       0x00000008   Zero   RW           55    .bss.vel_left       mainpp.o
     0x20000f88        -       0x00000008   Zero   RW           56    .bss.vel_right      mainpp.o
-    0x20000f90        -       0x00000200   Zero   RW          518    HEAP                startup_stm32f411xe.o
-    0x20001190        -       0x00000400   Zero   RW          517    STACK               startup_stm32f411xe.o
+    0x20000f90        -       0x00000200   Zero   RW          521    HEAP                startup_stm32f411xe.o
+    0x20001190        -       0x00000400   Zero   RW          520    STACK               startup_stm32f411xe.o
 
 
 ==============================================================================
@@ -2218,7 +2225,7 @@ Image component sizes
         64          0          0          0          0        605   encoder.o
        498          0          0          0       1232       4577   kernel.o
         64          4          0          0          0        272   kernel_1.o
-       208          0          0          0          0      18239   main.o
+       214          0          0          0          0      18369   main.o
       9750        104        594          8       2597      48186   mainpp.o
         56          0          0          0          0      14464   ros.o
         64         26        408          0       1536        872   startup_stm32f411xe.o
@@ -2227,9 +2234,9 @@ Image component sizes
        268          0          0          0          0       5519   uart2.o
 
     ----------------------------------------------------------------------
-     12490        150       1122         32       5392     101395   Object Totals
+     12498        150       1122         32       5392     101525   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        76          0          4          0         19          0   (incl. Padding)
+        78          0          4          0         19          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2325,15 +2332,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17470        544       1122         32       5488     103559   Grand Totals
-     17470        544       1122         32       5488     103559   ELF Image Totals
-     17470        544       1122         32          0          0   ROM Totals
+     17478        544       1122         32       5488     103689   Grand Totals
+     17478        544       1122         32       5488     103689   ELF Image Totals
+     17478        544       1122         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                18592 (  18.16kB)
+    Total RO  Size (Code + RO Data)                18600 (  18.16kB)
     Total RW  Size (RW Data + ZI Data)              5520 (   5.39kB)
-    Total ROM Size (Code + RO Data + RW Data)      18624 (  18.19kB)
+    Total ROM Size (Code + RO Data + RW Data)      18632 (  18.20kB)
 
 ==============================================================================
 
