@@ -165,7 +165,8 @@ void Encoder_Turnleft(void){
     	    	pos_left--;
     	    }
     	} left_wheel_tick_count.data = pos_left;
- } }
+	} 
+}
 void Encoder_Turnright(void) {
 	
 	while(1) {
@@ -196,24 +197,25 @@ void Encoder_Turnright(void) {
     	    }
     	}
     	right_wheel_tick_count.data = pos_right;
-    } }
+    } 
+}
 
-/////////////////////// Motor Controller Functions ////////////////////////////
+/********************** Motor Controller Functions *********************/
 
-// Calculate the left wheel linear velocity in m/s every time a
-// tick count message is rpublished on the /left_ticks topic.
+/*********************Calculate the left wheel linear velocity in m/s every time a 
+											tick count message is rpublished on the /left_ticks topic *************************/ 
 void calc_vel_left_wheel(){
 
 	// Previous timestamp
 	static double prevTime = 0;
 
-	// Variable gets created and initialized the first time a function is called.
+	/*******************************Variable gets created and initialized the first time a function is called.*************************************************************/ 
 	static int prevLeftCount = 0;
 
-	// Manage rollover and rollunder when we get outside the 16-bit integer range
+	/******************************Manage rollover and rollunder when we get outside the 16-bit integer range**********************************************/ 
 	int numOfTicks = ( 65535 + left_wheel_tick_count.data - prevLeftCount ) % 65535;
 
-	// If we have had a big jump, it means the tick count has rolled over.
+	/***********************If we have had a big jump, it means the tick count has rolled over.************************************************************/ 
 	if ( numOfTicks > 10000 ) {
 		numOfTicks = 0 - ( 65535 - numOfTicks );
 	}
@@ -276,22 +278,22 @@ void calc_right_wheel_query ( const std_msgs::Int16& vel ){
 
 int gain_dir ( int x, int y) {
 	if ( x > 0 && y > 0){
-	  return 1;                                   // ti?n tru?c
+	  return 1;                                   
 	}
 
 	else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0)){
-	  return 2;                                   // quay ph?i
+	  return 2;                                   
 	}
 
 	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0)){
-	  return 3;                                  // quay trái
+	  return 3;                                  
 	}
 
 	else if (x < 0 && y < 0 ){
-	  return 4;                                   // lùi sau
+	  return 4;                                   
 	}
 
-	else{                                         // d?ng yên
+	else{                                        
 	  return 0;
 	}
 }
