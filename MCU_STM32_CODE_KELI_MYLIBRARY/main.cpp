@@ -1,5 +1,5 @@
 /***************************************************************************
- * @file    mainpp.cpp
+ * @file    main.cpp
  * @brief   Main program for the AGV (Autonomous Guided Vehicle) project
  * @details This file serves as the core of the AGV system, providing the primary
  *          interface and functionalities required for autonomous navigation and control.
@@ -18,7 +18,6 @@ void Rcc_init(void);
 int main(void)
 {
 	
-  /* USER CODE BEGIN 1 */
 	/* Configure RCC to 72MHZ */
 	Rcc_init();
 

@@ -2227,14 +2227,14 @@ Image component sizes
         64          4          0          0          0        272   kernel_1.o
        214          0          0          0          0      18369   main.o
       9750        104        594          8       2597      48186   mainpp.o
-        56          0          0          0          0      14464   ros.o
+        56          0          0          0          0      14466   ros.o
         64         26        408          0       1536        872   startup_stm32f411xe.o
         18          0          0          0          0       2678   system_stm32f4xx.o
        102         16          0          4          8       1391   systick.o
        268          0          0          0          0       5519   uart2.o
 
     ----------------------------------------------------------------------
-     12498        150       1122         32       5392     101525   Object Totals
+     12498        150       1122         32       5392     101527   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         78          0          4          0         19          0   (incl. Padding)
 
@@ -2332,8 +2332,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17478        544       1122         32       5488     103689   Grand Totals
-     17478        544       1122         32       5488     103689   ELF Image Totals
+     17478        544       1122         32       5488     103691   Grand Totals
+     17478        544       1122         32       5488     103691   ELF Image Totals
      17478        544       1122         32          0          0   ROM Totals
 
 ==============================================================================

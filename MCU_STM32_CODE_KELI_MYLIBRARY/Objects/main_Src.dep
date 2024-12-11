@@ -55,7 +55,7 @@ I (Kernel.h)(0x67581AF3)
 I (Systick.h)(0x67544F54)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\stdio.h)(0x5E0BC0C8)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED619F4)
-F (.\main.cpp)(0x67591B5B)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
+F (.\main.cpp)(0x67591BC6)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/main.o -MD)
 I (main.h)(0x674FD423)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x637457FA)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)
@@ -83,7 +83,7 @@ I (D:\App\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5ED619F4)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\__nullptr)(0x5E0BC0C8)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\limits)(0x5E0BC0C8)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\__undef_macros)(0x5E0BC0C8)
-F (.\ros.cpp)(0x675593C2)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/ros.o -MD)
+F (.\ros.cpp)(0x67591BC6)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/ros.o -MD)
 I (ros.h)(0x674FD509)
 I (node_handle.h)(0x6751A317)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\libcxx\stdint.h)(0x5E0BC0C8)
