@@ -1,0 +1,7 @@
+../Core/Src/BTS7960.c:23:6:Tim2_Init	4	static
+../Core/Src/BTS7960.c:87:6:robot_forward	16	static
+../Core/Src/BTS7960.c:102:6:robot_backward	16	static
+../Core/Src/BTS7960.c:117:6:robot_turnleft	16	static
+../Core/Src/BTS7960.c:132:6:robot_turnright	16	static
+../Core/Src/BTS7960.c:146:6:robot_stop	16	static
+../Core/Src/BTS7960.c:173:6:ModeMotor	24	static

@@ -1,0 +1,5 @@
+[35m[1mScanning dependencies of target wheel_odom_node[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/wheel_odom_node.dir/src/wheel_odom_v2.cpp.o[0m
+[ 75%] Built target rviz_click_2d
+[100%] [32m[1mLinking CXX executable /home/thanh/catkin_ws/devel/.private/wheel_odom/lib/wheel_odom/wheel_odom_node[0m
+[100%] Built target wheel_odom_node

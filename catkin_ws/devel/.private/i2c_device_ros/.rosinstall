@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/thanh/catkin_ws/devel/.private/i2c_device_ros/setup.sh

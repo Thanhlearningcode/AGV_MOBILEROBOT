@@ -1,0 +1,5 @@
+kinematic
+/home/thanh/catkin_ws/devel/.private/kinematic/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
+/home/thanh/catkin_ws/devel/.private/kinematic/lib/pkgconfig/kinematic.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/kinematic.pc
+/home/thanh/catkin_ws/devel/.private/kinematic/share/kinematic/cmake/kinematicConfig.cmake /home/thanh/catkin_ws/devel/share/kinematic/cmake/kinematicConfig.cmake
+/home/thanh/catkin_ws/devel/.private/kinematic/share/kinematic/cmake/kinematicConfig-version.cmake /home/thanh/catkin_ws/devel/share/kinematic/cmake/kinematicConfig-version.cmake

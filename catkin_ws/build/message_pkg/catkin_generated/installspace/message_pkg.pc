@@ -1,0 +1,8 @@
+prefix=/home/thanh/catkin_ws/install
+
+Name: message_pkg
+Description: Description of message_pkg
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime roscpp rospy
