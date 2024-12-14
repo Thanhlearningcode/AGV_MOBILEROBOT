@@ -1,4 +1,0 @@
-../Core/Src/Encoder.c:13:6:Dio_Init	1
-../Core/Src/Encoder.c:22:6:setupVectorTable	1
-../Core/Src/Encoder.c:39:5:readEncoder1	1
-../Core/Src/Encoder.c:44:5:readEncoder2	1

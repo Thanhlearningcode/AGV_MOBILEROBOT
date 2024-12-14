@@ -1,5 +1,0 @@
-../Core/Src/Systick.c:15:6:Tick_Increment	4	static
-../Core/Src/Systick.c:19:6:Systick_Init	4	static,ignoring_inline_asm
-../Core/Src/Systick.c:35:6:SysTick_Handler	8	static
-../Core/Src/Systick.c:39:10:get_tick	4	static,ignoring_inline_asm
-../Core/Src/Systick.c:45:6:delay	24	static
