@@ -1,0 +1,88 @@
+Added Component: Designator=BT1(SW2)
+Add component (AddParameter): Name = "Value"; Value = "SW chip 2 pin"; VariantName = "[No Variations]"
+Added Component: Designator=C5(CN1)
+Add component (AddParameter): Name = "Value"; Value = "33pF"; VariantName = "[No Variations]"
+Added Component: Designator=HD1(HED8V)
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=P3(HDR2X5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=U1(MODULE_BEAGLEBONEBLACK)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/BEAGLEBONE%20BLACK/Bearings%20Limited/view-part/5296767/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Seeed Development Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "BEAGLEBONE BLACK"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/BEAGLEBONE%20BLACK/Bearings%20Limited/view-part/5296767/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U2(QFP50P1600X1600X160-100N)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "STM32F411VET6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "LQFP-100 STMicroelectronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/STM32F411VET6/STMicroelectronics/view-part/479547/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U3(XCVR_HC-SR04)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "HC-SR04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U4(DPAK127P1490X440-8N)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/BTS7960B/Infineon+Technologies/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Infineon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "BTS7960B"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "TO-263 Infineon"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/BTS7960B/Infineon+Technologies/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U5(ESP32-WROOM-32D)
+Added Pin To Net: NetName=+5 Pin=U3-1
+Added Pin To Net: NetName=+5 Pin=U4-7
+Added Net: Name=+5
+Added Pin To Net: NetName=GND Pin=BT1-1
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=GND Pin=P3-1
+Added Pin To Net: NetName=GND Pin=P3-3
+Added Pin To Net: NetName=GND Pin=U3-4
+Added Pin To Net: NetName=GND Pin=U4-1
+Added Net: Name=GND
+Added Pin To Net: NetName=INT Pin=P3-5
+Added Net: Name=INT
+Added Pin To Net: NetName=MCRL Pin=R4-1
+Added Net: Name=MCRL
+Added Pin To Net: NetName=NetBT1_2 Pin=BT1-2
+Added Pin To Net: NetName=NetBT1_2 Pin=C5-2
+Added Pin To Net: NetName=NetBT1_2 Pin=R3-1
+Added Pin To Net: NetName=NetBT1_2 Pin=R4-2
+Added Net: Name=NetBT1_2
+Added Pin To Net: NetName=RESET Pin=P3-7
+Added Net: Name=RESET
+Added Pin To Net: NetName=SPI-MISO Pin=P3-6
+Added Net: Name=SPI-MISO
+Added Pin To Net: NetName=SPI-MOSI Pin=P3-8
+Added Net: Name=SPI-MOSI
+Added Pin To Net: NetName=SPI-SCLK Pin=P3-4
+Added Net: Name=SPI-SCLK
+Added Pin To Net: NetName=SPI-SCS Pin=P3-2
+Added Net: Name=SPI-SCS
+Added Pin To Net: NetName=VCC-3V3D Pin=P3-10
+Added Net: Name=VCC-3V3D
+Added Pin To Net: NetName=VCC-5V Pin=P3-9
+Added Net: Name=VCC-5V
+Added Pin To Net: NetName=VCC Pin=R3-2
+Added Net: Name=VCC
+Added Class: Name=Sheet3
+Added Room: Name=Sheet3

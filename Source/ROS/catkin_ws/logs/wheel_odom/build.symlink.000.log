@@ -1,0 +1,5 @@
+Symlinking /home/thanh/catkin_ws/devel/lib/pkgconfig/wheel_odom.pc
+Symlinking /home/thanh/catkin_ws/devel/lib/wheel_odom/rviz_click_2d
+Symlinking /home/thanh/catkin_ws/devel/lib/wheel_odom/wheel_odom_node
+Symlinking /home/thanh/catkin_ws/devel/share/wheel_odom/cmake/wheel_odomConfig-version.cmake
+Symlinking /home/thanh/catkin_ws/devel/share/wheel_odom/cmake/wheel_odomConfig.cmake

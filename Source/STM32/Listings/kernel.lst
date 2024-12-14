@@ -1,0 +1,102 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             |.TEXT|,CODE,READONLY,ALIGN=2
+    2 00000000                 THUMB
+    3 00000000                 EXTERN           currentPt
+    4 00000000                 EXPORT           osSchedulerLaunch
+    5 00000000                 EXPORT           SysTick_Handler
+    6 00000000         
+    7 00000000         osSchedulerLaunch
+    8 00000000 480E            LDR              R0, =currentPt ; load value of 
+                                                            pointer to current 
+                                                            TCB to R0
+    9 00000002 6802            LDR              R2, [R0]    ; load value of R0 
+                                                            to R2
+   10 00000004         
+   11 00000004 F8D2 D000       LDR              SP, [R2]    ; load value of R2 
+                                                            to SP
+   12 00000008 E8BD 0FF0       POP              {R4-R11}
+   13 0000000C BC0F            POP              {R0-R3}
+   14 0000000E F85D CB04       POP              {R12}
+   15 00000012 B001            ADD              SP, SP, #4
+   16 00000014 F85D EB04       POP              {LR}
+   17 00000018 B001            ADD              SP, SP, #4
+   18 0000001A         
+   19 0000001A B662            CPSIE            I
+   20 0000001C 4770            BX               LR
+   21 0000001E         
+   22 0000001E         SysTick_Handler
+   23 0000001E B672            CPSID            I
+   24 00000020 E92D 0FF0       PUSH             {R4-R11}
+   25 00000024 4805            LDR              R0, =currentPt
+   26 00000026 6801            LDR              R1, [R0]
+   27 00000028         
+   28 00000028 F8C1 D000       STR              SP, [R1]
+   29 0000002C 6849            LDR              R1, [R1, #4]
+   30 0000002E 6001            STR              R1, [R0]
+   31 00000030         
+   32 00000030 F8D1 D000       LDR              SP, [R1]
+   33 00000034 E8BD 0FF0       POP              {R4-R11}
+   34 00000038 B662            CPSIE            I
+   35 0000003A 4770            BX               LR
+   36 0000003C         
+   37 0000003C                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\kernel_1.d -o.\objects\kernel_1.o -I.\RTE\_Src -ID
+:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -ID:\App\Arm\Packs\Keil\STM3
+2F4xx_DFP\3.0.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISIO
+N_VERSION SETA 531" --predefine="_RTE_ SETA 1" --predefine="STM32F411xE SETA 1"
+ --predefine="_RTE_ SETA 1" --list=.\listings\kernel.lst Kernel.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.TEXT 00000000
+
+Symbol: .TEXT
+   Definitions
+      At line 1 in file Kernel.s
+   Uses
+      None
+Comment: .TEXT unused
+SysTick_Handler 0000001E
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 22 in file Kernel.s
+   Uses
+      At line 5 in file Kernel.s
+Comment: SysTick_Handler used once
+osSchedulerLaunch 00000000
+
+Symbol: osSchedulerLaunch
+   Definitions
+      At line 7 in file Kernel.s
+   Uses
+      At line 4 in file Kernel.s
+Comment: osSchedulerLaunch used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+currentPt 00000000
+
+Symbol: currentPt
+   Definitions
+      At line 3 in file Kernel.s
+   Uses
+      At line 8 in file Kernel.s
+      At line 25 in file Kernel.s
+
+1 symbol
+340 symbols in table

@@ -1,0 +1,8 @@
+prefix=/home/thanh/catkin_ws/install
+
+Name: kinematic
+Description: Description of kinematic
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

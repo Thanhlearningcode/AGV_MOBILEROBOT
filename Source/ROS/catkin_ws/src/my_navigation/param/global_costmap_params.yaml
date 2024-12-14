@@ -1,0 +1,25 @@
+# global_costmap:
+#   global_frame: map
+#   robot_base_frame: base_link
+#   update_frequency: 5.0
+#   publish_frequency: 5.0
+#   static_map: true
+ 
+#   transform_tolerance: 0.7
+  
+
+global_costmap:
+  global_frame: map               # hệ tọa độ mà cost map sẽ chạy trên
+  robot_base_frame: base_link     # hẹ tọa độ mà cost map sẽ tham chiếu
+  update_frequency: 5             # Tần số cost map sẽ chạy loop
+  publish_frequency: 5            # 
+  static_map: true                # Tắt nếu ko sử dụng map đã tồn tại hoặc map server
+ 
+  transform_tolerance: 1.0
+
+  plugins:
+    - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
+    - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
+

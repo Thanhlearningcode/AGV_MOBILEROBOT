@@ -1,0 +1,27 @@
+# local_costmap:
+#   global_frame: odom
+#   robot_base_frame: base_link
+#   update_frequency: 10.0
+#   publish_frequency: 10.0
+#   static_map: false
+#   rolling_window: true
+#   width: 6
+#   height: 6
+#   resolution: 0.1
+#   transform_tolerance: 0.7 # 0,25 giây độ trễ, nếu lớn hơn mức này, trình lập kế hoạch sẽ dừng
+  
+local_costmap:
+  global_frame: map                # giống global
+  robot_base_frame: base_link      # giống global
+  update_frequency: 10             # giống global  20
+  publish_frequency: 10            # cost map hiển thị với tần số này 20
+  static_map: true                 # false
+  rolling_window: true             # = true: costmap sẽ duy trì ở trung tâm robot
+  width: 3.0                       # kích thước của costmap(m/cell)
+  height: 3.0
+  resolution: 0.1
+  transform_tolerance: 1.0   
+  
+  plugins:
+   - {name: static_layer,        type: "costmap_2d::StaticLayer"}
+   - {name: obstacle_layer,      type: "costmap_2d::ObstacleLayer"}

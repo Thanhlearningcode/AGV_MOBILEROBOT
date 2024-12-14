@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target i2c_device_ros[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/i2c_device_ros.dir/src/i2c_device.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/thanh/catkin_ws/devel/.private/i2c_device_ros/lib/libi2c_device_ros.so[0m
+[100%] Built target i2c_device_ros

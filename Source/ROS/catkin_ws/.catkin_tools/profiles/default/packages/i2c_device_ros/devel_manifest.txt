@@ -1,0 +1,6 @@
+i2c_device_ros-master
+/home/thanh/catkin_ws/devel/.private/i2c_device_ros/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
+/home/thanh/catkin_ws/devel/.private/i2c_device_ros/lib/libi2c_device_ros.so /home/thanh/catkin_ws/devel/lib/libi2c_device_ros.so
+/home/thanh/catkin_ws/devel/.private/i2c_device_ros/lib/pkgconfig/i2c_device_ros.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/i2c_device_ros.pc
+/home/thanh/catkin_ws/devel/.private/i2c_device_ros/share/i2c_device_ros/cmake/i2c_device_rosConfig.cmake /home/thanh/catkin_ws/devel/share/i2c_device_ros/cmake/i2c_device_rosConfig.cmake
+/home/thanh/catkin_ws/devel/.private/i2c_device_ros/share/i2c_device_ros/cmake/i2c_device_rosConfig-version.cmake /home/thanh/catkin_ws/devel/share/i2c_device_ros/cmake/i2c_device_rosConfig-version.cmake

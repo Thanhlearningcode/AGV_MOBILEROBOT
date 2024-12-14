@@ -1,0 +1,89 @@
+Author: Nguyen Van Thanh
+Explain ROS library
+Dated: 12/10/2024
+
+Thư viện và khởi tạo
+Thư viện ROS:
+ros/ros.h: Cung cấp các chức năng cơ bản của ROS.
+geometry_msgs/Twist.h: Định nghĩa loại message Twist, được dùng để gửi lệnh vận tốc.
+Thư viện tiêu chuẩn:
+stdio.h, unistd.h: Xử lý I/O cơ bản.
+termios.h: Điều chỉnh cài đặt của terminal để nhận đầu vào từ bàn phím mà không cần nhấn Enter.
+Cấu trúc bản đồ (std::map):
+moveBindings: Bản đồ ánh xạ các phím bấm đến lệnh di chuyển (tuyến tính và góc).
+speedBindings: Bản đồ ánh xạ các phím bấm để điều chỉnh tốc độ.
+Biến toàn cục
+Biến tốc độ:
+float speed(0.2): Tốc độ tuyến tính mặc định (m/s).
+float turn(0.15): Tốc độ góc mặc định (rad/s).
+Biến hướng:
+float x, y, z, th: Đại diện cho các hướng chuyển động. Ban đầu đặt là 0 (không di chuyển).
+Phím đầu vào:
+char key(' '): Lưu phím được nhấn cuối cùng.
+Xử lý đầu vào từ bàn phím
+Hàm getch():
+Chức năng: Đọc một phím từ bàn phím mà không cần nhấn Enter.
+Điều chỉnh chế độ terminal để:
+Tắt chế độ echo (không hiển thị phím nhập trên màn hình).
+Tắt chế độ canonical (cho phép xử lý từng ký tự ngay khi nhập).
+Hàm chính
+Khởi tạo:
+Node ROS:
+ros::init(argc, argv, "teleop_twist_keyboard"): Khởi tạo một node ROS với tên teleop_twist_keyboard.
+ros::NodeHandle nh: Tạo handle để giao tiếp với hệ thống ROS.
+Publisher:
+ros::Publisher pub: Tạo publisher gửi message cmd_vel, mà robot sẽ nhận để thực thi lệnh vận tốc.
+Message:
+geometry_msgs::Twist twist: Message chứa thông tin vận tốc.
+geometry_msgs::Twist twist0: Message dừng robot (mọi giá trị vận tốc đặt về 0).
+Vòng lặp chính
+Vòng lặp đọc phím bấm, xử lý lệnh và gửi message tương ứng:
+
+Đọc phím:
+key = getch(): Lấy một ký tự từ bàn phím.
+Lệnh di chuyển:
+Nếu key nằm trong moveBindings:
+Cập nhật giá trị x, y, z, th tương ứng với lệnh di chuyển:
+x: Tiến/lùi.
+y: Sang ngang (không dùng trong code này).
+z: Di chuyển theo chiều dọc (ít dùng).
+th: Quay tại chỗ (xoay góc).
+In thông tin tốc độ hiện tại và phím vừa nhấn.
+Điều chỉnh tốc độ:
+Nếu key nằm trong speedBindings:
+Điều chỉnh tốc độ tuyến tính và góc theo hệ số tăng/giảm.
+In thông tin tốc độ mới và phím vừa nhấn.
+Dừng robot:
+Nếu phím không hợp lệ hoặc không có trong hai bản đồ:
+Đặt x, y, z, th về 0.
+Nếu nhấn Ctrl+C (\x03):
+Xuất message dừng (twist0) và thoát khỏi vòng lặp.
+Cập nhật message Twist:
+Gán tốc độ tuyến tính:
+twist.linear.x = x * speed.
+twist.linear.y = y * speed.
+twist.linear.z = z * speed.
+Gán tốc độ góc:
+twist.angular.z = th * turn.
+Gửi message:
+pub.publish(twist): Gửi lệnh Twist qua topic cmd_vel.
+ros::spinOnce(): Xử lý callback (nếu có).
+Hoạt động chính của chương trình
+Nhấn các phím điều khiển được định nghĩa trong moveBindings để điều khiển hướng và vận tốc của robot:
+Ví dụ: i để tiến, , để lùi, j để quay trái, l để quay phải.
+Sử dụng các phím trong speedBindings để tăng/giảm tốc độ:
+Ví dụ: q để tăng cả tốc độ tuyến tính và góc, z để giảm.
+Khi muốn dừng robot, nhấn k hoặc Ctrl+C để gửi lệnh dừng.
+Ý nghĩa các bản đồ
+moveBindings:
+Xác định hướng di chuyển theo các phím bấm:
+{1, 0, 0, 0}: Tiến thẳng.
+{-1, 0, 0, 0}: Lùi.
+{0, 0, 0, 1}: Quay trái.
+{0, 0, 0, -1}: Quay phải.
+speedBindings:
+Điều chỉnh tốc độ:
+{1.1, 1.1}: Tăng cả tốc độ tuyến tính và góc.
+{0.9, 0.9}: Giảm cả hai.
+{1.1, 1}: Tăng tuyến tính, giữ nguyên góc.
+=> Code này giúp điều khiển robot qua bàn phím bằng cách xuất các message Twist lên topic cmd_vel
