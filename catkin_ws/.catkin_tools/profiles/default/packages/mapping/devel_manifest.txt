@@ -1,5 +1,0 @@
-mapping
-/home/thanh/catkin_ws/devel/.private/mapping/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
-/home/thanh/catkin_ws/devel/.private/mapping/lib/pkgconfig/mapping.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/mapping.pc
-/home/thanh/catkin_ws/devel/.private/mapping/share/mapping/cmake/mappingConfig.cmake /home/thanh/catkin_ws/devel/share/mapping/cmake/mappingConfig.cmake
-/home/thanh/catkin_ws/devel/.private/mapping/share/mapping/cmake/mappingConfig-version.cmake /home/thanh/catkin_ws/devel/share/mapping/cmake/mappingConfig-version.cmake

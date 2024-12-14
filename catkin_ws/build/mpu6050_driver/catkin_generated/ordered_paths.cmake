@@ -1,1 +1,0 @@
-set(ORDERED_PATHS "/home/thanh/catkin_ws/devel/.private/i2c_device_ros/lib;/opt/ros/noetic/lib")

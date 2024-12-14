@@ -1,5 +1,0 @@
-std_msgs/Int16 pwm_left_motor
-std_msgs/Int16 pwm_right_motor
-std_msgs/Float32 vel_left_motor
-std_msgs/Float32 vel_right_motor
-std_msgs/Int8 dir

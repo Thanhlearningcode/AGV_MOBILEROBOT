@@ -1,2 +1,0 @@
-turtlebot3/turtlebot3
-/home/thanh/catkin_ws/devel/.private/turtlebot3/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock

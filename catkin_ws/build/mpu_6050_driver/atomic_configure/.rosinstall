@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/thanh/catkin_ws/devel/.private/mpu_6050_driver/setup.sh

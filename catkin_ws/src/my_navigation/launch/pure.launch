@@ -1,3 +1,0 @@
-<launch>
-	<node pkg="my_navigation" type="pure_pursuit.py" name="pure_pursuit" output="screen"> </node>
-</launch>

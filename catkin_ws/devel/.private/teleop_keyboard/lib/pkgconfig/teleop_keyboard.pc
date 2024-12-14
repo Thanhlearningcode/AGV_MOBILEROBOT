@@ -1,8 +1,0 @@
-prefix=/home/thanh/catkin_ws/devel/.private/teleop_keyboard
-
-Name: teleop_keyboard
-Description: Description of teleop_keyboard
-Version: 0.0.0
-Cflags: -I/home/thanh/catkin_ws/src/teleop_keyboard/src
-Libs: -L${prefix}/lib 
-Requires: roscpp geometry_msgs

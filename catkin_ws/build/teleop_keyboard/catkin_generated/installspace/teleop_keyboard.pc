@@ -1,8 +1,0 @@
-prefix=/home/thanh/catkin_ws/install
-
-Name: teleop_keyboard
-Description: Description of teleop_keyboard
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp geometry_msgs

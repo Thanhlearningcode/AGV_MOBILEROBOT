@@ -1,6 +1,0 @@
-ros_imu_bno055
-/home/thanh/catkin_ws/devel/.private/ros_imu_bno055/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
-/home/thanh/catkin_ws/devel/.private/ros_imu_bno055/lib/pkgconfig/ros_imu_bno055.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/ros_imu_bno055.pc
-/home/thanh/catkin_ws/devel/.private/ros_imu_bno055/lib/python3/dist-packages/ros_imu_bno055/__init__.py /home/thanh/catkin_ws/devel/lib/python3/dist-packages/ros_imu_bno055/__init__.py
-/home/thanh/catkin_ws/devel/.private/ros_imu_bno055/share/ros_imu_bno055/cmake/ros_imu_bno055Config-version.cmake /home/thanh/catkin_ws/devel/share/ros_imu_bno055/cmake/ros_imu_bno055Config-version.cmake
-/home/thanh/catkin_ws/devel/.private/ros_imu_bno055/share/ros_imu_bno055/cmake/ros_imu_bno055Config.cmake /home/thanh/catkin_ws/devel/share/ros_imu_bno055/cmake/ros_imu_bno055Config.cmake

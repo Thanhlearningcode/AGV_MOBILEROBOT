@@ -1,5 +1,0 @@
-my_navigation
-/home/thanh/catkin_ws/devel/.private/my_navigation/cmake.lock /home/thanh/catkin_ws/devel/./cmake.lock
-/home/thanh/catkin_ws/devel/.private/my_navigation/lib/pkgconfig/my_navigation.pc /home/thanh/catkin_ws/devel/lib/pkgconfig/my_navigation.pc
-/home/thanh/catkin_ws/devel/.private/my_navigation/share/my_navigation/cmake/my_navigationConfig.cmake /home/thanh/catkin_ws/devel/share/my_navigation/cmake/my_navigationConfig.cmake
-/home/thanh/catkin_ws/devel/.private/my_navigation/share/my_navigation/cmake/my_navigationConfig-version.cmake /home/thanh/catkin_ws/devel/share/my_navigation/cmake/my_navigationConfig-version.cmake
