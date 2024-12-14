@@ -1,0 +1,126 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Trang-1" id="fY5KnhQyRW6ZXuRiHLc8">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OOC5cnjirTu0DVEG2wOe-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="173.5" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OOC5cnjirTu0DVEG2wOe-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="OOC5cnjirTu0DVEG2wOe-1" target="OOC5cnjirTu0DVEG2wOe-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="243.5" y="180" as="sourcePoint" />
+            <mxPoint x="233.5" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OOC5cnjirTu0DVEG2wOe-3" value="Khởi động robot, lidar&lt;div&gt;Khởi tạo bản đồ Occupancy Grid trống&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="118.5" y="150" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="OOC5cnjirTu0DVEG2wOe-4" value="Lidar thu thập dữ liệu: Khoảng cách, góc quét" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="108.5" y="260" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OOC5cnjirTu0DVEG2wOe-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OOC5cnjirTu0DVEG2wOe-3" target="OOC5cnjirTu0DVEG2wOe-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="343.5" y="260" as="sourcePoint" />
+            <mxPoint x="393.5" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OOC5cnjirTu0DVEG2wOe-4" target="2C0mKIIGGjtQrD1estLm-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="213.5" y="400" as="sourcePoint" />
+            <mxPoint x="233.5" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-3" value="Xử lý dữ liệu&lt;div&gt;&amp;nbsp;Chuyển đổi dữ liệu lidar từ hệ tọa độ cực sang hệ tọa độ descartes&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="66" y="350" width="335" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-3" target="2C0mKIIGGjtQrD1estLm-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="263.5" y="500" as="sourcePoint" />
+            <mxPoint x="233.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-5" value="&lt;div&gt;Tạo bản đồ ban đầu&lt;/div&gt;Tối ưu vị trí của robot bằng scan matching" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="113.5" y="440" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-6" value="Nhận lệnh di chuyển từ điều khiển" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="103.5" y="530" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-5" target="2C0mKIIGGjtQrD1estLm-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="203.5" y="600" as="sourcePoint" />
+            <mxPoint x="253.5" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-6" target="2C0mKIIGGjtQrD1estLm-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="413.5" y="600" as="sourcePoint" />
+            <mxPoint x="413.5" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-10" value="Cập nhật vị trí robot&lt;div&gt;Cập nhật bản đồ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="540" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-11" value="Lưu bản đồ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="173.5" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="680" as="sourcePoint" />
+            <mxPoint x="230" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="570" />
+              <mxPoint x="660" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-11" target="2C0mKIIGGjtQrD1estLm-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="226.5" y="900" as="sourcePoint" />
+            <mxPoint x="240.5" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-14" value="Stop" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="173.5" y="860" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-15" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="354" y="540" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-16" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="600" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-17" value="Nhận lệnh lưu bản đồ,&amp;nbsp;&lt;div&gt;kết thúc quá trình vẽ&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="137.75" y="650" width="191.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-17" target="2C0mKIIGGjtQrD1estLm-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="238.5" y="770" as="sourcePoint" />
+            <mxPoint x="288.5" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-6" target="2C0mKIIGGjtQrD1estLm-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="667" as="sourcePoint" />
+            <mxPoint x="102.25" y="792.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-20" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="720" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2C0mKIIGGjtQrD1estLm-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="339.2500000000002" y="689.9999999999998" as="sourcePoint" />
+            <mxPoint x="230" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="716" y="690" />
+              <mxPoint x="716" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2C0mKIIGGjtQrD1estLm-22" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="660" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
