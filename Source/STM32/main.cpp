@@ -23,7 +23,7 @@ int main(void)
 {
 	
 	/* Configure RCC to 72MHZ */
-	Rcc_Clock_Init();
+	Rcc_Clock_Init () ;
 /* Programming */
    setup();
   
