@@ -8,9 +8,9 @@
  *  This software is provided for changing clock to 72mhz
  *  \endverbatim
  *************************************************************************************************/
-#include "Rcc.h"
+#include "Rcc_Cfg.h"
 
-void Rcc_Init(void){
+void Rcc_Clock_Init	(void) {
 
     // Step 1: Enable HSE (High Speed External)
     RCC->CR |= RCC_CR_HSEON; // Turn on HSE

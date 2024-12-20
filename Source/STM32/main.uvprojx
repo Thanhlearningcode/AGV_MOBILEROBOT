@@ -398,6 +398,16 @@
               <FileType>8</FileType>
               <FilePath>.\ros.cpp</FilePath>
             </File>
+            <File>
+              <FileName>Rcc_Cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Rcc_Cfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>Rcc_Cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Rcc_Cfg.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -537,16 +547,6 @@
               <FileName>Motor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Motor.h</FilePath>
-            </File>
-            <File>
-              <FileName>Rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>Rcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Rcc.h</FilePath>
             </File>
             <File>
               <FileName>Encoder.c</FileName>
@@ -1100,6 +1100,16 @@
               <FileType>8</FileType>
               <FilePath>.\ros.cpp</FilePath>
             </File>
+            <File>
+              <FileName>Rcc_Cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Rcc_Cfg.c</FilePath>
+            </File>
+            <File>
+              <FileName>Rcc_Cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Rcc_Cfg.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1239,16 +1249,6 @@
               <FileName>Motor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Motor.h</FilePath>
-            </File>
-            <File>
-              <FileName>Rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>Rcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Rcc.h</FilePath>
             </File>
             <File>
               <FileName>Encoder.c</FileName>
