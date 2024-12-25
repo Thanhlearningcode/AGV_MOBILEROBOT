@@ -3606,9 +3606,9 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>.\mainpp.cpp</Name>
-        <ColumnNumber>3</ColumnNumber>
-        <TopLine>73</TopLine>
-        <CurrentLine>135</CurrentLine>
+        <ColumnNumber>81</ColumnNumber>
+        <TopLine>121</TopLine>
+        <CurrentLine>148</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -3723,9 +3723,9 @@
       </Doc>
       <Doc>
         <Name>.\STM32Hardware.h</Name>
-        <ColumnNumber>60</ColumnNumber>
+        <ColumnNumber>18</ColumnNumber>
         <TopLine>48</TopLine>
-        <CurrentLine>19</CurrentLine>
+        <CurrentLine>53</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

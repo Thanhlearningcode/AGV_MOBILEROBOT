@@ -29,30 +29,11 @@ Project File Date:  12/20/2024
 Build target 'Src'
 Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
 Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
-compiling Motor.c...
-ros.cpp(13): warning: In file included from...
-./ros.h(39): warning: In file included from...
-./STM32Hardware.h(53): error: use of undeclared identifier 'mute'; did you mean 'mutex'?
-        if (!mute ) {
-             ^~~~
-             mutex
-./STM32Hardware.h(51): note: 'mutex' declared here
-        static bool mutex = false;
-                    ^
-1 error generated.
-compiling ros.cpp...
-mainpp.cpp(12): warning: In file included from...
-./ros.h(39): warning: In file included from...
-./STM32Hardware.h(53): error: use of undeclared identifier 'mute'; did you mean 'mutex'?
-        if (!mute ) {
-             ^~~~
-             mutex
-./STM32Hardware.h(51): note: 'mutex' declared here
-        static bool mutex = false;
-                    ^
-1 error generated.
 compiling mainpp.cpp...
-".\Objects\main.axf" - 2 Error(s), 0 Warning(s).
+linking...
+Program Size: Code=17382 RO-data=1122 RW-data=32 ZI-data=5488  
+FromELF: creating hex file...
+".\Objects\main.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -83,7 +64,6 @@ Package Vendor: Keil
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Target not created.
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

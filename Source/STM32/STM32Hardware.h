@@ -50,7 +50,7 @@ class STM32Hardware{
     void flush(void) {
         static bool mutex = false;
 
-        if (!mute ) {
+        if (!mutex ) {
             mutex = true;
 
             if (twind != tfind) {
