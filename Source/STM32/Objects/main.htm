@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\main.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\main.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Wed Dec 25 13:45:31 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Wed Dec 25 22:55:05 2024
 <BR><P>
 <H3>Maximum Stack Usage =        304 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -619,10 +619,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[86]"></a>__rt_heap_descriptor</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_heap_descriptor_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;realloc
+<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;realloc
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 </UL>
 
 <P><STRONG><a name="[124]"></a>__use_no_heap</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
@@ -659,8 +659,8 @@ Global Symbols
 <P><STRONG><a name="[88]"></a>malloc</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, h1_alloc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Full
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;realloc
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_get_argv
@@ -761,9 +761,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM_inner
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sig_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_get_argv
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_init_alloc
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__Heap_Broken
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_get_argv
 </UL>
 
 <P><STRONG><a name="[84]"></a>__ARM_get_argv</STRONG> (Thumb, 264 bytes, Stack size 48 bytes, _get_argv.o(.text))

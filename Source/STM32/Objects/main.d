@@ -9,10 +9,13 @@
   D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
   D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h \
   D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
-  mainpp.h D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  mainpp.h D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdio \
+  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstring \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdlib \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
