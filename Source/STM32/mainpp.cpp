@@ -141,8 +141,8 @@
 		while(1) {	
 		int b2 = readEncoder2();
 			Direction_right = ( b2==0 ) ? 1 : 0 ;
-			pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : pos_right++) :
-																					((pos_left  == encoder_minimum) ? encoder_maximum : pos_right--) ;
+		pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : pos_right++) :
+																				((pos_left  == encoder_minimum) ? encoder_maximum : pos_right--) ;
 			} 
 	}
 	/////////////////////// Motor Controller Functions ////////////////////////////
