@@ -156,7 +156,7 @@ void robot_stop1(uint32_t pwm1, uint32_t pwm2) { // Mode 0
  * \param[in] pwm2 PWM value for the right motor.
  */
 void ModeMotor1(void (*controlCar1)(uint32_t, uint32_t), uint32_t pwm1, uint32_t pwm2) {
-    controlCar1(pwm1, pwm2);
+    controlCar1 (pwm1, pwm2);
 }
 
 /**************************************************************************************************

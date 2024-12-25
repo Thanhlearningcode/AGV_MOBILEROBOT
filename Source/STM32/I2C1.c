@@ -174,10 +174,10 @@ volatile int tmp;
     /* Enable Acknowledge */
       I2C1->CR1 |=  CR1_ACK;
 
-    while(n > 0U)
+    while (n > 0U)
     {
     	/*if one byte*/
-    	if(n == 1U)
+    	if (n == 1U)
     	{
     		/* Disable Acknowledge */
     	    I2C1->CR1 &= ~CR1_ACK;
@@ -191,9 +191,7 @@ volatile int tmp;
             /* Read data from DR */
             *data++ = I2C1->DR;
             break;
-    	}
-    	else
-    	{
+    	} else {
        	 /* Wait until RXNE flag is set */
            while ( !( I2C1->SR1 & SR1_RXNE ) ){}
 
@@ -240,7 +238,7 @@ void I2C1_burstWrite ( char saddr, char maddr , int n, char *data ){
     /* Send memory address */
     I2C1->DR = maddr;
 
-    for ( int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
 
      /* Wait until data register empty */
         while ( ! (I2C1->SR1 & ( SR1_TXE )  ) ){}

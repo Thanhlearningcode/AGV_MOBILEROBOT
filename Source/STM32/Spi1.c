@@ -31,7 +31,7 @@ void Spi1_Init(void){
 void Spi1_Transmitrer( uint8_t *data, uint8_t size){
 			 uint8_t i=0;
 			 uint8_t temp;
-		while ( i < size ){
+		while (i < size){
 				/* Wait until Tx is set */
 				while ( ! ( ( SPI1->SR>>1 ) &0x1 ) );
 						SPI1->DR = data[i];

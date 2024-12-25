@@ -31,7 +31,7 @@ void Spi2_Init(void){
 void Spi2_Transmitrer ( uint8_t *data, uint8_t size ){
 			 uint8_t i=0;
 			 uint8_t temp;
-		while ( i < size ){
+		while (i < size){
 				/* Wait until Tx is emty */
 				while( !( ( SPI1->SR>>1 )&0x1 ) );
 						SPI2->DR = data[i];
@@ -44,7 +44,7 @@ void Spi2_Transmitrer ( uint8_t *data, uint8_t size ){
 }	
 void Spi2_ReceiveData(uint8_t *data, uint8_t size){
 	int i=0;
-	while( size ){
+	while (size){
 	/* Wait Rx is emty */
 		while( !  (( SPI2->SR)&0x1) );
 		SPI2->DR =0xFF; // Send dummy 

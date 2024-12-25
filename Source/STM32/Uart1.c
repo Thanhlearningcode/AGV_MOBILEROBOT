@@ -14,7 +14,7 @@ void Uart1_Init ( uint16_t baudrate ){
     USART1->CR1 |= ( 0x3 << 2 ); // Enable RX and TX
     
     // Configure USART1 baud rate based on input parameter for 16 MHz clock
-    switch ( baudrate ) {
+    switch (baudrate) {
         case 9600:
             USART1->BRR = ( 468 << 4 ) | 12; 
 
@@ -38,7 +38,7 @@ void Uart1_Init ( uint16_t baudrate ){
 }
 
 void Uart1_Transmiter ( uint8_t *data, uint16_t size ) {
-    for ( uint16_t i = 0; i < size; i++ ) {
+    for (uint16_t i = 0; i < size; i++) {
      
         while ( !( ( USART2->SR >> 7) & 0x1));
 

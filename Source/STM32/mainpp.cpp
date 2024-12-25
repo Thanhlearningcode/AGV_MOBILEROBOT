@@ -129,28 +129,19 @@ void USART2_IRQHandler(void) {
     // Check if the interrupt was triggered by RXNE (Receive Data Register Not Empty)
     if ( USART2->SR & (1U<<7) ) {
 			nh.getHardware()->reset_rbuf();}
-		if( 1== ( USART2->SR>>5 ) ) {
+		if ( 1== (USART2->SR>>5) ) {
 		  nh.getHardware()->flush();
 		}
 	}
 
 	
 
-void Encoder_Turnleft(void){
-	
-	while(1){
-		
+void Encoder_Turnleft(void){	
+	while(1){	
  int b1 = readEncoder1() ;
-
-    	if ( b1 == 0) {
-    		Direction_left = 1;
-    	}
-    	else if ( b1 > 0 ) {
-    		Direction_left = 0;
-    	}
-
-    	if ( Direction_left == 1 ){
-    		if ( pos_left == encoder_maximum ){
+		Direction_left = (b1 == 0) ? 1: 0 ;
+    	if (Direction_left == 1){
+    		if (pos_left == encoder_maximum){
     			pos_left = encoder_minimum;
     		}
     		else {
@@ -158,29 +149,21 @@ void Encoder_Turnleft(void){
     		}
     	}
     	else {
-    	    if ( pos_left == encoder_minimum ) {
+    	    if (pos_left == encoder_minimum) {
     	    	pos_left = encoder_maximum;
     	    }
     	    else {
     	    	pos_left--;
     	    }
     	} left_wheel_tick_count.data = pos_left;
- } }
-void Encoder_Turnright(void) {
-	
-	while(1) {
-		
+ } 
+}
+void Encoder_Turnright(void) {	
+	while(1) {	
  	int b2 = readEncoder2();
-
-    	if ( b2 == 0) {
-    		Direction_right = 0;
-    	}
-    	else if ( b2 > 0) {
-    		Direction_right = 1;
-    	}
-
-    	if ( Direction_right == 1 ){
-    		if ( pos_right == encoder_maximum ){
+    Direction_right = ( b2==0 ) ? 1 : 0 ;
+    	if (Direction_right == 1){
+    		if (pos_right == encoder_maximum){
     			pos_right = encoder_minimum;
     		}
     		else{
@@ -188,7 +171,7 @@ void Encoder_Turnright(void) {
     		}
     	}
     	else {
-    	    if ( pos_right == encoder_minimum ) {
+    	    if (pos_right == encoder_minimum) {
     	    	pos_right = encoder_maximum;
     	    }
     	    else {
@@ -196,8 +179,8 @@ void Encoder_Turnright(void) {
     	    }
     	}
     	right_wheel_tick_count.data = pos_right;
-    } }
-
+    } 
+}
 /////////////////////// Motor Controller Functions ////////////////////////////
 
 // Calculate the left wheel linear velocity in m/s every time a
@@ -211,11 +194,11 @@ void calc_vel_left_wheel(){
 	static int prevLeftCount = 0;
 
 	// Manage rollover and rollunder when we get outside the 16-bit integer range
-	int numOfTicks = ( 65535 + left_wheel_tick_count.data - prevLeftCount ) % 65535;
+	int numOfTicks = (65535 + left_wheel_tick_count.data - prevLeftCount) % 65535;
 
 	// If we have had a big jump, it means the tick count has rolled over.
 	if ( numOfTicks > 10000 ) {
-		numOfTicks = 0 - ( 65535 - numOfTicks );
+		numOfTicks = 0 - (65535 - numOfTicks);
 	}
 
 	// Calculate wheel velocity in meters per milisecond
@@ -244,10 +227,10 @@ void calc_vel_right_wheel() {
 	static int prevRightCount = 0;
 
 	// Manage rollover and rollunder when we get outside the 16-bit integer range
-	int numOfTicks = ( 65535 + right_wheel_tick_count.data - prevRightCount ) % 65535;
+	int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
 
-	if ( numOfTicks > 10000 ) {
-		numOfTicks = 0 - ( 65535 - numOfTicks );
+	if (numOfTicks > 10000) {
+		numOfTicks = 0 - (65535 - numOfTicks);
 	}
 
 	// Calculate wheel velocity in meters per milisecond
@@ -262,7 +245,7 @@ void calc_vel_right_wheel() {
 
 }
 
-void calc_left_wheel_query ( const std_msgs::Int16& vel ){
+void calc_left_wheel_query (const std_msgs::Int16& vel){
     is_recv_left_wheel = 1;
     vel_left = vel.data;
     lastCmdVelReceived = ( get_tick() / 1000 );
@@ -279,15 +262,15 @@ int gain_dir (int x, int y){
 	  return 1;                                   // ti?n tru?c
 	}
 
-	else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0)){
+	else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0) ){
 	  return 2;                                   // quay ph?i
 	}
 
-	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0)){
+	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0) ){
 	  return 3;                                  // quay trái
 	}
 
-	else if (x < 0 && y < 0 ){
+	else if ( x < 0 && y < 0 ){
 	  return 4;                                   // lùi sau
 	}
 
@@ -296,25 +279,25 @@ int gain_dir (int x, int y){
 	}
 }
 
-void set_pwm_values(int dir, double pwm_left, double pwm_right) {
+void set_pwm_values (int dir, double pwm_left, double pwm_right) {
 
 	// These variables will hold our desired PWM values
 	static int pwmLeftOut = 0;
 	static int pwmRightOut = 0;
 
 	// Calculate the output PWM value by making slow changes to the current value
-	if (abs(pwmLeftReq) > pwmLeftOut) {
+	if (abs (pwmLeftReq) > pwmLeftOut) {
 		pwmLeftOut += PWM_INCREMENT;
 	}
-	else if (abs(pwmLeftReq) < pwmLeftOut) {
+	else if (abs (pwmLeftReq) < pwmLeftOut) {
 		pwmLeftOut -= PWM_INCREMENT;
 	}
 	else{}
 
-	if (abs(pwmRightReq) > pwmRightOut) {
+	if (abs (pwmRightReq) > pwmRightOut) {
 		pwmRightOut += PWM_INCREMENT;
 	}
-	else if (abs(pwmRightReq) < pwmRightOut) {
+	else if (abs (pwmRightReq) < pwmRightOut) {
 		pwmRightOut -= PWM_INCREMENT;
 	}
 	else{}
@@ -366,12 +349,12 @@ void setup(void)
 	Systick_Init();
 	Tim2_Init();
 	osKernelInit();
-		osKernelAddThread ( loop, Encoder_Turnright, Encoder_Turnleft );
-	osKernelLaunch ( QUANTA );
+		osKernelAddThread (loop, Encoder_Turnright, Encoder_Turnleft);
+	osKernelLaunch (QUANTA);
 	  nh.initNode();
   ModeMotor ( STOP, 0, 0 );
-  Dio_Init();
-  setupVectorTable() ;
+  Dio_Init ();
+  setupVectorTable () ;
 
   nh.subscribe ( left_wheel_query );
   nh.subscribe ( right_wheel_query );
@@ -380,7 +363,7 @@ void setup(void)
 
 void loop(void)
 {
-while(1){
+	while (1) {
 	nh.spinOnce();
 
 	// Record the time
@@ -388,7 +371,7 @@ while(1){
 
 	// If the time interval has passed, publish the number of ticks,
 	// and calculate the velocities.
-	if ( currentMillis - previousMillis > interval ) {
+	if ( (currentMillis - previousMillis) > interval ) {
 
 		previousMillis = currentMillis;
 
@@ -403,18 +386,18 @@ while(1){
 
 	}
 
-	if ( is_recv_left_wheel == 1 && is_recv_right_wheel == 1 ) {
+	if ( (is_recv_left_wheel == 1) && (is_recv_right_wheel == 1) ) {
 
 		/* Compute velocity with method 1 */
 		long currT = get_tick();
-		float deltaT = ( (float)( currT-prevT ) )/1000;
+		float deltaT = ( (float)( currT-prevT ) ) /1000 ;
 
 		/* -- ROBOT RUN MANUALLY --
 		 -- set vel target for left motor -- */
-		float vtl = abs ( vel_left );	  // L?y v?n t?c mong mu?n (tuy?t d?i).
+		float vtl = abs (vel_left);	  // L?y v?n t?c mong mu?n (tuy?t d?i).
 		float kpl = 5;	// H? s? khu?ch d?i Proportional (P).
 		float kil = 0;	// H? s? khu?ch d?i Integral (I).
-		float el = vtl - abs ( left_wheel_vel );	 // Sai s? gi?a v?n t?c mong mu?n và th?c t?.
+		float el = vtl - abs (left_wheel_vel);	 // Sai s? gi?a v?n t?c mong mu?n và th?c t?.
 		eintegral_l = eintegral_l + el*deltaT;	// C?ng d?n sai s? theo th?i gian (thành ph?n I).
 
 		float ul = kpl*el + kil*eintegral_l;	// Tính giá tr? di?u khi?n t?ng h?p P và I.
@@ -426,17 +409,17 @@ while(1){
 		}
 
 		// -- set vel target for right motor --
-		float vtr = abs ( vel_right ); 	 // L?y v?n t?c mong mu?n.
+		float vtr = abs (vel_right); 	 // L?y v?n t?c mong mu?n.
 		float kpr = 5;
 		float kir = 0;
-		float er = vtr - abs ( right_wheel_vel );	// Sai s? c?a bánh ph?i.
+		float er = vtr - abs (right_wheel_vel);	// Sai s? c?a bánh ph?i.
 		eintegral_r = eintegral_r + er*deltaT;	// C?ng d?n sai s?.
 
 		float ur = kpr*er + kir*eintegral_r;	// Ði?u khi?n t?ng h?p P và I.
 
-		pwmRightReq = fabs(ur);
+		pwmRightReq = fabs (ur);
 
-		if ( pwmRightReq > PWM_MAX ) {
+		if (pwmRightReq > PWM_MAX) {
 			pwmRightReq = PWM_MAX;	     // Gi?i h?n PWM.
 		}
 
@@ -445,7 +428,7 @@ while(1){
 		robot_dir = gain_dir ( vel_left, vel_right );
 
 		// Case 1: robot stop => reset variables
-		if ( robot_dir == 0 ) {
+		if (robot_dir == 0) {
 			ul = 0;
 			pwmLeftReq = 0;
 			eintegral_l = 0;
@@ -457,7 +440,7 @@ while(1){
 		}
 
 		/* Case 2: robot change dir => stop robot before running */
-		if ( pre_robot_dir != robot_dir ) {
+		if (pre_robot_dir != robot_dir) {
 			pre_robot_dir = robot_dir;
 			ul = 0;
 			pwmLeftReq = 0;
@@ -469,7 +452,7 @@ while(1){
 		}
 
 		/* Stop the car if there are no cmd_vel messages	*/
-		if ( ( get_tick()/1000 ) - lastCmdVelReceived > 1 ) {
+		if (  (( get_tick()/1000 ) - lastCmdVelReceived) > 1 ) {
 			pwmLeftReq = 0;
 			pwmRightReq = 0;
 		}
