@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\main.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\main.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Wed Dec 25 11:06:33 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Wed Dec 25 11:26:49 2024
 <BR><P>
-<H3>Maximum Stack Usage =        312 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        304 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; loop &rArr; set_pwm_values(int, double, double) &rArr; ModeMotor
 <P>
@@ -284,7 +284,7 @@ Global Symbols
 <P><STRONG><a name="[11b]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[7d]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; loop &rArr; set_pwm_values(int, double, double) &rArr; ModeMotor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -859,7 +859,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setup
 </UL>
 
-<P><STRONG><a name="[49]"></a>Encoder_Turnleft</STRONG> (Thumb, 158 bytes, Stack size 24 bytes, mainpp.o(.text.Encoder_Turnleft))
+<P><STRONG><a name="[49]"></a>Encoder_Turnleft</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, mainpp.o(.text.Encoder_Turnleft))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Encoder_Turnleft &rArr; readEncoder1
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readEncoder1
@@ -867,7 +867,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> mainpp.o(.text.setup)
 <LI> encoder.o(.text.setupVectorTable)
 </UL>
-<P><STRONG><a name="[48]"></a>Encoder_Turnright</STRONG> (Thumb, 158 bytes, Stack size 24 bytes, mainpp.o(.text.Encoder_Turnright))
+<P><STRONG><a name="[48]"></a>Encoder_Turnright</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, mainpp.o(.text.Encoder_Turnright))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Encoder_Turnright &rArr; readEncoder2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readEncoder2
@@ -908,8 +908,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setup
 </UL>
 
-<P><STRONG><a name="[a6]"></a>set_pwm_values(int, double, double)</STRONG> (Thumb, 824 bytes, Stack size 152 bytes, mainpp.o(.text._Z14set_pwm_valuesidd))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = set_pwm_values(int, double, double) &rArr; ModeMotor
+<P><STRONG><a name="[a6]"></a>set_pwm_values(int, double, double)</STRONG> (Thumb, 840 bytes, Stack size 144 bytes, mainpp.o(.text._Z14set_pwm_valuesidd))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = set_pwm_values(int, double, double) &rArr; ModeMotor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmple
@@ -1436,7 +1436,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[47]"></a>loop</STRONG> (Thumb, 1068 bytes, Stack size 112 bytes, mainpp.o(.text.loop))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = loop &rArr; set_pwm_values(int, double, double) &rArr; ModeMotor
+<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = loop &rArr; set_pwm_values(int, double, double) &rArr; ModeMotor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
@@ -1456,7 +1456,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> mainpp.o(.text.setup)
 </UL>
 <P><STRONG><a name="[7e]"></a>main</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
 <LI>Call Chain = main &rArr; loop &rArr; set_pwm_values(int, double, double) &rArr; ModeMotor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Rcc_Clock_Init

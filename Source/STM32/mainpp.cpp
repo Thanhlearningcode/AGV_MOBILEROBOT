@@ -133,16 +133,16 @@
 	 int b1 = readEncoder1() ;
 			Direction_left = (b1 == 0) ? 1: 0 ;
 				
-		pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : pos_left++) :
-																			 	((pos_left == encoder_minimum) ? encoder_maximum : pos_left--) ;
+		pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
+																			 	((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 			} 
 	}
 	void Encoder_Turnright(void) {	
 		while(1) {	
 		int b2 = readEncoder2();
 			Direction_right = ( b2==0 ) ? 1 : 0 ;
-		pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : pos_right++) :
-																				((pos_left  == encoder_minimum) ? encoder_maximum : pos_right--) ;
+		pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
+																				((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 			} 
 	}
 	/////////////////////// Motor Controller Functions ////////////////////////////
@@ -250,28 +250,19 @@
 		static int pwmRightOut = 0;
 
 		// Calculate the output PWM value by making slow changes to the current value
-		if (abs (pwmLeftReq) > pwmLeftOut) {
-			pwmLeftOut += PWM_INCREMENT;
-		}
-		else if (abs (pwmLeftReq) < pwmLeftOut) {
-			pwmLeftOut -= PWM_INCREMENT;
-		}
-		else{}
 
-		if (abs (pwmRightReq) > pwmRightOut) {
-			pwmRightOut += PWM_INCREMENT;
-		}
-		else if (abs (pwmRightReq) < pwmRightOut) {
-			pwmRightOut -= PWM_INCREMENT;
-		}
-		else{}
+pwmRightOut = (abs (pwmRightReq) > pwmRightOut) ? (pwmRightOut + PWM_INCREMENT) : 
+              (abs (pwmRightReq) < pwmRightOut) ? (pwmRightOut - PWM_INCREMENT) : pwmRightOut;
+
+pwmLeftOut = (abs (pwmLeftReq) > pwmLeftReq) ? (pwmLeftOut + PWM_INCREMENT) : 
+             (abs (pwmLeftReq) < pwmLeftReq) ? (pwmLeftOut - PWM_INCREMENT) : pwmLeftOut;
 
 		// Conditional operator to limit PWM output at the maximum
 		pwmLeftOut = (pwmLeftOut > PWM_MAX) ? PWM_MAX : pwmLeftOut;
 		pwmRightOut = (pwmRightOut > PWM_MAX) ? PWM_MAX : pwmRightOut;
 
 		// PWM output cannot be less than 0
-		pwmLeftOut = (pwmLeftOut < 0) ? 0 : pwmLeftOut;
+		pwmLeftOut  =  (pwmLeftOut < 0) ? 0 : pwmLeftOut;
 		pwmRightOut = (pwmRightOut < 0) ? 0 : pwmRightOut;
 
 		// convert pwm in 16 bit type
