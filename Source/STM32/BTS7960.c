@@ -14,13 +14,17 @@
 /**************************************************************************************************
  *  GLOBAL FUNCTION DEFINITIONS
  *************************************************************************************************/
+ /**************************************************************************************************
+ *  MACROS
+ **************************************************************************************************/
+#define BTS7960_MAX_PWM 65535
+#define BTS7960_MIN_PWM 0
 /**
- *
  * \brief Initialize TIM2 for multi-channel PWM generation.
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
  *          (PA0, PA1, PA2, PA3).
  */
-void Tim2_Init(void) {
+void BTS7960_PWMInit(void) {
     /* Enable clock for TIM2 */
     RCC->APB1ENR |= ( 1U << 0 );  // Enable RCC clock for TIM2
 
@@ -78,16 +82,22 @@ void Tim2_Init(void) {
     /* Enable TIM2 */
     TIM2->CR1 |= ( 1U << 0 );       // Enable TIM2 counter
 }
-
+/**************************************************************************************************
+ *  STATIC INLINE FUNCTIONS
+ **************************************************************************************************/
+static inline uint32_t BTS7960_ClampPWM(uint32_t pwm) {
+				assert( (pwm <= 66535) && (pwm >= 0));
+	return (pwm > BTS7960_MAX_PWM) ? BTS7960_MAX_PWM :
+			(  (pwm < BTS7960_MIN_PWM) ? BTS7960_MIN_PWM : pwm );
+}
 /**
  * \brief Move the robot forward.
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_forward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
-		if ( pwm1 > 66535 ) pwm1 = 66535;
-		if ( pwm2 > 66535 ) pwm2 = 66535;
-		assert(	( pwm1 <= 66535 ) && ( pwm2 <= 66535 ) );
+void BTS7960_MoveForward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
+		pwm1 = BTS7960_ClampPWM(pwm1);
+    pwm2 = BTS7960_ClampPWM(pwm2);
     TIM2->CCR1 = pwm1;  // Set PWM for left motor
     TIM2->CCR2 = 0;     // Disable left motor reverse
     TIM2->CCR3 = pwm2;  // Set PWM for right motor
@@ -99,10 +109,9 @@ void robot_forward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_backward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
-		if ( pwm1 > 66535 ) pwm1 = 66535;
-		if ( pwm2 > 66535 ) pwm2 = 66535;
-		assert((pwm1 <= 66535) && (pwm2 <= 66535));
+void BTS7960_MoveBackward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
+		pwm1 = BTS7960_ClampPWM(pwm1);
+    pwm2 = BTS7960_ClampPWM(pwm2);
     TIM2->CCR1 = 0;     // Disable left motor forward
     TIM2->CCR2 = pwm1;  // Set PWM for left motor reverse
     TIM2->CCR3 = 0;     // Disable right motor forward
@@ -114,10 +123,9 @@ void robot_backward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_turnleft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
-		if ( pwm1 > 66535 ) pwm1 = 66535;
-		if ( pwm2 > 66535 ) pwm2 = 66535;
-		assert( ( pwm1 <= 66535 ) && ( pwm2 <= 66535 ) );
+void BTS7960_TurnLeft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
+		pwm1 = BTS7960_ClampPWM (pwm1);
+    pwm2 = BTS7960_ClampPWM (pwm2);	
     TIM2->CCR1 = pwm1;  // Set PWM for left motor forward
     TIM2->CCR2 = 0;     // Disable left motor reverse
     TIM2->CCR3 = 0;     // Disable right motor forward
@@ -129,10 +137,9 @@ void robot_turnleft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_turnright ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
-		if ( pwm1 > 66535 ) pwm1 = 66535;
-		if ( pwm2 > 66535 ) pwm2 = 66535;
-		assert( ( pwm1 <= 66535 ) && ( pwm2 <= 66535 ) );
+void BTS7960_TurnRight ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
+		pwm1 = BTS7960_ClampPWM (pwm1);
+    pwm2 = BTS7960_ClampPWM (pwm2);
     TIM2->CCR1 = 0;     // Disable left motor forward
     TIM2->CCR2 = pwm1;  // Set PWM for left motor reverse
     TIM2->CCR3 = pwm2;  // Set PWM for right motor forward
@@ -143,7 +150,7 @@ void robot_turnright ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
  * \brief Stop the robot's movement.
  * \details This function stops the robot by setting motor PWM values to zero.
  */
-void robot_stop ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 0
+void BTS7960_Stop ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 0
     TIM2->CCR1 = 0;  // Stop left motor
     TIM2->CCR2 = 0;  // Stop left motor reverse
     TIM2->CCR3 = 0;  // Stop right motor
@@ -157,12 +164,12 @@ void robot_stop ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 0
  *************************************************************************************************/
 
 /* Array of function pointers to control different movement modes of the robot. */
-void ( *controlCar[] )( uint32_t, uint32_t ) = {
-    robot_stop,       // STOP
-    robot_forward,    // FORWARD
-    robot_backward,   // BACKWARD
-    robot_turnright,   // TURNRIGHT
-	  robot_turnleft,   // TURNLEFT
+void (*BTS7960_ControlFunctions[])(uint32_t, uint32_t) = {
+    BTS7960_Stop,
+    BTS7960_MoveForward,
+    BTS7960_MoveBackward,
+    BTS7960_TurnRight,
+    BTS7960_TurnLeft,
 };
 /**
  * \brief Control robot mode.
@@ -170,6 +177,10 @@ void ( *controlCar[] )( uint32_t, uint32_t ) = {
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void ModeMotor ( RobotControlMode mode, uint32_t pwm1, uint32_t pwm2 ) {
-	 controlCar[mode]( pwm1, pwm2 );
+void BTS7960_SetMode(BTS7960_Mode mode, uint32_t pwm1, uint32_t pwm2) {
+    if (mode >= 0 && mode < sizeof(BTS7960_ControlFunctions) / sizeof(BTS7960_ControlFunctions[0])) {
+        BTS7960_ControlFunctions[mode](pwm1, pwm2);
+  } else {
+        BTS7960_Stop (BTS7960_MIN_PWM, BTS7960_MIN_PWM);
+    }
 }

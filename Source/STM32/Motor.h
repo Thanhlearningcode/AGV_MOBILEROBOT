@@ -35,21 +35,21 @@ typedef enum {
     Backward,    /**< Move the car backward. */
     Left,        /**< Turn the car to the left. */
     Right        /**< Turn the car to the right. */
-} ControlCar1;
+} CarControlMode;
 
 /**
  * \brief Initialize TIM2 for multi-channel PWM generation.
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
  *          (PA0, PA1, PA2, PA3).
  */
-void Tim2_Init1(void);
+void Motor_Init(void);
 /**
  * \brief Move the robot forward.
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  * \details This function makes the robot move forward based on the PWM values.
  */
-void robot_forward1 (uint32_t pwm1, uint32_t pwm2);
+void Robot_MoveForward (uint32_t pwm1, uint32_t pwm2);
 
 /**
  * \brief Move the robot backward.
@@ -57,7 +57,7 @@ void robot_forward1 (uint32_t pwm1, uint32_t pwm2);
  * \param[in] pwm2 PWM value for the right motor.
  * \details This function makes the robot move backward based on the PWM values.
  */
-void robot_backward1 (uint32_t pwm1, uint32_t pwm2);
+void Robot_MoveBackward (uint32_t pwm1, uint32_t pwm2);
 
 /**
  * \brief Turn the robot to the left.
@@ -65,7 +65,7 @@ void robot_backward1 (uint32_t pwm1, uint32_t pwm2);
  * \param[in] pwm2 PWM value for the right motor.
  * \details This function makes the robot turn left by adjusting motor PWM values.
  */
-void robot_turnleft1 (uint32_t pwm1, uint32_t pwm2);
+void Robot_TurnLeft (uint32_t pwm1, uint32_t pwm2);
 
 /**
  * \brief Turn the robot to the right.
@@ -73,13 +73,13 @@ void robot_turnleft1 (uint32_t pwm1, uint32_t pwm2);
  * \param[in] pwm2 PWM value for the right motor.
  * \details This function makes the robot turn right by adjusting motor PWM values.
  */
-void robot_turnright1 (uint32_t pwm1, uint32_t pwm2);
+void Robot_TurnRight (uint32_t pwm1, uint32_t pwm2);
 
 /**
  * \brief Stop the robot's movement.
  * \details This function stops the robot by setting motor PWM values to zero.
  */
-void robot_stop1 (uint32_t pwm1, uint32_t pwm2);
+void Robot_Stop (uint32_t pwm1, uint32_t pwm2);
 
 /**
  * \brief Control robot mode.
@@ -88,6 +88,6 @@ void robot_stop1 (uint32_t pwm1, uint32_t pwm2);
  * \param[in] pwm2 PWM value for the right motor.
  * \details This function allows the selection of the robot's mode of operation by calling the specified control function.
  */
-void ModeMotor1 (void (*controlCar)(uint32_t, uint32_t), uint32_t pwm1, uint32_t pwm2);
+void Robot_SetMotor (void (*controlCar)(uint32_t, uint32_t), uint32_t pwm1, uint32_t pwm2);
 
 #endif /* MOTOR_H_ */

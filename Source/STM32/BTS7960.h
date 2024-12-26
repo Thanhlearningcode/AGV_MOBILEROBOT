@@ -1,14 +1,14 @@
-#ifndef BTS7960_H_
-#define BTS7960_H_
+#ifndef BTS7960_DRIVER_H_
+#define BTS7960_DRIVER_H_
 
 /**************************************************************************************************
- *  DC BTS7960.h
+ *  BTS7960_Driver.h
  *  -------------------------------------------------------------------------------------------------------------------
  *  \verbatim
  *  Author: Nguyen Van Thanh
  *  Date: 2024-11-01
  *  Contact: https://thanhlearningcode.github.io/Myprofile/
- *  This software is provided for controlling driver BTS7960 motor
+ *  Description: Driver for controlling BTS7960 motor driver module.
  *  \endverbatim
  *************************************************************************************************/
 
@@ -17,77 +17,54 @@
  *************************************************************************************************/
 #include "stm32f411xe.h"
 #include <assert.h>
+
 /**************************************************************************************************
- *  GLOBAL FUNCTION PROTOTYPES
+ *  GLOBAL ENUMS AND MACROS
+ *************************************************************************************************/
+typedef enum {
+    BTS7960_STOP = 0U,    /**< Stop the motor. */
+    BTS7960_FORWARD,      /**< Move forward. */
+    BTS7960_BACKWARD,     /**< Move backward. */
+    BTS7960_TURN_LEFT,    /**< Turn left. */
+    BTS7960_TURN_RIGHT    /**< Turn right. */
+} BTS7960_Mode;
+
+/**************************************************************************************************
+ *  FUNCTION PROTOTYPES
  *************************************************************************************************/
 /**
- * \brief Enumeration for controlling the car's movement.
- * \param[in] Stop value for stoping the car.
- * \param[in] Forward value for turn foward the car.
- * \param[in] Backward value for turn backward the car.
- * \param[in] right value for turn right the car.
-  * \param[in] left value for turn left the car.
- * \details This function makes the robot move backward based on the PWM values.
+ * \brief Initialize TIM2 for BTS7960 PWM generation.
  */
-
-typedef enum {
-    STOP = 0U,
-    FORWARD,
-	TURNRIGHT,
-    TURNLEFT,
-    BACKWARD,
-} RobotControlMode;
-/**
- * \brief Initialize TIM2 for multi-channel PWM generation.
- * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
- *          (PA0, PA1, PA2, PA3).
- */
-void Tim2_Init(void);
-/**
- * \brief Move the robot forward.
- * \param[in] pwm1 PWM value for the left motor.
- * \param[in] pwm2 PWM value for the right motor.
- * \details This function makes the robot move forward based on the PWM values.
- */
-void robot_forward ( uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_PWMInit(void);
 
 /**
- * \brief Move the robot backward.
- * \param[in] pwm1 PWM value for the left motor.
- * \param[in] pwm2 PWM value for the right motor.
- * \details This function makes the robot move backward based on the PWM values.
+ * \brief Move forward.
  */
-void robot_backward ( uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_MoveForward(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
- * \brief Turn the robot to the left.
- * \param[in] pwm1 PWM value for the left motor.
- * \param[in] pwm2 PWM value for the right motor.
- * \details This function makes the robot turn left by adjusting motor PWM values.
+ * \brief Move backward.
  */
-void robot_turnleft ( uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_MoveBackward(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
- * \brief Turn the robot to the right.
- * \param[in] pwm1 PWM value for the left motor.
- * \param[in] pwm2 PWM value for the right motor.
- * \details This function makes the robot turn right by adjusting motor PWM values.
+ * \brief Turn left.
  */
-void robot_turnright ( uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_TurnLeft(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
- * \brief Stop the robot's movement.
- * \details This function stops the robot by setting motor PWM values to zero.
+ * \brief Turn right.
  */
-void robot_stop ( uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_TurnRight(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
- * \brief Control robot mode.
- * \param[in] controlCar Pointer to the function controlling the robot's movement mode.
- * \param[in] pwm1 PWM value for the left motor.
- * \param[in] pwm2 PWM value for the right motor.
- * \details This function allows the selection of the robot's mode of operation by calling the specified control function.
+ * \brief Stop the motor.
  */
-void ModeMotor ( RobotControlMode mode, uint32_t pwm1, uint32_t pwm2 );
+void BTS7960_Stop(uint32_t pwmLeft, uint32_t pwmRight);
 
-#endif /* MOTOR_H_ */
+/**
+ * \brief Set motor mode and control movement.
+ */
+void BTS7960_SetMode(BTS7960_Mode mode, uint32_t pwmLeft, uint32_t pwmRight);
+
+#endif /* BTS7960_DRIVER_H_ */

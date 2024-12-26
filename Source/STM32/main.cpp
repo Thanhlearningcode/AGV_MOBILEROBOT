@@ -31,9 +31,8 @@ int main() {
     setup();
 
    
-    while (true) {
-        loop();
+  while (true) {
+    loop();
     }
-
     return 0; 
 }

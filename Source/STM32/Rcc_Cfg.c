@@ -14,7 +14,7 @@ void Rcc_Clock_Init	(void) {
 
     // Step 1: Enable HSE (High Speed External)
     RCC->CR |= RCC_CR_HSEON; // Turn on HSE
-    while (!(RCC->CR & RCC_CR_HSERDY)); // Wait until HSE is ready
+  while (!(RCC->CR & RCC_CR_HSERDY)); // Wait until HSE is ready
 
     // Step 2: Configure PLL
     RCC->PLLCFGR = 0; // Reset PLL Configuration Register
@@ -25,11 +25,11 @@ void Rcc_Clock_Init	(void) {
 
     // Step 3: Enable PLL
     RCC->CR |= RCC_CR_PLLON; // Turn on PLL
-    while (!(RCC->CR & RCC_CR_PLLRDY)); // Wait until PLL is ready
+  while (!(RCC->CR & RCC_CR_PLLRDY)); // Wait until PLL is ready
 
     // Step 4: Select PLL as system clock source
     RCC->CFGR |= RCC_CFGR_SW_PLL; // Set PLL as system clock source
-    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL); // Wait until PLL is used as system clock source
+   while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL); // Wait until PLL is used as system clock source
 
     // Step 5: Configure AHB and APB Prescalers
     RCC->CFGR |= RCC_CFGR_HPRE_DIV1; // Set AHB = SYSCLK / 1 = 72 MHz

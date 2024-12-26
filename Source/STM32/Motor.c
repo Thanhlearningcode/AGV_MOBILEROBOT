@@ -19,7 +19,7 @@
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
  *          (PA0, PA1, PA2, PA3).
  */
-void Tim2_Init1(void){
+void Motor_Init(void){
     /* Enable clock for TIM2 */
     RCC->APB1ENR |= ( 1U << 0 );  // Enable RCC clock for TIM2
 
@@ -83,7 +83,7 @@ void Tim2_Init1(void){
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_forward1(uint32_t pwm1, uint32_t pwm2) { // Mode 1
+void Robot_MoveForward (uint32_t pwm1, uint32_t pwm2) { // Mode 1
 		if (pwm1 > 66535) pwm1 = 66535;
     if (pwm2 > 66535) pwm2 = 66535;
 		assert(	(pwm1 <= 66535) && (pwm2 <= 66535) );
@@ -98,7 +98,7 @@ void robot_forward1(uint32_t pwm1, uint32_t pwm2) { // Mode 1
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_backward1(uint32_t pwm1, uint32_t pwm2) { // Mode 2
+void Robot_MoveBackward (uint32_t pwm1, uint32_t pwm2) { // Mode 2
 		if (pwm1 > 66535) pwm1 = 66535;
     if (pwm2 > 66535) pwm2 = 66535;
 		assert((pwm1 <= 66535) && (pwm2 <= 66535));
@@ -113,7 +113,7 @@ void robot_backward1(uint32_t pwm1, uint32_t pwm2) { // Mode 2
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_turnleft1(uint32_t pwm1, uint32_t pwm2) { // Mode 3
+void Robot_TurnLeft (uint32_t pwm1, uint32_t pwm2) { // Mode 3
 		if (pwm1 > 66535) pwm1 = 66535;
     if (pwm2 > 66535) pwm2 = 66535;
 		assert((pwm1 <= 66535) && (pwm2 <= 66535));
@@ -128,7 +128,7 @@ void robot_turnleft1(uint32_t pwm1, uint32_t pwm2) { // Mode 3
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void robot_turnright1(uint32_t pwm1, uint32_t pwm2) { // Mode 4
+void Robot_TurnRight (uint32_t pwm1, uint32_t pwm2) { // Mode 4
 		if (pwm1 > 66535) pwm1 = 66535;
     if (pwm2 > 66535) pwm2 = 66535;
 		assert((pwm1 <= 66535) && (pwm2 <= 66535));
@@ -142,7 +142,7 @@ void robot_turnright1(uint32_t pwm1, uint32_t pwm2) { // Mode 4
  * \brief Stop the robot's movement.
  * \details This function stops the robot by setting motor PWM values to zero.
  */
-void robot_stop1(uint32_t pwm1, uint32_t pwm2) { // Mode 0
+void Robot_Stop (uint32_t pwm1, uint32_t pwm2) { // Mode 0
     TIM2->CCR1 = 0;  // Stop left motor
     TIM2->CCR2 = 0;  // Stop left motor reverse
     TIM2->CCR3 = 0;  // Stop right motor
@@ -155,8 +155,8 @@ void robot_stop1(uint32_t pwm1, uint32_t pwm2) { // Mode 0
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void ModeMotor1(void (*controlCar1)(uint32_t, uint32_t), uint32_t pwm1, uint32_t pwm2) {
-    controlCar1 (pwm1, pwm2);
+void Robot_SetMotor(void (*Control_Robot)(uint32_t, uint32_t), uint32_t pwm1, uint32_t pwm2) {
+    Control_Robot (pwm1, pwm2);
 }
 
 /**************************************************************************************************
@@ -164,11 +164,11 @@ void ModeMotor1(void (*controlCar1)(uint32_t, uint32_t), uint32_t pwm1, uint32_t
  *************************************************************************************************/
 
 /* Array of function pointers to control different movement modes of the robot. */
-void (*controlCar1[])(uint32_t, uint32_t) = {
-    robot_stop1,       // Mode 0
-    robot_forward1,    // Mode 1
-    robot_backward1,   // Mode 2
-    robot_turnleft1,   // Mode 3
-    robot_turnright1,   // Mode 4
+void (*Control_Robot[])(uint32_t, uint32_t) = {
+    Robot_Stop,       // Mode 0
+    Robot_MoveForward,    // Mode 1
+    Robot_MoveBackward,   // Mode 2
+    Robot_TurnLeft,   // Mode 3
+    Robot_TurnRight,   // Mode 4
 };
 
