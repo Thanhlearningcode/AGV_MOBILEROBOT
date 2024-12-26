@@ -131,8 +131,13 @@ void USART2_IRQHandler(void) {
 	        int b1 = readEncoder1() ;
 			Direction_left = (b1 == 0) ? 1: 0 ;
 			
+
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
 									((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+
+pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
+						    ((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+
 			} 
 	}
 void Encoder_Turnright(void) {	
@@ -140,8 +145,13 @@ void Encoder_Turnright(void) {
 		   int b2 = readEncoder2();
 			Direction_right = ( b2==0 ) ? 1 : 0 ;
 		
+
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
 									((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+
+pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
+						    ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+
 			} 
 	}
 /************************************* Motor Controller Functions ******************************/
