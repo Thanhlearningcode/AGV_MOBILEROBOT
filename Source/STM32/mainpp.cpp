@@ -128,20 +128,20 @@ void USART2_IRQHandler(void) {
 /************************ Encoder ***********************************************/
 	void Encoder_Turnleft(void){	
 		while(1){	
-	    int b1 = readEncoder1() ;
+	        int b1 = readEncoder1() ;
 			Direction_left = (b1 == 0) ? 1: 0 ;
 			
-		pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-																			 	((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
+									((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 			} 
 	}
 void Encoder_Turnright(void) {	
 	  while(1) {	
-		  int b2 = readEncoder2();
+		   int b2 = readEncoder2();
 			Direction_right = ( b2==0 ) ? 1 : 0 ;
 		
-		pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-																				((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
+									((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 			} 
 	}
 /************************************* Motor Controller Functions ******************************/
@@ -160,7 +160,7 @@ static int prevLeftCount = 0;
 int numOfTicks = (65535 + left_wheel_tick_count.data - prevLeftCount) % 65535;
 
 /*If we have had a big jump, it means the tick count has rolled over.*/ 
-		if (numOfTicks > 10000) {
+	if (numOfTicks > 10000) {
 			numOfTicks = 0 - (65535 - numOfTicks);
 		}
 
@@ -191,7 +191,7 @@ static int prevRightCount = 0;
 
 /*Manage rollover and rollunder when we get outside the 16-bit integer range*/ 
 int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
-		if (numOfTicks > 10000) {
+	if (numOfTicks > 10000) {
 			numOfTicks = 0 - (65535 - numOfTicks);
 		}
 		/*Calculate wheel velocity in meters per milisecond*/ 
@@ -333,7 +333,7 @@ void loop(void)
 
 			pwmLeftReq = fabs (ul);	// PWM y�u c?u (tuy?t d?i).
 
-		if ( pwmLeftReq > PWM_MAX ) {
+		if (pwmLeftReq > PWM_MAX) {
 				pwmLeftReq = PWM_MAX;	  // Gi?i h?n gi� tr? PWM t?i da.
 			}
 
