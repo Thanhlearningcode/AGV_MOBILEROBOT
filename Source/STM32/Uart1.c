@@ -32,7 +32,7 @@ void Uart1_Init ( uint16_t baudrate ){
 
     // Set the priority for USART1 interrupt
     NVIC_SetPriority( USART1_IRQn, 2 ); // Set priority level 2
-    NVIC_EnableIRQ( USART1_IRQn ); // Enable USART1 interrupt in NVIC
+    NVIC_EnableIRQ  ( USART1_IRQn ); // Enable USART1 interrupt in NVIC
 
     USART1->CR1 |=  ( 1U << 13 ); // Enable USART1
 }
@@ -54,6 +54,6 @@ uint32_t Uart1_Receiver(){
 	// Wait until the data is ready to be received (RXNE bit set)
 	while( !( ( USART1->SR>>5 )&0x1 ) );
 	
-	return USART1->DR;
+	return (USART1->DR);
 
 }

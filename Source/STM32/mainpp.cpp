@@ -35,7 +35,7 @@ std_msgs::Int16 right_vel_data;
 volatile long pos_left = 0;
 volatile long pos_right = 0;
 
-/* direction of motor */
+/* Direction of motor */
 int Direction_left = 1;
 int Direction_right = 1;
 
@@ -136,7 +136,7 @@ void USART2_IRQHandler(void) {
 			} 
 	}
 void Encoder_Turnright(void) {	
-	while(1) {	
+	  while(1) {	
 		  int b2 = readEncoder2();
 			Direction_right = ( b2==0 ) ? 1 : 0 ;
 		
@@ -216,19 +216,19 @@ void calc_right_wheel_query (const std_msgs::Int16& vel){
 	}
 int gain_dir (int x, int y){
 		if ( x > 0 && y > 0) {
-			return 1;                                   // turn forward
+			return 1;                                   //< Robot_MoveForward 
 		} else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0) ){
-			return 2;                                   // turn right
+			return 2;                                   //< Robot_TurnRight
 		}	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0) ){
-			return 3;                                  // turn left
+			return 3;                                  //< Robot_TurnLeft
 		}	else if ( x < 0 && y < 0 ){
-			return 4;                                   // backward
-		} else{                                         // stop
+			return 4;                                   //< Robot_TurnRight
+		} else{                                       //< Robot_Stop
 			return 0;
 		}
 	}
 
-	void set_pwm_values (int dir, double pwm_left, double pwm_right) {
+	void Set_Values_Pwm (int dir, double pwm_left, double pwm_right) {
 
 		/*These variables will hold our desired PWM values*/ 
 static int pwmLeftOut = 0;
@@ -386,7 +386,7 @@ void loop(void)
 				pwmRightReq = 0;
 			}
 
-			set_pwm_values ( robot_dir, pwmLeftReq, pwmRightReq );
+			Set_Values_Pwm ( robot_dir, pwmLeftReq, pwmRightReq );
 
 			/* update time */
 			prevT = currT;

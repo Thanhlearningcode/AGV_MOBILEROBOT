@@ -33,6 +33,6 @@ void Exti_Init(void){
 /*  Enable EXTI interrupt in NVIC */
  NVIC_SetPriority ( EXTI15_10_IRQn , 2 );
  NVIC_SetPriority ( EXTI9_5_IRQn , 1);
- NVIC_EnableIRQ ( EXTI9_5_IRQn ); // Enable IRQ handler for EXTI lines [9:5]
- NVIC_EnableIRQ ( EXTI15_10_IRQn );
+ NVIC_EnableIRQ   ( EXTI9_5_IRQn ); // Enable IRQ handler for EXTI lines [9:5]
+ NVIC_EnableIRQ   ( EXTI15_10_IRQn );
 }	

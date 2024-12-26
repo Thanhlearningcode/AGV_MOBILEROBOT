@@ -33,10 +33,10 @@ void Uart2_Init(uint16_t baudrate) {
 
     // Enable USART2 interrupt in NVIC
     NVIC_SetPriority(USART2_IRQn, 0); // Set priority level for USART2 interrupt
-    NVIC_EnableIRQ(USART2_IRQn);       // Enable USART2 interrupt in NVIC
+    NVIC_EnableIRQ  (USART2_IRQn);       // Enable USART2 interrupt in NVIC
 }
 
-void Uart2_Transmiter(uint8_t *data, uint16_t size) {
+void Uart2_Transmiter (uint8_t *data, uint16_t size) {
     for (uint16_t i = 0; i < size; i++) {
         while (!((USART2->SR >> 7) & 0x1)); // Wait until TX is ready
         USART2->DR = data[i];                // Transmit data
@@ -46,7 +46,7 @@ void Uart2_Transmiter(uint8_t *data, uint16_t size) {
 
 uint16_t Uart2_Receiver() {
     while( !((USART2->SR >> 5) & 0x1) ); // Wait until data is received
-    return USART2->DR;                    // Return received data
+    return (USART2->DR);                    // Return received data
 }
 
 void DMA_UART_Transmit ( uint8_t* data, uint16_t length ) {

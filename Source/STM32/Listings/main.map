@@ -76,19 +76,19 @@ Section Cross References
     mainpp.o(.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E) refers to mainpp.o(.bss.lastCmdVelReceived) for lastCmdVelReceived
     mainpp.o(.ARM.exidx.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E) refers to mainpp.o(.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E) for [Anonymous Symbol]
     mainpp.o(.ARM.exidx.text._Z8gain_dirii) refers to mainpp.o(.text._Z8gain_dirii) for [Anonymous Symbol]
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss.pwmRightReq) for pwmRightReq
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss._ZZ14set_pwm_valuesiddE11pwmRightOut) for set_pwm_values(int, double, double)::pwmRightOut
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to dflt_clz.o(x$fpl$dflt) for __aeabi_i2d
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to dcmp.o(x$fpl$fcmp) for __aeabi_dcmple
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss.pwmLeftReq) for pwmLeftReq
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss._ZZ14set_pwm_valuesiddE10pwmLeftOut) for set_pwm_values(int, double, double)::pwmLeftOut
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss.pwmout1) for pwmout1
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to mainpp.o(.bss.pwmout2) for pwmout2
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to bts7960.o(.text.BTS7960_MoveForward) for BTS7960_MoveForward
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to bts7960.o(.text.BTS7960_MoveBackward) for BTS7960_MoveBackward
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to bts7960.o(.text.BTS7960_TurnLeft) for BTS7960_TurnLeft
-    mainpp.o(.text._Z14set_pwm_valuesidd) refers to bts7960.o(.text.BTS7960_Stop) for BTS7960_Stop
-    mainpp.o(.ARM.exidx.text._Z14set_pwm_valuesidd) refers to mainpp.o(.text._Z14set_pwm_valuesidd) for [Anonymous Symbol]
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss.pwmRightReq) for pwmRightReq
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss._ZZ14Set_Values_PwmiddE11pwmRightOut) for Set_Values_Pwm(int, double, double)::pwmRightOut
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to dflt_clz.o(x$fpl$dflt) for __aeabi_i2d
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to dcmp.o(x$fpl$fcmp) for __aeabi_dcmple
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss.pwmLeftReq) for pwmLeftReq
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss._ZZ14Set_Values_PwmiddE10pwmLeftOut) for Set_Values_Pwm(int, double, double)::pwmLeftOut
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss.pwmout1) for pwmout1
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.bss.pwmout2) for pwmout2
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to bts7960.o(.text.BTS7960_MoveForward) for BTS7960_MoveForward
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to bts7960.o(.text.BTS7960_MoveBackward) for BTS7960_MoveBackward
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to bts7960.o(.text.BTS7960_TurnLeft) for BTS7960_TurnLeft
+    mainpp.o(.text._Z14Set_Values_Pwmidd) refers to bts7960.o(.text.BTS7960_Stop) for BTS7960_Stop
+    mainpp.o(.ARM.exidx.text._Z14Set_Values_Pwmidd) refers to mainpp.o(.text._Z14Set_Values_Pwmidd) for [Anonymous Symbol]
     mainpp.o(.text.__cxx_global_var_init.5) refers to mainpp.o(.bss.left_wheel_query) for left_wheel_query
     mainpp.o(.text.__cxx_global_var_init.5) refers to mainpp.o(.rodata.str1.1) for .L.str
     mainpp.o(.text.__cxx_global_var_init.5) refers to mainpp.o(.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E) for calc_left_wheel_query(const std_msgs::Int16&)
@@ -144,7 +144,7 @@ Section Cross References
     mainpp.o(.text.loop) refers to dflt_clz.o(x$fpl$dfltu) for __aeabi_ui2d
     mainpp.o(.text.loop) refers to mainpp.o(.bss.lastCmdVelReceived) for lastCmdVelReceived
     mainpp.o(.text.loop) refers to daddsub_clz.o(x$fpl$dsub) for __aeabi_dsub
-    mainpp.o(.text.loop) refers to mainpp.o(.text._Z14set_pwm_valuesidd) for set_pwm_values(int, double, double)
+    mainpp.o(.text.loop) refers to mainpp.o(.text._Z14Set_Values_Pwmidd) for Set_Values_Pwm(int, double, double)
     mainpp.o(.ARM.exidx.text.loop) refers to mainpp.o(.text.loop) for [Anonymous Symbol]
     mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp) refers to mainpp.o(.text.__cxx_global_var_init) for __cxx_global_var_init
     mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp) refers to mainpp.o(.text.__cxx_global_var_init.1) for __cxx_global_var_init.1
@@ -792,7 +792,7 @@ Removing Unused input sections from the image.
     Removing mainpp.o(.ARM.exidx.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text._Z22calc_right_wheel_queryRKN8std_msgs5Int16E), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text._Z8gain_dirii), (8 bytes).
-    Removing mainpp.o(.ARM.exidx.text._Z14set_pwm_valuesidd), (8 bytes).
+    Removing mainpp.o(.ARM.exidx.text._Z14Set_Values_Pwmidd), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text.__cxx_global_var_init.5), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text.__cxx_global_var_init.6), (8 bytes).
     Removing mainpp.o(.ARM.exidx.text.setup), (8 bytes).
@@ -1284,7 +1284,7 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08000fe4   Section        0  systick.o(.text.Tick_Increment)
     _GLOBAL__sub_I_mainpp.cpp                0x08001001   Thumb Code    32  mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp)
     [Anonymous Symbol]                       0x08001000   Section        0  mainpp.o(.text._GLOBAL__sub_I_mainpp.cpp)
-    [Anonymous Symbol]                       0x08001020   Section        0  mainpp.o(.text._Z14set_pwm_valuesidd)
+    [Anonymous Symbol]                       0x08001020   Section        0  mainpp.o(.text._Z14Set_Values_Pwmidd)
     [Anonymous Symbol]                       0x08001358   Section        0  mainpp.o(.text._Z19calc_vel_left_wheelv)
     [Anonymous Symbol]                       0x080014d0   Section        0  mainpp.o(.text._Z20calc_vel_right_wheelv)
     [Anonymous Symbol]                       0x08001648   Section        0  mainpp.o(.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E)
@@ -1440,10 +1440,10 @@ Image Symbol Table
     .L.str.1                                 0x080045df   Data          10  bts7960.o(.rodata.str1.1)
     .init_array                              0x08004610   Section        0  init_aeabi.o(.init_array)
     .bss                                     0x20000010   Section       96  libspace.o(.bss)
-    set_pwm_values(int, double, double)::pwmLeftOut 0x20000524   Data           4  mainpp.o(.bss._ZZ14set_pwm_valuesiddE10pwmLeftOut)
-    [Anonymous Symbol]                       0x20000524   Section        0  mainpp.o(.bss._ZZ14set_pwm_valuesiddE10pwmLeftOut)
-    set_pwm_values(int, double, double)::pwmRightOut 0x20000528   Data           4  mainpp.o(.bss._ZZ14set_pwm_valuesiddE11pwmRightOut)
-    [Anonymous Symbol]                       0x20000528   Section        0  mainpp.o(.bss._ZZ14set_pwm_valuesiddE11pwmRightOut)
+    Set_Values_Pwm(int, double, double)::pwmLeftOut 0x20000524   Data           4  mainpp.o(.bss._ZZ14Set_Values_PwmiddE10pwmLeftOut)
+    [Anonymous Symbol]                       0x20000524   Section        0  mainpp.o(.bss._ZZ14Set_Values_PwmiddE10pwmLeftOut)
+    Set_Values_Pwm(int, double, double)::pwmRightOut 0x20000528   Data           4  mainpp.o(.bss._ZZ14Set_Values_PwmiddE11pwmRightOut)
+    [Anonymous Symbol]                       0x20000528   Section        0  mainpp.o(.bss._ZZ14Set_Values_PwmiddE11pwmRightOut)
     calc_vel_left_wheel()::prevLeftCount     0x2000052c   Data           4  mainpp.o(.bss._ZZ19calc_vel_left_wheelvE13prevLeftCount)
     [Anonymous Symbol]                       0x2000052c   Section        0  mainpp.o(.bss._ZZ19calc_vel_left_wheelvE13prevLeftCount)
     calc_vel_left_wheel()::prevTime          0x20000530   Data           8  mainpp.o(.bss._ZZ19calc_vel_left_wheelvE8prevTime)
@@ -1679,7 +1679,7 @@ Image Symbol Table
     SystemInit                               0x08000fa9   Thumb Code    18  system_stm32f4xx.o(.text.SystemInit)
     Systick_Init                             0x08000fbd   Thumb Code    24  systick.o(.text.Systick_Init)
     Tick_Increment                           0x08000fe5   Thumb Code    26  systick.o(.text.Tick_Increment)
-    set_pwm_values(int, double, double)      0x08001021   Thumb Code   824  mainpp.o(.text._Z14set_pwm_valuesidd)
+    Set_Values_Pwm(int, double, double)      0x08001021   Thumb Code   824  mainpp.o(.text._Z14Set_Values_Pwmidd)
     calc_vel_left_wheel()                    0x08001359   Thumb Code   376  mainpp.o(.text._Z19calc_vel_left_wheelv)
     calc_vel_right_wheel()                   0x080014d1   Thumb Code   376  mainpp.o(.text._Z20calc_vel_right_wheelv)
     calc_left_wheel_query(const std_msgs::Int16&) 0x08001649   Thumb Code    90  mainpp.o(.text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E)
@@ -1991,7 +1991,7 @@ Memory Map of the image
     0x08000fe4   0x08000fe4   0x0000001a   Code   RO          499    .text.Tick_Increment  systick.o
     0x08000ffe   0x08000ffe   0x00000002   PAD
     0x08001000   0x08001000   0x00000020   Code   RO           38    .text._GLOBAL__sub_I_mainpp.cpp  mainpp.o
-    0x08001020   0x08001020   0x00000338   Code   RO           28    .text._Z14set_pwm_valuesidd  mainpp.o
+    0x08001020   0x08001020   0x00000338   Code   RO           28    .text._Z14Set_Values_Pwmidd  mainpp.o
     0x08001358   0x08001358   0x00000178   Code   RO           18    .text._Z19calc_vel_left_wheelv  mainpp.o
     0x080014d0   0x080014d0   0x00000178   Code   RO           20    .text._Z20calc_vel_right_wheelv  mainpp.o
     0x08001648   0x08001648   0x0000005a   Code   RO           22    .text._Z21calc_left_wheel_queryRKN8std_msgs5Int16E  mainpp.o
@@ -2165,8 +2165,8 @@ Memory Map of the image
     0x20000010        -       0x00000060   Zero   RW          765    .bss                c_w.l(libspace.o)
     0x20000070        -       0x00000004   Zero   RW          487    .bss.MILLIS_PRESCALER  kernel.o
     0x20000074        -       0x000004b0   Zero   RW          484    .bss.TCB_STACK      kernel.o
-    0x20000524        -       0x00000004   Zero   RW           84    .bss._ZZ14set_pwm_valuesiddE10pwmLeftOut  mainpp.o
-    0x20000528        -       0x00000004   Zero   RW           85    .bss._ZZ14set_pwm_valuesiddE11pwmRightOut  mainpp.o
+    0x20000524        -       0x00000004   Zero   RW           84    .bss._ZZ14Set_Values_PwmiddE10pwmLeftOut  mainpp.o
+    0x20000528        -       0x00000004   Zero   RW           85    .bss._ZZ14Set_Values_PwmiddE11pwmRightOut  mainpp.o
     0x2000052c        -       0x00000004   Zero   RW           81    .bss._ZZ19calc_vel_left_wheelvE13prevLeftCount  mainpp.o
     0x20000530        -       0x00000008   Zero   RW           80    .bss._ZZ19calc_vel_left_wheelvE8prevTime  mainpp.o
     0x20000538        -       0x00000004   Zero   RW           83    .bss._ZZ20calc_vel_right_wheelvE14prevRightCount  mainpp.o
