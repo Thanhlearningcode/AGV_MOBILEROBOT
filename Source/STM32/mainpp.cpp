@@ -129,29 +129,23 @@ void USART2_IRQHandler(void) {
 	void Encoder_Turnleft(void){	
 		while(1){	
 	        int b1 = readEncoder1() ;
-			Direction_left = (b1 == 0) ? 1: 0 ;
-			
+		    	Direction_left = (b1==0) ? 1: 0 ;
+pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
+																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-									((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
-
-pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-						    ((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
-
+																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 			} 
 	}
 void Encoder_Turnright(void) {	
 	  while(1) {	
-		   int b2 = readEncoder2();
-			Direction_right = ( b2==0 ) ? 1 : 0 ;
-		
+		    int b2 = readEncoder2();
+		  	Direction_right = (b2==0 ) ? 1 : 0 ;
+pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
+																	  ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-									((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
-
-pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-						    ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
-
+																	  ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 			} 
 	}
 /************************************* Motor Controller Functions ******************************/
@@ -171,7 +165,7 @@ int numOfTicks = (65535 + left_wheel_tick_count.data - prevLeftCount) % 65535;
 
 /*If we have had a big jump, it means the tick count has rolled over.*/ 
 	if (numOfTicks > 10000) {
-			numOfTicks = 0 - (65535 - numOfTicks);
+		numOfTicks = 0 - (65535 - numOfTicks);
 		}
 
 		/*Calculate wheel velocity in meters per milisecond*/ 
@@ -202,7 +196,7 @@ static int prevRightCount = 0;
 /*Manage rollover and rollunder when we get outside the 16-bit integer range*/ 
 int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
 	if (numOfTicks > 10000) {
-			numOfTicks = 0 - (65535 - numOfTicks);
+		numOfTicks = 0 - (65535 - numOfTicks);
 		}
 		/*Calculate wheel velocity in meters per milisecond*/ 
 		velRightWheel = numOfTicks /TICKS_PER_METER / ( get_tick() - prevTime );
@@ -225,16 +219,16 @@ void calc_right_wheel_query (const std_msgs::Int16& vel){
 			lastCmdVelReceived = ( get_tick() / 1000 );
 	}
 int gain_dir (int x, int y){
-		if ( x > 0 && y > 0) {
+		       if (   (x > 0) && (y > 0) ) {
 			return 1;                                   //< Robot_MoveForward 
-		} else if ( ( x > 0 && y < 0) || (x > 0 && y == 0) || (x == 0 && y < 0) ){
+		} else if ( ( (x > 0) && (y < 0)) || ( (x > 0)  && (y == 0)) || ( (x == 0) && (y  < 0)) ) {
 			return 2;                                   //< Robot_TurnRight
-		}	else if ( ( x < 0 && y > 0) || (x == 0 && y > 0) || (x < 0 && y == 0) ){
+		}	else if ( ( (x < 0) && (y > 0)) || ( (x == 0) && (y  > 0)) || ( (x  < 0) && (y == 0)) ) {
 			return 3;                                  //< Robot_TurnLeft
-		}	else if ( x < 0 && y < 0 ){
+		}	else if (   (x < 0) && (y < 0) ) {
 			return 4;                                   //< Robot_TurnRight
-		} else{                                       //< Robot_Stop
-			return 0;
+		} else{                                       
+			return 0;																		//< Robot_Stop
 		}
 	}
 
@@ -289,7 +283,7 @@ switch (dir) {
 	/*Set up ROS subscriber to the velocity command*/ 
 
 ros::Subscriber<std_msgs::Int16 > left_wheel_query  ( "left_wheel_query" ,  &calc_left_wheel_query   );
-ros::Subscriber<std_msgs::Int16 > right_wheel_query ( "right_wheel_query", &calc_right_wheel_query );
+ros::Subscriber<std_msgs::Int16 > right_wheel_query ( "right_wheel_query",  &calc_right_wheel_query 	 );
 
 void setup(void)
 	{
@@ -299,7 +293,7 @@ void setup(void)
 		osKernelAddThread (loop, Encoder_Turnright, Encoder_Turnleft);
 		osKernelLaunch    (QUANTA);
 		nh.initNode ();
-		 BTS7960_Stop(0, 0);
+		BTS7960_Stop(0, 0);
 		Dio_Init ();
 		setupVectorTable () ;
 		nh.subscribe      (left_wheel_query);
