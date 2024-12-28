@@ -126,15 +126,15 @@ void USART2_IRQHandler(void) {
 		}
 
 /************************ Encoder ***********************************************/
-	void Encoder_Turnleft(void){	
+void Encoder_Turnleft(void){	
 		while(1){	
 	        int b1 = readEncoder1() ;
 		    	Direction_left = (b1==0) ? 1: 0 ;
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+									((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+									((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 			} 
 	}
 void Encoder_Turnright(void) {	
@@ -142,10 +142,10 @@ void Encoder_Turnright(void) {
 		    int b2 = readEncoder2();
 		  	Direction_right = (b2==0 ) ? 1 : 0 ;
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-																	  ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+									((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-																	  ((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+									((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 			} 
 	}
 /************************************* Motor Controller Functions ******************************/
@@ -207,18 +207,18 @@ int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
 		prevRightCount = right_wheel_tick_count.data;
 		prevTime = get_tick ();
 	}
-void calc_left_wheel_query (const std_msgs::Int16& vel){
+static inline void calc_left_wheel_query (const std_msgs::Int16& vel){
 			is_recv_left_wheel = 1;
 			vel_left = vel.data;
 			lastCmdVelReceived = ( get_tick() / 1000 );
 	}
 
-void calc_right_wheel_query (const std_msgs::Int16& vel){
+static inline void calc_right_wheel_query (const std_msgs::Int16& vel){
 			vel_right = vel.data;
 			is_recv_right_wheel = 1;
 			lastCmdVelReceived = ( get_tick() / 1000 );
 	}
-int gain_dir (int x, int y){
+static inline int gain_dir (int x, int y){
 		       if (   (x > 0) && (y > 0) ) {
 			return 1;                                   //< Robot_MoveForward 
 		} else if ( ( (x > 0) && (y < 0)) || ( (x > 0)  && (y == 0)) || ( (x == 0) && (y  < 0)) ) {
@@ -232,7 +232,7 @@ int gain_dir (int x, int y){
 		}
 	}
 
-	void Set_Values_Pwm (int dir, double pwm_left, double pwm_right) {
+void Set_Values_Pwm (int dir, double pwm_left, double pwm_right) {
 
 		/*These variables will hold our desired PWM values*/ 
 static int pwmLeftOut = 0;
@@ -282,7 +282,7 @@ switch (dir) {
 
 	/*Set up ROS subscriber to the velocity command*/ 
 
-ros::Subscriber<std_msgs::Int16 > left_wheel_query  ( "left_wheel_query" ,  &calc_left_wheel_query   );
+ros::Subscriber<std_msgs::Int16 > left_wheel_query  ( "left_wheel_query" ,  &calc_left_wheel_query     );
 ros::Subscriber<std_msgs::Int16 > right_wheel_query ( "right_wheel_query",  &calc_right_wheel_query 	 );
 
 void setup(void)

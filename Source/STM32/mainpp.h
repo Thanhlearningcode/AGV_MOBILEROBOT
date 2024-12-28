@@ -7,7 +7,6 @@
 
 void setup(void);
 void loop(void);
-
 #ifdef __cplusplus
 }
 #endif

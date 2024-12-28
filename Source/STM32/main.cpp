@@ -14,7 +14,6 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
-
 extern "C" {
     #include "Rcc_Cfg.h"
 }
@@ -29,7 +28,6 @@ int main() {
 
     /*Initialize setup*/
     setup();
-
    
   while (true) {
     loop();
