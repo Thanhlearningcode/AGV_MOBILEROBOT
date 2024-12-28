@@ -17,7 +17,23 @@
  *************************************************************************************************/
 #include "stm32f411xe.h"
 #include <assert.h>
+/**************************************************************************************************
+ *  Config PWM
+ *************************************************************************************************/
+typedef struct {
+    TIM_TypeDef* timer;          /**< Timer: Points to the timer (e.g., TIM1, TIM2). */
+    GPIO_TypeDef* gpioPort;      /**< GPIO Port: Points to the GPIO port (e.g., GPIOA, GPIOB). */
+    uint32_t gpioPin;            /**< GPIO Pin: Specifies the GPIO pin (e.g., 0, 1, 2...). */
+    uint8_t timerChannel;        /**< Timer Channel: The timer channel number (e.g., 1, 2, 3, 4). */
+    uint8_t Psc_t;               /**< Prescaler value for the timer  */
+    uint32_t Arr_t;              /**< Auto-reload value: Determines the PWM period or frequency. */
+} BTS7960_Channel_t;
 
+typedef struct {
+    BTS7960_Channel_t motor1;
+    BTS7960_Channel_t motor2;
+} MotorSystem;
+/**************************************************************************************************
 /**************************************************************************************************
  *  GLOBAL ENUMS AND MACROS
  *************************************************************************************************/
@@ -35,7 +51,7 @@ typedef enum {
 /**
  * \brief Initialize TIM2 for BTS7960 PWM generation.
  */
-void BTS7960_PWMInit(void);
+void BTS7960_PWMInit(BTS7960_Channel_t* motor1, BTS7960_Channel_t* motor2);
 
 /**
  * \brief Move forward.

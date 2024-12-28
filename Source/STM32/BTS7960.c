@@ -24,63 +24,127 @@
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
  *          (PA0, PA1, PA2, PA3).
  */
-void BTS7960_PWMInit(void) {
-    /* Enable clock for TIM2 */
-    RCC->APB1ENR |= ( 1U << 0 );  // Enable RCC clock for TIM2
+void BTS7960_PWMInit(BTS7960_Channel_t* motor1, BTS7960_Channel_t* motor2) {
+      /* Case when motor1 and motor2 use the same timers*/
+    if (motor1->timer == motor2->timer) {
+        // Enable the clock for the timer used by both motors
+        if (motor1->timer == TIM1) {
+            RCC->APB2ENR |= (1U << 0);  // Enable clock for TIM1
+        } else if (motor1->timer == TIM2) {
+            RCC->APB1ENR |= (1U << 0);  // Enable clock for TIM2
+        }
 
-    /* Configure GPIOA (PA0, PA1, PA2, PA3) for Alternate Function (AF) mode */
-    GPIOA->MODER &= ~( 0xF << 0 );  // Clear bits for PA0 and PA1
-    GPIOA->MODER |= ( 0xA << 0  );   // Set PA0 and PA1 to AF mode
+        // Enable the GPIO clock for the motor pins
+        if (motor1->gpioPort == GPIOA || motor2->gpioPort == GPIOA) {
+            RCC->AHB1ENR |= (1U << 0);  // Enable GPIOA clock
+        } else if (motor1->gpioPort == GPIOB || motor2->gpioPort == GPIOB) {
+            RCC->AHB1ENR |= (1U << 1);  // Enable GPIOB clock
+        }
 
-    GPIOA->MODER &= ~( 0x3 << 4 );  // Clear bits for PA2
-    GPIOA->MODER |=  ( 2U  << 4 );    // Set PA2 to AF mode
+        // Configure GPIO for motor1
+        motor1->gpioPort->MODER &= ~(0x3 << (2 * motor1->gpioPin));  // Clear bits for motor1 pin
+        motor1->gpioPort->MODER |= (0x2 << (2 * motor1->gpioPin));    // Set to AF mode for motor1 pin
+        motor1->gpioPort->AFR[motor1->gpioPin / 8] |= (1U << ((motor1->gpioPin % 8) * 4));
 
-    GPIOA->MODER &= ~( 0x3 << 6 );  // Clear bits for PA3
-    GPIOA->MODER |=  ( 2U  << 6 );    // Set PA3 to AF mode
+        // Configure GPIO for motor2
+        motor2->gpioPort->MODER &= ~(0x3 << (2 * motor2->gpioPin));  // Clear bits for motor2 pin
+        motor2->gpioPort->MODER |= (0x2 << (2 * motor2->gpioPin));    // Set to AF mode for motor2 pin
+        motor2->gpioPort->AFR[motor2->gpioPin / 8] |= (1U << ((motor2->gpioPin % 8) * 4));
 
-    /* Set Alternate Function (AF01) for PA0, PA1, PA2, PA3 */
-    GPIOA->AFR[0] |= ( 1U << 0 );   // AF01 mapping for PA0
-    GPIOA->AFR[0] |= ( 1U << 4 ) ;   // AF01 mapping for PA1
-    GPIOA->AFR[0] |= ( 1U << 8 );   // AF01 mapping for PA2
-    GPIOA->AFR[0] |= ( 1U << 12 );  // AF01 mapping for PA3
+        // Configure the timer for both motors (same timer)
+        motor1->timer->CNT = 0;            // Reset counter
+        motor1->timer->ARR = motor1->Arr_t;  // Auto-reload value (max counter)
+        motor1->timer->PSC = motor1->Psc_t;  // No prescaler
+        motor1->timer->CCR1 = 0;           // Set initial duty cycle for motor1
+        motor1->timer->CCR2 = 0;           // Set initial duty cycle for motor2
+        motor1->timer->CR1 |= (1U << 7);   // Enable auto-reload preload
+        motor1->timer->CR1 &= ~(1U << 4);  // Set counter as upcounter
 
-    /* Configure TIM2 */
-    TIM2->CNT  = 0;               // Reset counter
-    TIM2->ARR  = 65535;      	  // Auto-reload value (maximum counter value)
-    TIM2->PSC  = 0;        		  // Set prescaler (no division)
-    TIM2->CCR1 = 0;         	  // Set initial duty cycle for PA0
-    TIM2->CCR2 = 0;               // Set initial duty cycle for PA1
-    TIM2->CCR3 = 0;               // Set initial duty cycle for PA2
-    TIM2->CCR4 = 0;               // Set initial duty cycle for PA3
+        // Configure PWM mode for motor1
+        if (motor1->timerChannel == 1) {
+            motor1->timer->CCMR1 &= ~(3U << 0);  // CC1 channel is output
+            motor1->timer->CCMR1 |= (6U << 4);   // PWM mode 1 for CC1
+					  motor1->timer->CCER |= (1U << 0);    // Enable output for Channel 1 of motor1
+        }
 
-    TIM2->CR1 |= ( 1U << 7  ); 	  // Enable auto-reload preload
-    TIM2->CR1 &= ~( 1U << 4 ); 	  // Set counter as upcounter
+        // Configure PWM mode for motor2
+        if (motor2->timerChannel == 2) {
+            motor2->timer->CCMR1 &= ~(3U << 8);  // CC2 channel is output
+            motor2->timer->CCMR1 |= (6U << 12);  // PWM mode 1 for CC2
+						motor2->timer->CCER |= (1U << 4);    // Enable output for Channel 2 of motor2
+        }
+        // Enable the timer for both motors
+        motor1->timer->CR1 |= (1U << 0);  // Enable Timer counter for both motors
+    } 
+/* Case when motor1 and motor2 use different timers*/
+    else {
+        // Enable clock for motor1's timer
+        if (motor1->timer == TIM1) {
+            RCC->APB2ENR |= (1U << 0);  // Enable clock for TIM1
+        } else if (motor1->timer == TIM2) {
+            RCC->APB1ENR |= (1U << 0);  // Enable clock for TIM2
+        }
 
-    /* Configure channels for PWM output */
-    // Channel 1 (PA0)
-    TIM2->CCMR1 &= ~( 3U << 0 );    // CC1 channel is output
-    TIM2->CCMR1 |= ( 6U << 4 );     // PWM mode 1 for CC1
+        // Enable clock for motor2's timer
+        if (motor2->timer == TIM1) {
+            RCC->APB2ENR |= (1U << 0);  // Enable clock for TIM1
+        } else if (motor2->timer == TIM2) {
+            RCC->APB1ENR |= (1U << 0);  // Enable clock for TIM2
+        }
 
-    // Channel 2 (PA1)
-    TIM2->CCMR1 &= ~( 3U << 8 );    // CC2 channel is output
-    TIM2->CCMR1 |=  ( 6U << 12 );    // PWM mode 1 for CC2
+        // Enable the GPIO clock for the motor pins
+        if (motor1->gpioPort == GPIOA || motor2->gpioPort == GPIOA) {
+            RCC->AHB1ENR |= (1U << 0);  // Enable GPIOA clock
+        } else if (motor1->gpioPort == GPIOB || motor2->gpioPort == GPIOB) {
+            RCC->AHB1ENR |= (1U << 1);  // Enable GPIOB clock
+        }
 
-    // Channel 3 (PA2)
-    TIM2->CCMR2 &= ~( 3U << 0 );    // CC3 channel is output
-    TIM2->CCMR2 |=  ( 6U << 4 );     // PWM mode 1 for CC3
+        // Configure GPIO for motor1
+        motor1->gpioPort->MODER &= ~(0x3 << (2 * motor1->gpioPin));  // Clear bits for motor1 pin
+        motor1->gpioPort->MODER |= (0x2 << (2 * motor1->gpioPin));    // Set to AF mode for motor1 pin
+        motor1->gpioPort->AFR[motor1->gpioPin / 8] |= (1U << ((motor1->gpioPin % 8) * 4));
 
-    // Channel 4 (PA3)
-    TIM2->CCMR2 &= ~( 3U << 8 );    // CC4 channel is output
-    TIM2->CCMR2 |= ( 6U << 12 );    // PWM mode 1 for CC4
+        // Configure GPIO for motor2
+        motor2->gpioPort->MODER &= ~(0x3 << (2 * motor2->gpioPin));  // Clear bits for motor2 pin
+        motor2->gpioPort->MODER |= (0x2 << (2 * motor2->gpioPin));    // Set to AF mode for motor2 pin
+        motor2->gpioPort->AFR[motor2->gpioPin / 8] |= (1U << ((motor2->gpioPin % 8) * 4));
 
-    /* Enable output for all channels */
-    TIM2->CCER |= ( 1U << 0 );      // Enable output for Channel 1
-    TIM2->CCER |= ( 1U << 4 );      // Enable output for Channel 2
-    TIM2->CCER |= ( 1U << 8 );      // Enable output for Channel 3
-    TIM2->CCER |= ( 1U << 12 );     // Enable output for Channel 4
+        // Configure Timer for motor1
+        motor1->timer->CNT = 0;            // Reset counter for motor1
+        motor1->timer->ARR = motor1->Arr_t;  // Auto-reload value (max counter)
+        motor1->timer->PSC = motor1->Psc_t;  // No prescaler
+        motor1->timer->CCR1 = 0;           // Set initial duty cycle for motor1
+        motor1->timer->CCR2 = 0;           // Set initial duty cycle for motor2
+        motor1->timer->CR1 |= (1U << 7);   // Enable auto-reload preload
+        motor1->timer->CR1 &= ~(1U << 4);  // Set counter as upcounter
 
-    /* Enable TIM2 */
-    TIM2->CR1 |= ( 1U << 0 );       // Enable TIM2 counter
+        // Configure PWM mode for motor1
+        if (motor1->timerChannel == 1) {
+            motor1->timer->CCMR1 &= ~(3U << 0);  // CC1 channel is output
+            motor1->timer->CCMR1 |= (6U << 4);   // PWM mode 1 for CC1
+						motor1->timer->CCER |= (1U << 0);    // Enable output for Channel 1 of motor1
+        }
+
+        // Configure Timer for motor2
+        motor2->timer->CNT = 0;            // Reset counter for motor2
+        motor2->timer->ARR = motor1->Arr_t;  // Auto-reload value (max counter)
+        motor2->timer->PSC = motor1->Psc_t;  // No prescaler
+        motor2->timer->CCR1 = 0;           // Set initial duty cycle for motor1
+        motor2->timer->CCR2 = 0;           // Set initial duty cycle for motor2
+        motor2->timer->CR1 |= (1U << 7);   // Enable auto-reload preload
+        motor2->timer->CR1 &= ~(1U << 4);  // Set counter as upcounter
+
+        // Configure PWM mode for motor2
+        if (motor2->timerChannel == 2) {
+            motor2->timer->CCMR1 &= ~(3U << 8);  // CC2 channel is output
+            motor2->timer->CCMR1 |=  (6U << 12);  // PWM mode 1 for CC2
+            motor2->timer->CCER |= (1U << 4);    // Enable output for Channel 2 of motor2
+        }
+
+        // Enable Timer for motor1 and motor2
+        motor1->timer->CR1 |= (1U << 0);  // Enable Timer counter for motor1
+        motor2->timer->CR1 |= (1U << 0);  // Enable Timer counter for motor2
+    }
 }
 /**************************************************************************************************
  *  STATIC INLINE FUNCTIONS
