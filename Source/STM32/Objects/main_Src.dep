@@ -194,7 +194,7 @@ I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F5
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F58EE)
 I (D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F58EE)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x637457FA)
-I (TryCatch.h)(0x6770C279)
+I (TryCatch.h)(0x6770C415)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED619F4)
 I (D:\App\Keil_v5\ARM\ARMCLANG\include\setjmp.h)(0x5ED619F4)
 F (.\Dio.h)(0x675D08D9)()
@@ -325,7 +325,11 @@ F (.\Float64.h)(0x675D08D9)()
 F (.\Int32.h)(0x675D08D9)()
 F (.\Twist.h)(0x675D08D9)()
 F (.\Vector3.h)(0x675D08D9)()
-F (.\TryCatch.h)(0x6770C279)()
+F (.\TryCatch.h)(0x6770C415)()
+F (.\TryCatch.c)(0x6770C415)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/trycatch.o -MD)
+I (TryCatch.h)(0x6770C415)
+I (D:\App\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5ED619F4)
+I (D:\App\Keil_v5\ARM\ARMCLANG\include\setjmp.h)(0x5ED619F4)
 F (RTE\Device\STM32F411VETx\startup_stm32f411xe.s)(0x675D08D9)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto -c-gdwarf-3-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 531" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F411xE SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f411xe.o)
 F (RTE\Device\STM32F411VETx\system_stm32f4xx.c)(0x675D08D9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-3 -O0 -ffunction-sections -w-I./RTE/_Src-ID:/App/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-ID:/App/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F411xE -D_RTE_-o ./objects/system_stm32f4xx.o -MD)
 I (D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x637457FA)

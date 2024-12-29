@@ -708,6 +708,11 @@
               <FileType>5</FileType>
               <FilePath>.\TryCatch.h</FilePath>
             </File>
+            <File>
+              <FileName>TryCatch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TryCatch.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1419,6 +1424,11 @@
               <FileName>TryCatch.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\TryCatch.h</FilePath>
+            </File>
+            <File>
+              <FileName>TryCatch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\TryCatch.c</FilePath>
             </File>
           </Files>
         </Group>
