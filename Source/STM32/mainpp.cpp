@@ -127,7 +127,6 @@ void USART2_IRQHandler(void) {
 
 /************************ Encoder ***********************************************/
 void Encoder_Turnleft(void){	
-		while(1){	
 	        int b1 = readEncoder1() ;
 		    	Direction_left = (b1==0) ? 1: 0 ;
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
@@ -136,9 +135,8 @@ pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_min
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
 																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 			} 
-	}
 void Encoder_Turnright(void) {	
-	  while(1) {	
+
 		    int b2 = readEncoder2();
 		  	Direction_right = (b2==0 ) ? 1 : 0 ;
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
@@ -147,7 +145,6 @@ pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_mi
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
 																		((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 			} 
-	}
 /************************************* Motor Controller Functions ******************************/
 
 /*Calculate the left wheel linear velocity in m/s every time a*/ 
@@ -207,17 +204,26 @@ int numOfTicks = (65535 + right_wheel_tick_count.data - prevRightCount) % 65535;
 		prevRightCount = right_wheel_tick_count.data;
 		prevTime = get_tick ();
 	}
-static inline void calc_left_wheel_query (const std_msgs::Int16& vel){
+void calc_left_wheel_query (const std_msgs::Int16& vel){
 			is_recv_left_wheel = 1;
 			vel_left = vel.data;
 			lastCmdVelReceived = ( get_tick() / 1000 );
 	}
 
-static inline void calc_right_wheel_query (const std_msgs::Int16& vel){
+void calc_right_wheel_query (const std_msgs::Int16& vel){
 			vel_right = vel.data;
 			is_recv_right_wheel = 1;
 			lastCmdVelReceived = ( get_tick() / 1000 );
 	}
+static inline void calc_left_wheel_query_wrapper (void) {
+    std_msgs::Int16 vel;
+    calc_left_wheel_query(vel);  // Call original function
+}
+
+static inline void calc_right_wheel_query_wrapper (void) {
+    std_msgs::Int16 vel;
+    calc_right_wheel_query(vel);  // Call original function
+}
 static inline int gain_dir (int x, int y){
 		       if (   (x > 0) && (y > 0) ) {
 			return 1;                                   //< Robot_MoveForward 
@@ -295,7 +301,7 @@ MotorSystem system = {
 };  
 		BTS7960_PWMInit(&system.motor1, &system.motor2);
 		osKernelInit ();
-		osKernelAddThread (loop, Encoder_Turnright, Encoder_Turnleft);
+		osKernelAddThread (loop, calc_left_wheel_query_wrapper, calc_right_wheel_query_wrapper);
 		osKernelLaunch    (QUANTA);
 		nh.initNode ();
 		BTS7960_Stop(0, 0);

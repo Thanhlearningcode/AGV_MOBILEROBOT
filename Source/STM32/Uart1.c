@@ -31,7 +31,7 @@ void Uart1_Init ( uint16_t baudrate ){
     USART1->CR1 |= ( 1U << 5 ); // Enable RXNE interrupt (Receive Not Empty)
 
     // Set the priority for USART1 interrupt
-    NVIC_SetPriority( USART1_IRQn, 2 ); // Set priority level 2
+    NVIC_SetPriority( USART1_IRQn, 3 ); // Set priority level 3
     NVIC_EnableIRQ  ( USART1_IRQn ); // Enable USART1 interrupt in NVIC
 
     USART1->CR1 |=  ( 1U << 13 ); // Enable USART1
