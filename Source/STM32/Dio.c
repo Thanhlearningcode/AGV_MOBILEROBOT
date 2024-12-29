@@ -1,5 +1,5 @@
 #include "Dio.h"
-
+#include "TryCatch.h"
 void Dio_Init(void){
 	//	RCC->AHB1ENR|=(1U<<02); // System configuration GPIOC clock enable
 			GPIOC->MODER &= ~ ( 3U << 12 ); // Input mode PC6

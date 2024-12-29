@@ -701,6 +701,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Test</GroupName>
+          <Files>
+            <File>
+              <FileName>TryCatch.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TryCatch.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
@@ -1399,6 +1409,16 @@
               <FileName>Vector3.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Vector3.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Test</GroupName>
+          <Files>
+            <File>
+              <FileName>TryCatch.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\TryCatch.h</FilePath>
             </File>
           </Files>
         </Group>

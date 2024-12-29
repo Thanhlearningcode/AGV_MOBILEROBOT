@@ -319,9 +319,7 @@ void loop(void)
 			/*Calculate the velocity of the right and left wheels*/ 
 			calc_vel_right_wheel ();
 			calc_vel_left_wheel ();
-
-	/*leftVelPub.publish( &left_vel_data );*/		
-	/*rightVelPub.publish( &right_vel_data );*/		
+	
 		}
 
 		if ( (is_recv_left_wheel == 1) && (is_recv_right_wheel == 1) ) {
