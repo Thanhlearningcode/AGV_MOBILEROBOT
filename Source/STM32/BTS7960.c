@@ -10,7 +10,11 @@
  *************************************************************************************************/
 
 #include "BTS7960.h"
-
+#include <assert.h>
+#include "stddef.h"
+#ifndef assert_param
+    #define assert_param(expression)  assert(expression)  
+#endif
 /**************************************************************************************************
  *  GLOBAL FUNCTION DEFINITIONS
  *************************************************************************************************/
@@ -24,7 +28,15 @@
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
  *          (PA0, PA1, PA2, PA3).
  */
+ static void check_assert_param(BTS7960_Channel_t* a, BTS7960_Channel_t* b){
+ 
+ 	/* Check the Parameters */
+ assert_param(a != NULL);  // Ensure motor1 pointer is valid
+ assert_param(b != NULL);  // Ensure motor2 pointer is valid
+    
+ }
 void BTS7960_PWMInit(BTS7960_Channel_t* motor1, BTS7960_Channel_t* motor2) {
+check_assert_param(&motor1,&motor2);
       /* Case when motor1 and motor2 use the same timers*/
     if (motor1->timer == motor2->timer) {
         // Enable the clock for the timer used by both motors

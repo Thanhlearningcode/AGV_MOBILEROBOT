@@ -28,6 +28,5 @@
   Uart2.h D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\String.h \
   Int16.h Float64.h Int32.h Twist.h Vector3.h Systick.h \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h BTS7960.h \
-  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\assert.h Encoder.h Exti.h \
-  Dio.h Kernel.h
+  D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h BTS7960.h Encoder.h \
+  Exti.h Dio.h Kernel.h
