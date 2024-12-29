@@ -132,8 +132,7 @@ void Encoder_Turnleft(void){
 pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
 																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
 
-pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+			left_wheel_tick_count.data = pos_left;
 			} 
 void Encoder_Turnright(void) {	
 
@@ -142,8 +141,7 @@ void Encoder_Turnright(void) {
 pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
 																		((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
 
-pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-																		((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+			right_wheel_tick_count.data = pos_right;
 			} 
 /************************************* Motor Controller Functions ******************************/
 
