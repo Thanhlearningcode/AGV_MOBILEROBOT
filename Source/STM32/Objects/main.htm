@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\main.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\main.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Mon Dec 30 11:40:59 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Mon Dec 30 12:36:21 2024
 <BR><P>
 <H3>Maximum Stack Usage =        312 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -841,8 +841,8 @@ Global Symbols
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT_inner
 </UL>
 
-<P><STRONG><a name="[9f]"></a>BTS7960_PWMInit</STRONG> (Thumb, 1162 bytes, Stack size 16 bytes, bts7960.o(.text.BTS7960_PWMInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88 + Unknown Stack Size
+<P><STRONG><a name="[9f]"></a>BTS7960_PWMInit</STRONG> (Thumb, 1698 bytes, Stack size 32 bytes, bts7960.o(.text.BTS7960_PWMInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = BTS7960_PWMInit &rArr; check_assert_param &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_assert_param
@@ -1510,7 +1510,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[df]"></a>setup</STRONG> (Thumb, 186 bytes, Stack size 64 bytes, mainpp.o(.text.setup))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = setup &rArr; BTS7960_PWMInit &rArr; check_assert_param &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setupVectorTable
