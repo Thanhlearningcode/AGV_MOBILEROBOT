@@ -18,11 +18,6 @@
 /**************************************************************************************************
  *  GLOBAL FUNCTION DEFINITIONS
  *************************************************************************************************/
- /**************************************************************************************************
- *  MACROS
- **************************************************************************************************/
-#define BTS7960_MAX_PWM 65535
-#define BTS7960_MIN_PWM 0
 /**
  * \brief Initialize TIM2 for multi-channel PWM generation.
  * \details This function configures TIM2 and GPIOA for generating PWM signals on multiple channels
@@ -171,7 +166,7 @@ static inline uint32_t BTS7960_ClampPWM(uint32_t pwm) {
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void BTS7960_MoveForward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
+static inline void BTS7960_MoveForward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
 		pwm1 = BTS7960_ClampPWM(pwm1);
     pwm2 = BTS7960_ClampPWM(pwm2);
     TIM2->CCR1 = pwm1;  // Set PWM for left motor
@@ -185,7 +180,7 @@ void BTS7960_MoveForward ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 1
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void BTS7960_MoveBackward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
+static inline void BTS7960_MoveBackward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
 		pwm1 = BTS7960_ClampPWM(pwm1);
     pwm2 = BTS7960_ClampPWM(pwm2);
     TIM2->CCR1 = 0;     // Disable left motor forward
@@ -199,7 +194,7 @@ void BTS7960_MoveBackward ( uint32_t pwm1 , uint32_t pwm2 ) { // Mode 2
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void BTS7960_TurnLeft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
+static inline void BTS7960_TurnLeft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
 		pwm1 = BTS7960_ClampPWM (pwm1);
     pwm2 = BTS7960_ClampPWM (pwm2);	
     TIM2->CCR1 = pwm1;  // Set PWM for left motor forward
@@ -213,7 +208,7 @@ void BTS7960_TurnLeft ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 3
  * \param[in] pwm1 PWM value for the left motor.
  * \param[in] pwm2 PWM value for the right motor.
  */
-void BTS7960_TurnRight ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
+static inline void BTS7960_TurnRight ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
 		pwm1 = BTS7960_ClampPWM (pwm1);
     pwm2 = BTS7960_ClampPWM (pwm2);
     TIM2->CCR1 = 0;     // Disable left motor forward
@@ -226,7 +221,7 @@ void BTS7960_TurnRight ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 4
  * \brief Stop the robot's movement.
  * \details This function stops the robot by setting motor PWM values to zero.
  */
-void BTS7960_Stop ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 0
+static inline void BTS7960_Stop ( uint32_t pwm1, uint32_t pwm2 ) { // Mode 0
     TIM2->CCR1 = 0;  // Stop left motor
     TIM2->CCR2 = 0;  // Stop left motor reverse
     TIM2->CCR3 = 0;  // Stop right motor

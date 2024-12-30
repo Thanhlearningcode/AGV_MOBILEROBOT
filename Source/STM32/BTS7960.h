@@ -16,6 +16,11 @@
  *  INCLUDES
  *************************************************************************************************/
 #include "stm32f411xe.h"
+ /**************************************************************************************************
+ *  MACROS
+ **************************************************************************************************/
+#define BTS7960_MAX_PWM 65535
+#define BTS7960_MIN_PWM 0
 /**************************************************************************************************
  *  Config PWM
  *************************************************************************************************/
@@ -55,27 +60,27 @@ void BTS7960_PWMInit(BTS7960_Channel_t* motor1, BTS7960_Channel_t* motor2);
 /**
  * \brief Move forward.
  */
-void BTS7960_MoveForward(uint32_t pwmLeft, uint32_t pwmRight);
+static inline void BTS7960_MoveForward(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
  * \brief Move backward.
  */
-void BTS7960_MoveBackward(uint32_t pwmLeft, uint32_t pwmRight);
+static inline void BTS7960_MoveBackward(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
  * \brief Turn left.
  */
-void BTS7960_TurnLeft(uint32_t pwmLeft, uint32_t pwmRight);
+static inline void BTS7960_TurnLeft(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
  * \brief Turn right.
  */
-void BTS7960_TurnRight(uint32_t pwmLeft, uint32_t pwmRight);
+static inline void BTS7960_TurnRight(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
  * \brief Stop the motor.
  */
-void BTS7960_Stop(uint32_t pwmLeft, uint32_t pwmRight);
+static inline void BTS7960_Stop(uint32_t pwmLeft, uint32_t pwmRight);
 
 /**
  * \brief Set motor mode and control movement.

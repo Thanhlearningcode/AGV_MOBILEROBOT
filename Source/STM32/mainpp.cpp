@@ -266,19 +266,19 @@ pwmLeftOut =  (abs (pwmLeftReq)  > pwmLeftReq)  ? (pwmLeftOut  + PWM_INCREMENT) 
 
 switch (dir) {
     case BTS7960_FORWARD:
-        BTS7960_MoveForward  (pwmout1, pwmout2);
+							BTS7960_SetMode	(BTS7960_FORWARD,pwmout1,pwmout2);
         break;
     case BTS7960_TURN_RIGHT:
-        BTS7960_MoveBackward (pwmout1, pwmout2);
+							BTS7960_SetMode	(BTS7960_TURN_RIGHT,pwmout1,pwmout2);
         break;
     case BTS7960_TURN_LEFT:
-        BTS7960_TurnLeft     (pwmout1, pwmout2);
+							BTS7960_SetMode	(BTS7960_TURN_LEFT,pwmout1,pwmout2);
         break;
     case BTS7960_BACKWARD:
-        BTS7960_MoveBackward (pwmout1, pwmout2);
+							BTS7960_SetMode	(BTS7960_BACKWARD,pwmout1,pwmout2);
         break;
     default:
-        BTS7960_Stop         (0, 0);
+							BTS7960_SetMode	(BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM);
         break;
 } 
 	}
@@ -302,7 +302,7 @@ MotorSystem system = {
 		osKernelAddThread (loop, calc_left_wheel_query_wrapper, calc_right_wheel_query_wrapper);
 		osKernelLaunch    (QUANTA);
 		nh.initNode ();
-		BTS7960_Stop(0, 0);
+		BTS7960_SetMode	(BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM);
 		Dio_Init ();
 		setupVectorTable () ;
 		nh.subscribe      (left_wheel_query);
