@@ -265,25 +265,23 @@ pwmLeftOut =  (abs (pwmLeftReq)  > pwmLeftReq)  ? (pwmLeftOut  + PWM_INCREMENT) 
 		/*Set the PWM value on the pins*/ 
 
 switch (dir) {
-    case BTS7960_FORWARD:
-							BTS7960_SetMode	(BTS7960_FORWARD,pwmout1,pwmout2);
+    case BTS7960_FORWARD   :
+							BTS7960_SetMode	(BTS7960_FORWARD		,pwmout1,pwmout2);
         break;
     case BTS7960_TURN_RIGHT:
-							BTS7960_SetMode	(BTS7960_TURN_RIGHT,pwmout1,pwmout2);
+							BTS7960_SetMode	(BTS7960_TURN_RIGHT ,pwmout1,pwmout2);
         break;
-    case BTS7960_TURN_LEFT:
-							BTS7960_SetMode	(BTS7960_TURN_LEFT,pwmout1,pwmout2);
+    case BTS7960_TURN_LEFT :
+							BTS7960_SetMode	(BTS7960_TURN_LEFT  ,pwmout1,pwmout2);
         break;
-    case BTS7960_BACKWARD:
-							BTS7960_SetMode	(BTS7960_BACKWARD,pwmout1,pwmout2);
+    case BTS7960_BACKWARD  :
+							BTS7960_SetMode	(BTS7960_BACKWARD   ,pwmout1,pwmout2);
         break;
     default:
 							BTS7960_SetMode	(BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM);
         break;
 } 
 	}
-
-
 	/*Set up ROS subscriber to the velocity command*/ 
 
 ros::Subscriber<std_msgs::Int16 > left_wheel_query  ( "left_wheel_query" ,  &calc_left_wheel_query     );
@@ -294,8 +292,8 @@ void setup(void)
 		Systick_Init ();
 		
 MotorSystem system = {
-    .motor1 = {TIM2, GPIOA, 2, 3, 0, 65535},
-    .motor2 = {TIM2, GPIOA, 3, 4, 0, 65535}
+    .motor1 = {TIM2, GPIOA, 2, 3, 0, 65535}, // Use TIM2 , PA2 , Channel 3 , PSC =0 , Arr= 65535
+    .motor2 = {TIM2, GPIOA, 3, 4, 0, 65535}  // Use TIM2 , PA3 , Channel 4 , PSC =0 , Arr= 65535
 };  
 		BTS7960_PWMInit(&system.motor1, &system.motor2);
 		osKernelInit ();
@@ -304,7 +302,7 @@ MotorSystem system = {
 		nh.initNode ();
 		BTS7960_SetMode	(BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM);
 		Dio_Init ();
-		setupVectorTable () ;
+		setupVectorTable  () ;
 		nh.subscribe      (left_wheel_query);
 		nh.subscribe      (right_wheel_query);
 	}
@@ -314,7 +312,7 @@ void loop(void)
 		while (1) {
 		nh.spinOnce();
 		/*Record the time*/ 
-		currentMillis = get_tick();
+		currentMillis = get_tick ();
 
 		/*If the time interval has passed, publish the number of ticks, and calculate the velocities.*/
 		if ( (currentMillis - previousMillis) > interval ) {
@@ -322,7 +320,7 @@ void loop(void)
 
 			/*Calculate the velocity of the right and left wheels*/ 
 			calc_vel_right_wheel ();
-			calc_vel_left_wheel ();
+			calc_vel_left_wheel  ();
 	
 		}
 

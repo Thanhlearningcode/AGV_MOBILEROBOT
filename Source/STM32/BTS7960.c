@@ -67,8 +67,8 @@ void BTS7960_PWMInit(BTS7960_Channel_t* motor1, BTS7960_Channel_t* motor2) {
         motor1->timer->PSC = motor1->Psc_t;  // No prescaler
         motor1->timer->CCR1 = 0;           // Set initial duty cycle for motor1
         motor1->timer->CCR2 = 0;           // Set initial duty cycle for motor2
-        motor1->timer->CR1 |=  (1U << 7);   // Enable auto-reload preload
-        motor1->timer->CR1 &= ~(1U << 4);  // Set counter as upcounter
+        motor1->timer->CR1 |=    (1U << 7);   // Enable auto-reload preload
+        motor1->timer->CR1 &= ~	 (1U << 4);  // Set counter as upcounter
 
 switch (motor1->timerChannel) {
     case 1:
@@ -115,7 +115,7 @@ switch (motor2->timerChannel) {
         break;
 }
 			/*Enable the timer for both motors*/ 
-        motor1->timer->CR1 |= (1U << 0);  // Enable Timer counter for both motors
+        motor1->timer->CR1   |=   (1U << 0);  // Enable Timer counter for both motors
         }
  
 /* Case when motor1 and motor2 use different timers*/
@@ -151,45 +151,45 @@ switch (motor2->timerChannel) {
         motor2->gpioPort->AFR[motor2->gpioPin / 8] |= (1U << ((motor2->gpioPin % 8) * 4));
 
         /*Configure Timer for motor1*/ 
-        motor1->timer->CNT = 0;            // Reset counter for motor1
-        motor1->timer->ARR = motor1->Arr_t;  // Auto-reload value (max counter)
-        motor1->timer->PSC = motor1->Psc_t;  // No prescaler
-        motor1->timer->CCR1 = 0;           // Set initial duty cycle for motor1
-        motor1->timer->CCR2 = 0;           // Set initial duty cycle for motor2
+        motor1->timer->CNT = 0;               // Reset counter for motor1
+        motor1->timer->ARR = motor1->Arr_t;   // Auto-reload value (max counter)
+        motor1->timer->PSC = motor1->Psc_t;   // No prescaler
+        motor1->timer->CCR1 = 0;              // Set initial duty cycle for motor1
+        motor1->timer->CCR2 = 0;              // Set initial duty cycle for motor2
         motor1->timer->CR1 |=    (1U << 7);   // Enable auto-reload preload
-        motor1->timer->CR1 &= ~  (1U << 4);  // Set counter as upcounter
+        motor1->timer->CR1 &= ~  (1U << 4);   // Set counter as upcounter
 
         /*Configure PWM mode for motor1*/ 
 switch (motor1->timerChannel) {
     case 1:
-        motor1->timer->CCMR1 &= ~(3U << 0);  // CC1 channel is output
+        motor1->timer->CCMR1 &= ~(3U << 0);   // CC1 channel is output
         motor1->timer->CCMR1 |=  (6U << 4);   // PWM mode 1 for CC1
         motor1->timer->CCER  |=  (1U << 0);    // Enable output for Channel 1 of motor1
         break;
     case 2:
-        motor1->timer->CCMR1 &= ~(3U << 8);  // CC2 channel is output
-        motor1->timer->CCMR1 |=  (6U << 12);  // PWM mode 2 for CC1
+        motor1->timer->CCMR1 &= ~(3U << 8);    // CC2 channel is output
+        motor1->timer->CCMR1 |=  (6U << 12);   // PWM mode 2 for CC1
         motor1->timer->CCER  |=  (1U << 4);    // Enable output for Channel 2 of motor1
         break;
     case 3:
-        motor1->timer->CCMR2 &= ~(3U << 0);  // CC3 channel is output
-        motor1->timer->CCMR2 |=  (6U << 4);   // PWM mode 3 for CC1
+        motor1->timer->CCMR2 &= ~(3U << 0);    // CC3 channel is output
+        motor1->timer->CCMR2 |=  (6U << 4);    // PWM mode 3 for CC1
         motor1->timer->CCER  |=  (1U << 8);    // Enable output for Channel 3 of motor1
         break;
     default:
-        motor1->timer->CCMR1 &= ~(3U << 8);  // CC2 channel is output
-        motor1->timer->CCMR1 |=  (6U << 12);  // PWM mode 2 for CC1
+        motor1->timer->CCMR1 &= ~(3U << 8);    // CC2 channel is output
+        motor1->timer->CCMR1 |=  (6U << 12);   // PWM mode 2 for CC1
         motor1->timer->CCER  |=  (1U << 12);   // Enable output for Channel 2 of motor1
         break;
 }
         /*Configure Timer for motor2*/ 
-        motor2->timer->CNT = 0;            // Reset counter for motor2
-        motor2->timer->ARR = motor1->Arr_t;  // Auto-reload value (max counter)
-        motor2->timer->PSC = motor1->Psc_t;  // No prescaler
-        motor2->timer->CCR1 = 0;           // Set initial duty cycle for motor1
-        motor2->timer->CCR2 = 0;           // Set initial duty cycle for motor2
+        motor2->timer->CNT = 0;                // Reset counter for motor2
+        motor2->timer->ARR = motor1->Arr_t;    // Auto-reload value (max counter)
+        motor2->timer->PSC = motor1->Psc_t;    // No prescaler
+        motor2->timer->CCR1 = 0;              // Set initial duty cycle for motor1
+        motor2->timer->CCR2 = 0;              // Set initial duty cycle for motor2
         motor2->timer->CR1 |=    (1U << 7);   // Enable auto-reload preload
-        motor2->timer->CR1 &= ~  (1U << 4);  // Set counter as upcounter
+        motor2->timer->CR1 &= ~  (1U << 4);   // Set counter as upcounter
 
 switch (motor2->timerChannel) {
     case 1:
