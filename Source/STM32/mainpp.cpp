@@ -119,7 +119,7 @@ void USART2_IRQHandler(void) {
 /************************ Encoder ***********************************************/
 void Encoder_Turnleft(void){	
 	/* Direction of motor */
-				int Direction_left = 1;
+				bool Direction_left = 1;
 	/* Number of wheel ticks */
 				static volatile long pos_left = 0;
 	      bool b1 = readEncoder1() ;
@@ -130,7 +130,7 @@ pos_left = (Direction_left == true) ?  ((pos_left == encoder_maximum) ? encoder_
 			} 
 void Encoder_Turnright(void) {	
 		/* Direction of motor */
-				int Direction_right = 1;
+				bool Direction_right = 1;
 		/* Number of wheel ticks */
 				static volatile long pos_right = 0;
 		    bool b2 = readEncoder2();
