@@ -27,4 +27,4 @@
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
   D:\App\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
-  Rcc_Cfg.h
+  Uart2.h Rcc_Cfg.h

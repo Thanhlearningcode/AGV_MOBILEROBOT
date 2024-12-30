@@ -14,6 +14,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include "Uart2.h"
 extern "C" {
     #include "Rcc_Cfg.h"
 }
@@ -25,7 +26,7 @@ extern "C" {
 int main() {
     /* Configure RCC to 72MHz */
     Rcc_Clock_Init();
-
+		Uart2_Init (115200);
     /*Initialize setup*/
     setup();
    

@@ -118,10 +118,9 @@ void USART2_IRQHandler(void) {
 
 /************************ Encoder ***********************************************/
 void Encoder_Turnleft(void){	
-	/* Direction of motor */
-				bool Direction_left = 1;
-	/* Number of wheel ticks */
-				static volatile long pos_left = 0;
+
+				bool Direction_left = 1; /* Direction of motor */
+				static volatile long pos_left = 0; 	/* Number of wheel ticks */
 	      bool b1 = readEncoder1() ;
 Direction_left = (b1==false) ? true: false ;
 pos_left = (Direction_left == true) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
@@ -129,10 +128,8 @@ pos_left = (Direction_left == true) ?  ((pos_left == encoder_maximum) ? encoder_
 		     left_wheel_tick_count.data = pos_left;
 			} 
 void Encoder_Turnright(void) {	
-		/* Direction of motor */
-				bool Direction_right = 1;
-		/* Number of wheel ticks */
-				static volatile long pos_right = 0;
+				bool Direction_right = 1; /* Direction of motor */
+				static volatile long pos_right = 0; /* Number of wheel ticks */
 		    bool b2 = readEncoder2();
 Direction_right = (b2==false ) ? true : false ;
 pos_right = (Direction_right ==true) ? ((pos_right == encoder_maximum)  ? encoder_minimum : ++pos_right) :
@@ -144,12 +141,10 @@ pos_right = (Direction_right ==true) ? ((pos_right == encoder_maximum)  ? encode
 /*Calculate the left wheel linear velocity in m/s every time a*/ 
 /* Tick count message is rpublished on the /left_ticks topic.*/
 void calc_vel_left_wheel () {
-
-/*Previous timestamp*/ 
-static double prevTime = 0;
-
+		/*Previous timestamp*/ 
+			static double prevTime = 0;
 /* Variable gets created and initialized the first time a function is called.	*/ 
-static int prevLeftCount = 0;
+			static int prevLeftCount = 0;
 
 		/*Manage rollover and rollunder when we get outside the 16-bit integer range	*/ 
 int numOfTicks = (65535 + left_wheel_tick_count.data - prevLeftCount) % 65535;

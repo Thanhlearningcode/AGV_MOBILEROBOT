@@ -32,7 +32,7 @@ void Uart2_Init(uint16_t baudrate) {
     USART2->CR1 |= (1U << 13);    // Enable USART2
 
     // Enable USART2 interrupt in NVIC
-    NVIC_SetPriority(USART2_IRQn, 0); // Set priority level for USART2 interrupt
+    NVIC_SetPriority(USART2_IRQn, 4); // Set priority level for USART2 interrupt
     NVIC_EnableIRQ  (USART2_IRQn);       // Enable USART2 interrupt in NVIC
 }
 

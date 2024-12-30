@@ -17,21 +17,21 @@ void Tick_Increment(void){
 }
 
 void Systick_Init(void){
-	 __asm__ volatile(
-		        "LDR R0, =0xE000E014 \n\t"  // Ð?a ch? c?a STK_LOAD
-		        "LDR R1, =71999999   \n\t"  // N?p giá tr? 71999999 vào R1 (tuong ?ng v?i 72 MHz * 1s - 1)
-		        "STR R1, [R0]        \n\t"  // Ghi giá tr? vào STK_LOAD
+    __asm__ volatile(
+        "LDR R0, =0xE000E014 \n\t"  // Address of STK_LOAD
+        "LDR R1, =71999999   \n\t"  // Load the value 71999999 into R1 (corresponding to 72 MHz * 1s - 1)
+        "STR R1, [R0]        \n\t"  // Write the value to STK_LOAD
 
-		        "LDR R0, =0xE000E018 \n\t"  // Ð?a ch? c?a STK_VAL
-		        "LDR R1, =0          \n\t"  // Ð?t giá tr? c?a STK_VAL v? 0
-		        "STR R1, [R0]        \n\t"  // Ghi giá tr? vào STK_VAL
+        "LDR R0, =0xE000E018 \n\t"  // Address of STK_VAL
+        "LDR R1, =0          \n\t"  // Set the value of STK_VAL to 0
+        "STR R1, [R0]        \n\t"  // Write the value to STK_VAL
 
-		        "LDR R0, =0xE000E010 \n\t"  // Ð?a ch? c?a STK_CTRL
-		        "LDR R1, =7          \n\t"  // C?u hình SysTick: B?t SysTick (ENABLE = 1), T?o ng?t (TICKINT = 1), S? d?ng ngu?n xung h? th?ng (CLKSOURCE = 1)
-		        "STR R1, [R0]        \n\t"  // Ghi giá tr? vào STK_CTRL
-		    );
-
+        "LDR R0, =0xE000E010 \n\t"  // Address of STK_CTRL
+        "LDR R1, =7          \n\t"  // Configure SysTick: Enable SysTick (ENABLE = 1), Enable interrupt (TICKINT = 1), Use system clock source (CLKSOURCE = 1)
+        "STR R1, [R0]        \n\t"  // Write the value to STK_CTRL
+    );
 }
+
 void SysTick_Handler(){
 	Tick_Increment();
 }
