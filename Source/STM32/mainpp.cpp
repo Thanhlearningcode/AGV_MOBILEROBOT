@@ -24,20 +24,11 @@
 
 ros::NodeHandle nh;
 
-
 /* Keep track of the number of wheel ticks for ros */
 std_msgs::Int16 right_wheel_tick_count;
 std_msgs::Int16 left_wheel_tick_count;
 std_msgs::Int16 left_vel_data;
 std_msgs::Int16 right_vel_data;
-
-/* Number of wheel ticks */
-volatile long pos_left = 0;
-volatile long pos_right = 0;
-
-/* Direction of motor */
-int Direction_left = 1;
-int Direction_right = 1;
 
 /* Linear Limit of Encoder */
 const int encoder_minimum = -32768;
@@ -127,21 +118,26 @@ void USART2_IRQHandler(void) {
 
 /************************ Encoder ***********************************************/
 void Encoder_Turnleft(void){	
-	        int b1 = readEncoder1() ;
-		    	Direction_left = (b1==0) ? 1: 0 ;
-pos_left = (Direction_left == 1) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
-																		((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
-
-			left_wheel_tick_count.data = pos_left;
+	/* Direction of motor */
+				int Direction_left = 1;
+	/* Number of wheel ticks */
+				static volatile long pos_left = 0;
+	      bool b1 = readEncoder1() ;
+Direction_left = (b1==false) ? true: false ;
+pos_left = (Direction_left == true) ?  ((pos_left == encoder_maximum) ? encoder_minimum : ++pos_left) :
+																			 ((pos_left == encoder_minimum) ? encoder_maximum : --pos_left) ;
+		     left_wheel_tick_count.data = pos_left;
 			} 
 void Encoder_Turnright(void) {	
-
-		    int b2 = readEncoder2();
-		  	Direction_right = (b2==0 ) ? 1 : 0 ;
-pos_right = (Direction_right ==1) ? ((pos_right == encoder_maximum) ? encoder_minimum : ++pos_right) :
-																		((pos_left  == encoder_minimum) ? encoder_maximum : --pos_right) ;
-
-			right_wheel_tick_count.data = pos_right;
+		/* Direction of motor */
+				int Direction_right = 1;
+		/* Number of wheel ticks */
+				static volatile long pos_right = 0;
+		    bool b2 = readEncoder2();
+Direction_right = (b2==false ) ? true : false ;
+pos_right = (Direction_right ==true) ? ((pos_right == encoder_maximum)  ? encoder_minimum : ++pos_right) :
+																		   ((pos_right  == encoder_minimum) ? encoder_maximum : --pos_right) ;
+		  	right_wheel_tick_count.data = pos_right;
 			} 
 /************************************* Motor Controller Functions ******************************/
 
