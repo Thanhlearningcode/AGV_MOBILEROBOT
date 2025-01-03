@@ -18,6 +18,9 @@ void Uart2_Init(uint16_t baudrate) {
         case 9600:
             USART2->BRR = (468 << 4) | 12; 
             break;
+				case 57600:
+						USART2->BRR = (625 << 4) | 0; // Optimal settings
+						break;
         case 115200:
             USART2->BRR = (625 << 4) | 0;
             break;

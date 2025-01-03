@@ -16,4 +16,5 @@
 void Rcc_Clock_Init(void);
 
 void IWDG_Init(void);
+void IWDG_Refresh(void);
 #endif // _Rcc_H_

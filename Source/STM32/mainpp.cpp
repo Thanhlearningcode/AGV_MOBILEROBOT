@@ -118,7 +118,6 @@ void USART2_IRQHandler(void) {
 
 /************************ Encoder ***********************************************/
 void Encoder_Turnleft(void){	
-
 				bool Direction_left = 1; /* Direction of motor */
 				static volatile long pos_left = 0; 	/* Number of wheel ticks */
 	      bool b1 = readEncoder1() ;

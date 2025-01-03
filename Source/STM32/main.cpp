@@ -23,15 +23,17 @@ extern "C" {
  * @brief Main entry point for the program
  * @return int Exit status of the program
  */
-int main() {
+int main(int argc, char *argv[]) {
     /* Configure RCC to 72MHz */
     Rcc_Clock_Init();
-		Uart2_Init (115200);
+		Uart2_Init (57600);
     /*Initialize setup*/
     setup();
-   
+    IWDG_Init();
   while (true) {
     loop();
+		IWDG_Refresh();
     }
+//	NVIC_SystemReset();
     return 0; 
 }
