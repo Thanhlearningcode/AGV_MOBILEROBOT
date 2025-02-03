@@ -280,7 +280,10 @@ ros::Subscriber<std_msgs::Int16 > right_wheel_query ( "right_wheel_query",  &cal
 void setup(void)
 	{
 		Systick_Init ();
-		
+MotorSystem system = {
+     .motor1 ={0},
+     .motor2 ={0},
+}		
 MotorSystem system = {
     .motor1 = {TIM2, GPIOA, 2, 3, 0, 65535}, // Use TIM2 , PA2 , Channel 3 , PSC =0 , Arr= 65535
     .motor2 = {TIM2, GPIOA, 3, 4, 0, 65535}  // Use TIM2 , PA3 , Channel 4 , PSC =0 , Arr= 65535
