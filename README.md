@@ -33,3 +33,7 @@ Mục tiêu của dự án không chỉ là lập bản đồ mà còn là đi�
 
 ### Kết luận
 Dự án này không chỉ giúp tôi nâng cao kỹ năng lập trình và thiết kế hệ thống mà còn mang đến cái nhìn sâu sắc về cách tích hợp các công nghệ khác nhau để tạo ra một robot di động thông minh và hiệu quả.
+
+https://youtu.be/lSaE2lDuPe4
+
+https://www.youtube.com/watch?v=16xksGicoLY
