@@ -26,13 +26,13 @@ extern "C" {
 int main(int argc, char *argv[]) {
     /* Configure RCC to 72MHz */
     Rcc_Clock_Init();
-		Uart2_Init (57600);
+		Uart2_Init( 57600 );
     /*Initialize setup*/
     setup();
     IWDG_Init();
   while (true) {
-    loop();
-		IWDG_Refresh();
+		//  loop(); <Using Rtos 
+		//IWDG_Refresh(); :<
     }
 //	NVIC_SystemReset();
     return 0; 

@@ -21,7 +21,7 @@
 #include "Encoder.h"
 #include "Kernel.h"
 	}
-
+extern void IWDG_Refresh(void); //<< Function also need to extern
 ros::NodeHandle nh;
 
 /* Keep track of the number of wheel ticks for ros */
@@ -276,31 +276,34 @@ switch (dir) {
 
 ros::Subscriber<std_msgs::Int16 > left_wheel_query  ( "left_wheel_query" ,  &calc_left_wheel_query     );
 ros::Subscriber<std_msgs::Int16 > right_wheel_query ( "right_wheel_query",  &calc_right_wheel_query 	 );
+	
 
-void setup(void)
+void setup( void )
 	{
 		Systick_Init ();
-MotorSystem system = {
+MotorSystem system =   //<  Initialize motor values
+		{
      .motor1 ={0},
      .motor2 ={0},
-}		
-MotorSystem system = {
-    .motor1 = {TIM2, GPIOA, 2, 3, 0, 65535}, // Use TIM2 , PA2 , Channel 3 , PSC =0 , Arr= 65535
-    .motor2 = {TIM2, GPIOA, 3, 4, 0, 65535}  // Use TIM2 , PA3 , Channel 4 , PSC =0 , Arr= 65535
-};  
-		BTS7960_PWMInit(&system.motor1, &system.motor2);
+		};		
+						system = 
+		{
+    .motor1 = 				{ TIM2, GPIOA, 2, 3, 0, 65535 }, // Use TIM2 , PA2 , Channel 3 , PSC =0 , Arr= 65535
+    .motor2 = 				{ TIM2, GPIOA, 3, 4, 0, 65535 }  // Use TIM2 , PA3 , Channel 4 , PSC =0 , Arr= 65535
+		};  
+		BTS7960_PWMInit   ( &system.motor1, &system.motor2 );
 		osKernelInit ();
-		osKernelAddThread (loop, calc_left_wheel_query_wrapper, calc_right_wheel_query_wrapper);
-		osKernelLaunch    (QUANTA);
+		osKernelAddThread ( loop, calc_left_wheel_query_wrapper, calc_right_wheel_query_wrapper );
+		osKernelLaunch    (	QUANTA);
 		nh.initNode ();
-		BTS7960_SetMode	(BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM);
+		BTS7960_SetMode	  ( BTS7960_STOP,BTS7960_MIN_PWM,BTS7960_MIN_PWM );
 		Dio_Init ();
 		setupVectorTable  () ;
-		nh.subscribe      (left_wheel_query);
-		nh.subscribe      (right_wheel_query);
+		nh.subscribe      ( left_wheel_query );
+		nh.subscribe      ( right_wheel_query );
 	}
 
-void loop(void)
+void loop( void )
 	{
 		while (1) {
 		nh.spinOnce();
@@ -308,16 +311,17 @@ void loop(void)
 		currentMillis = get_tick ();
 
 		/*If the time interval has passed, publish the number of ticks, and calculate the velocities.*/
-		if ( (currentMillis - previousMillis) > interval ) {
+		if ( (currentMillis - previousMillis) > interval ) 
+			{
 			previousMillis = currentMillis;
 
 			/*Calculate the velocity of the right and left wheels*/ 
 			calc_vel_right_wheel ();
 			calc_vel_left_wheel  ();
-	
-		}
+	  	}
 
-		if ( (is_recv_left_wheel == 1) && (is_recv_right_wheel == 1) ) {
+		if ( (is_recv_left_wheel == 1) && (is_recv_right_wheel == 1) ) 
+			{
 
 			/* Compute velocity with method 1 */
 			long currT = get_tick();
@@ -325,33 +329,36 @@ void loop(void)
 
 			/* -- ROBOT RUN MANUALLY --
 			 -- set vel target for left motor -- */
-			float vtl = abs (vel_left);	  // L?y v?n t?c mong mu?n (tuy?t d?i).
-			float kpl = 5;	// H? s? khu?ch d?i Proportional (P).
-			float kil = 0;	// H? s? khu?ch d?i Integral (I).
-			float el = vtl - abs (left_wheel_vel);	 // Sai s? gi?a v?n t?c mong mu?n v� th?c t?.
-			eintegral_l = eintegral_l + el*deltaT;	// C?ng d?n sai s? theo th?i gian (th�nh ph?n I).
+		// -- Set velocity target for left motor --
+			float vtl = abs(vel_left);  // Get the desired speed (absolute value).
+			float kpl = 5;  // Proportional gain (P).
+			float kil = 0;  // Integral gain (I).
+			float el = vtl - abs(left_wheel_vel);  // Error between desired and actual speed.
+			eintegral_l = eintegral_l + el * deltaT;  // Accumulate error over time (Integral term).
 
-			float ul = kpl*el + kil*eintegral_l;	// T�nh gi� tr? di?u khi?n t?ng h?p P v� I.
+			float ul = kpl * el + kil * eintegral_l;  // Compute the control value using P and I.
 
-			pwmLeftReq = fabs (ul);	// PWM y�u c?u (tuy?t d?i).
+			pwmLeftReq = fabs(ul);  // Required PWM (absolute value).
 
-		if (pwmLeftReq > PWM_MAX) {
-				pwmLeftReq = PWM_MAX;	  // Gi?i h?n gi� tr? PWM t?i da.
-			}
+		if ( pwmLeftReq > PWM_MAX ) 
+			{
+				pwmLeftReq = PWM_MAX;  // Limit the maximum PWM value.
+	   	}
 
-			// -- set vel target for right motor --
-			float vtr = abs (vel_right); 	 // L?y v?n t?c mong mu?n.
-			float kpr = 5;
-			float kir = 0;
-			float er = vtr - abs (right_wheel_vel);	// Sai s? c?a b�nh ph?i.
-			eintegral_r = eintegral_r + er*deltaT;	// C?ng d?n sai s?.
+		// -- Set velocity target for right motor --
+			float vtr = abs(vel_right);  // Get the desired speed.
+			float kpr = 5;  
+			float kir = 0;  
+			float er = vtr - abs(right_wheel_vel);  // Error for the right wheel.
+			eintegral_r = eintegral_r + er * deltaT;  // Accumulate error.
 
-			float ur = kpr*er + kir*eintegral_r;	// �i?u khi?n t?ng h?p P v� I.
+			float ur = kpr * er + kir * eintegral_r;  // Compute the control value using P and I.
 
-			pwmRightReq = fabs (ur);
+			pwmRightReq = fabs(ur);
 
-		if (pwmRightReq > PWM_MAX) {
-				pwmRightReq = PWM_MAX;	     // Gi?i h?n PWM.
+		if ( pwmRightReq > PWM_MAX )
+			{
+				pwmRightReq = PWM_MAX;  // Limit the maximum PWM value.
 			}
 
 			/* -- robot run --
@@ -359,7 +366,8 @@ void loop(void)
 			robot_dir = gain_dir ( vel_left, vel_right );
 
 			// Case 1: robot stop => reset variables
-		if (robot_dir == 0) {
+		if ( robot_dir == 0 ) 
+			{
 				ul = 0;
 				pwmLeftReq = 0;
 				eintegral_l = 0;
@@ -371,7 +379,8 @@ void loop(void)
 			}
 
 			/* Case 2: robot change dir => stop robot before running */
-		if (pre_robot_dir != robot_dir) {
+		if ( pre_robot_dir != robot_dir )
+			{
 				pre_robot_dir = robot_dir;
 				ul = 0;
 				pwmLeftReq = 0;
@@ -383,7 +392,8 @@ void loop(void)
 			}
 
 			/* Stop the car if there are no cmd_vel messages	*/
-		if (  (( get_tick()/1000 ) - lastCmdVelReceived) > 1 ) {
+		if (  (( get_tick()/1000 ) - lastCmdVelReceived) > 1 )
+			{
 				pwmLeftReq = 0;
 				pwmRightReq = 0;
 			}
@@ -395,4 +405,5 @@ void loop(void)
 
 		}
 			}
+		IWDG_Refresh();
 				}	
