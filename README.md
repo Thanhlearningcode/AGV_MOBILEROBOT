@@ -1,39 +1,84 @@
-# Đề Tài: Robot Tự Hành Sử Dụng Raspberry Pi và STM32F411
+# Robot Tự Hành Sử Dụng Raspberry Pi và STM32F411
 
-## Giới thiệu
-Đề tài này tập trung vào việc phát triển một hệ thống robot tự hành sử dụng công nghệ Lidar kết hợp với Raspberry Pi để thực hiện thuật toán **Hector SLAM** (Simultaneous Localization and Mapping). Hệ thống sẽ cho phép robot tự xác định vị trí của mình trong môi trường và xây dựng bản đồ theo thời gian thực.
+## 1. Giới thiệu
+Trong thời đại công nghệ phát triển, **robot tự hành** đang trở thành một lĩnh vực nghiên cứu và ứng dụng quan trọng trong nhiều ngành công nghiệp, từ **vận chuyển hàng hóa** trong kho bãi đến **thám hiểm môi trường phức tạp**. Dự án này tập trung vào việc phát triển một hệ thống **robot tự hành** sử dụng **cảm biến Lidar** kết hợp với **Raspberry Pi** để thực hiện thuật toán **Hector SLAM** (Simultaneous Localization and Mapping). 
 
-### Mục tiêu
-Mục tiêu chính của dự án là xây dựng một robot có khả năng tự động di chuyển trong không gian 2D bằng cách sử dụng cảm biến Lidar để thu thập dữ liệu về môi trường xung quanh. Dữ liệu này sẽ được xử lý trên Raspberry Pi, nơi thuật toán Hector SLAM sẽ được triển khai để tạo bản đồ và điều chỉnh vị trí của robot.
+Hệ thống giúp robot xác định vị trí của mình trong môi trường và xây dựng bản đồ theo **thời gian thực**, mở ra nhiều tiềm năng trong điều hướng tự động, robot di động AGV (Automated Guided Vehicle) và nghiên cứu về robot.
 
-### Phần cứng
-- **Raspberry Pi**: Sử dụng để xử lý dữ liệu Lidar và thực hiện thuật toán SLAM.
-- **Lidar (ví dụ: RPLidar)**: Cảm biến để thu thập dữ liệu khoảng cách và hình ảnh môi trường.
-- **STM32F411**: Vi điều khiển sẽ được sử dụng để điều khiển các động cơ bánh xe và đọc dữ liệu từ encoder, giúp robot có thể di chuyển chính xác theo bản đồ đã tạo.
+---
 
-### Tính năng
-- **Xác định vị trí và lập bản đồ**: Robot sẽ sử dụng dữ liệu từ cảm biến Lidar để xác định vị trí của nó và tạo ra bản đồ môi trường.
-- **Điều khiển động cơ**: STM32F411 sẽ nhận lệnh từ Raspberry Pi và điều khiển động cơ bánh xe dựa trên thông tin từ thuật toán SLAM và encoder để đạt được độ chính xác cao trong di chuyển.
-- **Giao tiếp giữa Raspberry Pi và STM32F411**: Sử dụng giao thức SPI, CAN để truyền dữ liệu giữa hai thiết bị, đảm bảo hiệu suất và độ chính xác trong quá trình điều khiển.
+## 2. Mục tiêu dự án
+Mục tiêu chính của dự án là xây dựng một hệ thống **robot tự hành thông minh**, có khả năng:
+- **Di chuyển tự động trong môi trường 2D**, tránh vật cản và điều hướng theo bản đồ.
+- **Sử dụng Lidar để thu thập dữ liệu môi trường**, xử lý bằng thuật toán **Hector SLAM** trên Raspberry Pi để lập bản đồ và định vị chính xác.
+- **Tích hợp STM32F411 để điều khiển động cơ chính xác**, đảm bảo robot di chuyển mượt mà và phản ứng nhanh chóng.
+- **Thiết lập giao tiếp giữa Raspberry Pi và STM32F411**, giúp truyền dữ liệu điều khiển và phản hồi vị trí một cách nhanh chóng và hiệu quả.
 
-### Kết luận
-Dự án này không chỉ giúp phát triển kỹ năng lập trình và thiết kế hệ thống mà còn cung cấp cái nhìn sâu sắc về cách kết hợp các công nghệ khác nhau để tạo ra một robot tự hành hoàn chỉnh. Thông qua việc sử dụng Lidar và thuật toán Hector SLAM, robot sẽ có khả năng hoạt động một cách tự động trong môi trường thực tế.
+---
 
-## 🚀 Dự Án Robot Di Động AGV
+## 3. Thành phần phần cứng
+Hệ thống robot này bao gồm các thành phần chính sau:
 
-Tôi đang làm việc trên một dự án **robot di động AGV (Automated Guided Vehicle)**! Dự án này bao gồm việc sử dụng cảm biến LIDAR kết nối với Raspberry Pi để thực hiện việc lập bản đồ và điều hướng, tất cả được hỗ trợ bởi ROS (Robot Operating System). 
+### 3.1 Raspberry Pi
+- **Vai trò:** Bộ xử lý trung tâm, chịu trách nhiệm xử lý dữ liệu từ cảm biến, thực hiện thuật toán Hector SLAM và điều khiển toàn bộ hệ thống.
+- **Chức năng chính:**
+  - Tiếp nhận dữ liệu từ cảm biến Lidar.
+  - Xử lý dữ liệu bản đồ và vị trí thông qua Hector SLAM.
+  - Gửi lệnh điều khiển đến STM32F411 để kiểm soát động cơ.
+  - Hiển thị và phân tích dữ liệu bản đồ qua giao diện đồ họa.
 
-### Mục tiêu dự án
-Mục tiêu của dự án không chỉ là lập bản đồ mà còn là điều khiển động cơ chính xác. Để đạt được điều này, tôi đã tích hợp Raspberry Pi với vi điều khiển STM32F411 thông qua giao tiếp UART. Vi điều khiển STM32F411 chịu trách nhiệm điều khiển động cơ ở mức thấp, cho phép robot di chuyển chính xác và phản ứng nhanh chóng với các thay đổi trong môi trường được phát hiện bởi cảm biến LIDAR.
+### 3.2 Lidar (Ví dụ: RPLidar A1, A2, hoặc A3)
+- **Vai trò:** Cảm biến chính giúp robot nhận diện môi trường xung quanh và xây dựng bản đồ.
+- **Chức năng:**
+  - Phát ra tia laser để đo khoảng cách đến các vật thể.
+  - Cung cấp dữ liệu đám mây điểm (point cloud) để xử lý bản đồ và định vị.
+  - Hỗ trợ tốc độ quét nhanh, giúp cập nhật bản đồ liên tục theo thời gian thực.
 
-### Các thành phần chính
-- **Cảm biến LIDAR**: Dùng để thu thập dữ liệu khoảng cách và hình ảnh môi trường, hỗ trợ cho việc lập bản đồ.
-- **Raspberry Pi**: Xử lý dữ liệu từ cảm biến LIDAR và thực hiện thuật toán điều hướng thông qua ROS.
-- **STM32F411**: Điều khiển động cơ bánh xe, đảm bảo chuyển động chính xác dựa trên dữ liệu từ Raspberry Pi.
+### 3.3 STM32F411
+- **Vai trò:** Điều khiển động cơ bánh xe, đảm bảo robot di chuyển chính xác.
+- **Chức năng:**
+  - Nhận lệnh từ Raspberry Pi và điều khiển động cơ theo thuật toán SLAM.
+  - Đọc dữ liệu từ encoder để phản hồi tốc độ và vị trí của robot.
+  - Điều khiển xung PWM để kiểm soát tốc độ động cơ một cách linh hoạt.
 
-### Kết luận
-Dự án này không chỉ giúp tôi nâng cao kỹ năng lập trình và thiết kế hệ thống mà còn mang đến cái nhìn sâu sắc về cách tích hợp các công nghệ khác nhau để tạo ra một robot di động thông minh và hiệu quả.
+### 3.4 Động cơ & Encoder
+- **Vai trò:** Cung cấp lực đẩy và đo lường vị trí của robot.
+- **Chức năng:**
+  - Hỗ trợ di chuyển chính xác theo lệnh điều khiển từ STM32F411.
+  - Encoder giúp cập nhật vị trí của bánh xe, đảm bảo độ chính xác trong di chuyển.
 
-https://youtu.be/lSaE2lDuPe4
+---
 
-https://www.youtube.com/watch?v=16xksGicoLY
+## 4. Các tính năng chính của hệ thống
+
+### 4.1 Xác định vị trí và lập bản đồ
+- Robot sử dụng **Lidar** để thu thập dữ liệu khoảng cách và nhận diện môi trường xung quanh.
+- Thuật toán **Hector SLAM** xử lý dữ liệu này để tạo bản đồ thời gian thực và định vị chính xác trong không gian 2D.
+
+### 4.2 Điều khiển động cơ thông minh
+- **STM32F411** nhận tín hiệu từ Raspberry Pi và điều khiển động cơ bánh xe để robot di chuyển chính xác.
+- **Encoder** đo lường sự di chuyển của bánh xe, giúp điều chỉnh đường đi của robot một cách tối ưu.
+
+### 4.3 Giao tiếp giữa Raspberry Pi và STM32F411
+- **Giao thức SPI, CAN hoặc UART** được sử dụng để truyền dữ liệu giữa hai bộ xử lý.
+- Đảm bảo hiệu suất cao, độ trễ thấp, giúp robot hoạt động ổn định và mượt mà.
+
+---
+
+## 5. Ứng dụng thực tế
+Hệ thống này có thể ứng dụng vào nhiều lĩnh vực khác nhau như:
+- **Xe tự hành trong nhà máy, kho bãi**: Hỗ trợ vận chuyển hàng hóa tự động.
+- **Robot thám hiểm trong môi trường phức tạp**: Giúp điều hướng trong các khu vực khó tiếp cận.
+- **Nghiên cứu và phát triển hệ thống điều hướng thông minh**: Cung cấp nền tảng cho các dự án robot tự hành hiện đại.
+
+---
+
+## 6. Kết luận
+Dự án này không chỉ giúp nâng cao kỹ năng **lập trình nhúng, xử lý dữ liệu và thiết kế hệ thống** mà còn cung cấp cái nhìn sâu sắc về **công nghệ robot tự hành**. Với sự kết hợp giữa **Lidar, Raspberry Pi và STM32F411**, robot có thể hoạt động **tự động, chính xác và hiệu quả**, mở ra nhiều tiềm năng ứng dụng thực tế.
+
+---
+
+## 7. Video minh họa dự án
+🎥 **Xem video demo về dự án tại:**
+🔗 [Video 1](https://youtu.be/lSaE2lDuPe4)  
+🔗 [Video 2](https://www.youtube.com/watch?v=16xksGicoLY)
