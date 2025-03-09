@@ -27,7 +27,7 @@ Hệ thống robot này bao gồm các thành phần chính sau:
   - Gửi lệnh điều khiển đến STM32F411 để kiểm soát động cơ.
   - Hiển thị và phân tích dữ liệu bản đồ qua giao diện đồ họa.
 
-### 3.2 Lidar (Ví dụ: RPLidar A1, A2, hoặc A3)
+### 3.2 Lidar 
 - **Vai trò:** Cảm biến chính giúp robot nhận diện môi trường xung quanh và xây dựng bản đồ.
 - **Chức năng:**
   - Phát ra tia laser để đo khoảng cách đến các vật thể.
