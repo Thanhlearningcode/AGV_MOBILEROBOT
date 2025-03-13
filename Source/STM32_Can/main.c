@@ -1,10 +1,5 @@
 #include "stm32f4xx.h"
 #include "can_driver.h"
-#include "uart.h"
-#include "bsp.h"
-#include "fpu.h"
-#include "adc.h"
-#include "timebase.h"
 
 
 #define  GPIOAEN		(1U<<0)

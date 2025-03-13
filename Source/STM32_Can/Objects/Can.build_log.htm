@@ -21,19 +21,22 @@ Target DLL:      UL2CM3.DLL V1.163.4.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-D:\WORK\AGV_MOBILEROBOT-main\Source\STM32_Can\Can.uvprojx
+D:\WORK\PBL4\AGV_MOBILEROBOT\Source\STM32_Can\Can.uvprojx
 Project File Date:  03/13/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'D:\App\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-main.c(3): error: 'uart.h' file not found
-#include "uart.h"
-         ^~~~~~~~
-1 error generated.
 compiling main.c...
-compiling Can_Driver.c...
-".\Objects\Can.axf" - 1 Error(s), 0 Warning(s).
+linking...
+.\Objects\Can.axf: Error: L6218E: Undefined symbol debug_uart_init (referred from main.o).
+.\Objects\Can.axf: Error: L6218E: Undefined symbol delay (referred from main.o).
+.\Objects\Can.axf: Error: L6218E: Undefined symbol fpu_enable (referred from main.o).
+.\Objects\Can.axf: Error: L6218E: Undefined symbol timebase_init (referred from main.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 4 error messages.
+".\Objects\Can.axf" - 4 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,8 +63,8 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.6.3
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 Target not created.
