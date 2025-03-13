@@ -17,41 +17,23 @@ Library Manager: ArmAr.exe V6.14
 Hex Converter:   FromElf.exe V6.14
 CPU DLL:         SARMCM3.DLL V5.31.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-D:\WORK\PBL4\AGV_MOBILEROBOT\Source\STM32_Main\main.uvprojx
-Project File Date:  03/14/2025
+D:\WORK\AGV_MOBILEROBOT-main\Source\STM32_Can\Can.uvprojx
+Project File Date:  03/13/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'D:\App\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Src'
-Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
-Note: source file '.\Kernel.s' - object file renamed from '.\Objects\Kernel.o' to '.\Objects\kernel_1.o'.
-compiling BNO055.c...
-compiling Dio.c...
-compiling Uart1.c...
-compiling I2C1.c...
-compiling Lcd1602.c...
-compiling Uart2.c...
-compiling Exti.c...
-compiling HSCR04.c...
-compiling Spi2.c...
-compiling Rcc_Cfg.c...
-compiling BTS7960.c...
-compiling Motor.c...
-compiling Encoder.c...
-compiling Systick.c...
-compiling Kernel.c...
-compiling main.cpp...
-compiling TryCatch.c...
-compiling ros.cpp...
-compiling mainpp.cpp...
-linking...
-Program Size: Code=19402 RO-data=1090 RW-data=24 ZI-data=5488  
-FromELF: creating hex file...
-".\Objects\main.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+main.c(3): error: 'uart.h' file not found
+#include "uart.h"
+         ^~~~~~~~
+1 error generated.
+compiling main.c...
+compiling Can_Driver.c...
+".\Objects\Can.axf" - 1 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -68,7 +50,7 @@ Package Vendor: Keil
    * Component: Startup Version: 2.6.3
 
 <h2>Collection of Component include folders:</h2>
-  .\RTE\_Src
+  .\RTE\_Target_1
   D:\App\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include
   D:\App\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
@@ -77,12 +59,13 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
-Build Time Elapsed:  00:00:01
+      Source file:   MDK\Device\Source\ARM\STM32F446xx_OPT.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f446xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
