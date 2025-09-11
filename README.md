@@ -82,3 +82,4 @@ Dự án này không chỉ giúp nâng cao kỹ năng **lập trình nhúng, x�
 🎥 **Xem video demo về dự án tại:**
 🔗 [Video 1](https://youtu.be/lSaE2lDuPe4)  
 🔗 [Video 2](https://www.youtube.com/watch?v=16xksGicoLY)
+🔗 [Video All]([https://www.youtube.com/watch?v=16xksGicoLY](https://www.youtube.com/playlist?list=PLuLSa6UJU-JVPB2FamfjqBzRCuvz32bf4))
